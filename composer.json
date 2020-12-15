@@ -16,7 +16,7 @@
             "DV\\": "src/"            
         },
         "classmap": [
-            "/vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php"
+            "../../../vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php"
         ]
     }
 }
