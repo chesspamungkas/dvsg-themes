@@ -1,7 +1,7 @@
 {
     "name": "dailyvanity/dailyvanity-core",
     "description": "dailyvanity",
-    "type": "project",
+    "type": "wordpress-theme",
     "authors": [
         {
             "name": "Chris Sim",
