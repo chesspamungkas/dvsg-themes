@@ -1,0 +1,39 @@
+#footer {
+  #footerMenu {
+    &.sidebar-footer-rows {
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        display: flex;
+      }
+      li {
+        &:first-child {
+          padding-left:0px;
+          
+        }
+        a {
+          color: #444;
+        }
+        &.social-icon {
+          font-size: 30px;
+          span {
+            display:none;
+          }
+          margin-left: 20px;
+          &:first-child {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+    .menu {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        margin: 0 12px 6px 0;
+        padding-left: 14px;
+        
+      }
+    }
+  }
+}

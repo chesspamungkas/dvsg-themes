@@ -1,0 +1,22 @@
+{
+    "name": "dailyvanity/dailyvanity-core",
+    "description": "dailyvanity",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Chris Sim",
+            "email": "chris.sim@dailyvanity.sg"
+        }
+    ],
+    "require": {
+        "wp-bootstrap/wp-bootstrap-navwalker": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "DV\\": "src/"            
+        },
+        "classmap": [
+            "vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php"
+        ]
+    }
+}

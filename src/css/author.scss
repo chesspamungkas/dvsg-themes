@@ -1,0 +1,116 @@
+.author-box {
+  margin: 20px 0;
+  border: 1px solid $pink;
+  padding: 10px;
+  .authorIntro {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #444;
+  }
+  .authorLink {
+    color: #444;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: block;
+  }
+}
+.author-block {
+  position: relative;
+  margin-top: 85px;
+  text-align: center;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #fc88b5, #f04084);
+  &.posts-grid {
+    margin-top: 0;
+    padding: 0;
+  }
+  .author-posts {
+    position: relative;
+    .fieldset {
+      .fieldset-title {
+        position: relative;
+        top: -12px;
+      }
+      .border {
+        // @media #{$tab} {
+        //   width: 34%;
+        // }
+        // @media #{$mobile} {
+        //   width: 27%;
+        // }
+        position: relative;
+        width: 41%;
+        border-top: 2px solid;
+        top: 0;
+        clear: both;
+        &.ls {
+          left: 0;
+          float: left;
+        }
+        &.rs {
+          right: 0;
+          float: right;
+        }
+      }
+    }
+    // @include fexGrid('flex-grid', 31, 48, 100);
+    // .flex-grid {
+    //   @media #{$tab} {
+    //   }
+    //   .flex-grid-item {
+    //     margin: 1%;
+    //     @media #{$mobile} {
+    //       margin-bottom: 15px;
+    //     }
+    //   }
+    // }
+  }
+  .author-intro {
+    background-color:white;
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    img {
+      &.img-circle {
+        width: 200px;
+        height: 200px;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        position: relative;
+        z-index: 1;
+        margin-top: -150px;
+        // @media #{$mobile} {
+        //   width: initial;
+        //   height: initial;
+        // }
+      }
+    }
+    .author-image-border {
+      position: absolute;
+      width: 50%;
+      top: 0;
+      z-index: 0;
+      border: 10px solid;
+      //vertical border
+      &.vr {
+        height: 100%;
+        width: 10px;
+      }
+      &.ls {
+        //border-color: $base-color-light;
+        left: 0;
+      }
+      &.rs {
+        right: 0;
+        //border-color: $base-color;
+      }
+    }
+  }
+}
