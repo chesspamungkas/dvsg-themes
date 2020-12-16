@@ -2,6 +2,5 @@ vendor
 ./node_modules
 .dist
 
-wp-content/themes/dailyvanity-main/node_modules/*
-wp-content/themes/dailyvanity-main/vendor/*
-wp-content/themes/dailyvanity-main/src/.dist/*
+node_modules
+src/.dist

@@ -15,6 +15,7 @@ class DailyVanity {
     add_image_size( 'full-size', '900', '467', true );
     add_image_size( 'article-thumbnail', '506', '262', true );
     add_image_size( 'article-featured', '760', '394', true );
+    add_image_size( 'shopable-image', '409', '522', true );
     add_image_size( 'sml_size', 300 ); 
     add_image_size( 'mid_size', 600 ); 
     add_image_size( 'lrg_size', 1200 ); 

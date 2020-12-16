@@ -8,7 +8,6 @@ $detect = new Mobile_Detect;
 
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
-define( 'DV_LOGO_ALT', 'Beauty Magazine Malaysia Daily Vanity Logo' );
 define( 'SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...' );
 define( 'DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!' );
 define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );

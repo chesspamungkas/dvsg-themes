@@ -30,7 +30,7 @@ get_header();
             </div>
             <div class="container" id="page-header">
                 <div class="row no-gutters justify-content-center">
-                    <div class="col-8 text-center">
+                    <div class="col-12 col-md-8 text-center">
                         <h3 class="post_category"><?php the_category(",  "); ?></h3>
                         <h1 class="eb-garamond-medium" id="page-title"><?php echo the_title(); ?></h1>
                         <div class="authorName poppins-medium">By <?php the_author_posts_link(); ?></div>
@@ -65,40 +65,34 @@ get_header();
               </div> <!-- .entry-content -->
             </article> <!-- .et_pb_post -->
             <?php //echo get_template_part('template_parts/author-box') ?>
-          <?php 
-            endwhile;
-
-            $tags = get_the_tags();
-
-            if( $tags ): 
-          ?>
-          <div class="topics">
-            <div class="title">Topics</div>
-            <div class="post_tags">
-            <?php
-                foreach( $tags as $tag ) {
-                  echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
-                }
-            ?>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <?php
-            endif;
-          ?>
+          <?php endwhile; ?>
         </div> <!-- #content-area -->
       </div>
-      <!--div class="col-xm-12 col-sm-12 col-md-4">
-      </div-->
     </div>    
   </div> <!-- .container -->
-  <!--div class="container-fluid">
-    <div class="row">
-      <div class="col no-padding">
-        <?//= do_shortcode('[list-posts]') ?>
+  <?= do_shortcode('[content-upgrade]') ?>
+  <?php
+    $tags = get_the_tags(); 
+
+    if( $tags ): 
+  ?>
+    <div class="container tags-container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-sm-12 col-md-1 tag-title poppins-medium">Topics:</div>
+        <div class="col-11 col-sm-12 col-md-11 tag-link poppins-semibold">
+          <?php
+              foreach( $tags as $tag ) {
+                echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+              }
+          ?>
+        </div>
       </div>
     </div>
-  </div-->
+  <?php 
+    endif;
+    
+    echo do_shortcode( '[beauty-newsfeed featured="0" title="2"]' );
+  ?>
 </div> <!-- #main-content -->
 
 <?php get_footer(); ?>

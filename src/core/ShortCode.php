@@ -13,7 +13,8 @@ class ShortCode {
     'search-results'=>['\DV\shortcodes\SearchResults\SearchResults', 'init'],
     'featured-daily-tips'=>['\DV\shortcodes\FeaturedDailyTips\FeaturedDailyTips', 'init'],
     'beauty-newsfeed'=>['\DV\shortcodes\BeautyNewsfeed\BeautyNewsfeed', 'init'],
-    'featured-articles'=>['\DV\shortcodes\FeaturedArticles\FeaturedArticles', 'init']
+    'featured-articles'=>['\DV\shortcodes\FeaturedArticles\FeaturedArticles', 'init'],
+    'content-upgrade'=>['\DV\shortcodes\ContentUpgrade\ContentUpgrade', 'init']
   ];
 
   public static function Add($key, $class) {
