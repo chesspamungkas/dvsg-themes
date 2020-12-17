@@ -51,7 +51,7 @@ get_header();
       <div class="col-xm-12 col-sm-12 col-md-8">
         <div id="content-area" class="clearfix">			
           <?php
-            echo do_shortcode( '[rtoc_mokuji]' ); 
+            // echo do_shortcode( '[rtoc_mokuji]' ); 
             while ( have_posts() ) : the_post(); 
           ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

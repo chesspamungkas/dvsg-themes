@@ -95,10 +95,10 @@ img {
     margin: 10px 0;
 }
 
-.single-post > #page-container > #body > #main-content > .container > .row > .col-md-8 > #content-area > .post > .entry-content > p:nth-child(2):first-letter {
+.single-post > #page-container > #body > #main-content > .container > .row > .col-md-8 > #content-area > .post > .entry-content > p:first-of-type:first-letter {
     float: left;
     font-size: 4rem;
-    line-height: 0.75;
+    line-height: 0.65;
     margin: 0.1em 0.15em 0.05em 0;
     color: #f04084;
 }
@@ -1094,7 +1094,7 @@ nav.rank-math-breadcrumb > p > .separator {
     margin-bottom: 280px;
 }
 
-.single-post #content-area .entry-content a {
+.single-post #content-area .entry-content a, .page #content-area .entry-content a {
     font-weight: 700;
     color: #000;
     display: inline;
@@ -1106,7 +1106,7 @@ nav.rank-math-breadcrumb > p > .separator {
     background-image: linear-gradient(#ffcede,#ffcede);
 }
 
-.single-post #content-area .entry-content a:hover {
+.single-post #content-area .entry-content a:hover, .page #content-area .entry-content a:hover {
     display: inline;
     background-size: 2px 2px;
     background-repeat: repeat-x;
@@ -1116,7 +1116,7 @@ nav.rank-math-breadcrumb > p > .separator {
     background-image: linear-gradient(#EA4A7F,#EA4A7F);
 }
 
-.post > .entry-content > p {
+.post > .entry-content > p, .page > .entry-content > p {
     font-family: 'EB Garamond', serif;
     font-weight: 500;
     font-size: 20px;
@@ -1128,7 +1128,13 @@ nav.rank-math-breadcrumb > p > .separator {
 .post > .entry-content > h3, 
 .post > .entry-content > h4, 
 .post > .entry-content > h5, 
-.post > .entry-content > h6  {
+.post > .entry-content > h6,
+.page > .entry-content > h1, 
+.page > .entry-content > h2, 
+.page > .entry-content > h3, 
+.page > .entry-content > h4, 
+.page > .entry-content > h5, 
+.page > .entry-content > h6  {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 } 
@@ -1149,7 +1155,18 @@ li::marker {
 .post > .entry-content > ol > li > ol > li > ol, 
 .post > .entry-content > ol > li > ul, 
 .post > .entry-content > ol > li > ul > li > ol, 
-.post > .entry-content > ol > li > ul > li > ul {
+.post > .entry-content > ol > li > ul > li > ul,
+.page > .entry-content > ul, 
+.page > .entry-content > ul > li > ul, 
+.page > .entry-content > ul > li > ul > li > ul, 
+.page > .entry-content > ul > li > ol, 
+.page > .entry-content > ul > li > ol > li > ul, 
+.page > .entry-content > ol, 
+.page > .entry-content > ol > li > ol, 
+.page > .entry-content > ol > li > ol > li > ol, 
+.page > .entry-content > ol > li > ul, 
+.page > .entry-content > ol > li > ul > li > ol, 
+.page > .entry-content > ol > li > ul > li > ul {
     list-style: none;
     list-style-position: outside;
     font-family: 'EB Garamond', serif;
@@ -1162,7 +1179,13 @@ li::marker {
 .post > .entry-content > ol > li > ol, 
 .post > .entry-content > ol > li > ol > li > ol, 
 .post > .entry-content > ol > li > ul > li > ol,
-.post > .entry-content > ul > li > ol > li > ol {
+.post > .entry-content > ul > li > ol > li > ol,
+.page > .entry-content > ul > li > ol, 
+.page > .entry-content > ol, 
+.page > .entry-content > ol > li > ol, 
+.page > .entry-content > ol > li > ol > li > ol, 
+.page > .entry-content > ol > li > ul > li > ol,
+.page > .entry-content > ul > li > ol > li > ol {
     counter-reset: my-counter;
 }
 
@@ -1174,35 +1197,47 @@ li::marker {
 .post > .entry-content > ol > li > ol > li > ol, 
 .post > .entry-content > ol > li > ul, 
 .post > .entry-content > ol > li > ul > li > ol, 
-.post > .entry-content > ol > li > ul > li > ul {
+.post > .entry-content > ol > li > ul > li > ul,
+.page > .entry-content > ul > li > ul, 
+.page > .entry-content > ul > li > ul > li > ul, 
+.page > .entry-content > ul > li > ol, 
+.page > .entry-content > ul > li > ol > li > ul, 
+.page > .entry-content > ol > li > ol, 
+.page > .entry-content > ol > li > ol > li > ol, 
+.page > .entry-content > ol > li > ul, 
+.page > .entry-content > ol > li > ul > li > ol, 
+.page > .entry-content > ol > li > ul > li > ul {
     margin-top: 20px;
 }
 
-.post > .entry-content > ol, .post > .entry-content > ul {
+.post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 15px;
 }
 
-.post > .entry-content > ol > li > ol {
+.post > .entry-content > ol > li > ol, .page > .entry-content > ol > li > ol {
     margin-left: 27px;
 }
 
-.post > .entry-content > ol > li > ol > li > ol {
+.post > .entry-content > ol > li > ol > li > ol, .page > .entry-content > ol > li > ol > li > ol {
     margin-left: -4px;
 }
 
-.post > .entry-content > ol > li > ul {
+.post > .entry-content > ol > li > ul, .page > .entry-content > ol > li > ul {
     margin-left: 30px;
 }
 
 .post > .entry-content > ol > li > ul > li > ul, 
 .post > .entry-content > ul > li > ul,
-.post > .entry-content > ul > li > ul > li > ul {
+.post > .entry-content > ul > li > ul > li > ul,
+.page > .entry-content > ol > li > ul > li > ul, 
+.page > .entry-content > ul > li > ul,
+.page > .entry-content > ul > li > ul > li > ul {
     margin-left: -10px;
 }
 
-.post > .entry-content > ul > li > ol {
+.post > .entry-content > ul > li > ol, .page > .entry-content > ul > li > ol {
     margin-left: -12px;
 }
 
@@ -1211,7 +1246,13 @@ li::marker {
 .post > .entry-content > ol > li > ol > li, 
 .post > .entry-content > ol > li > ol > li > ol > li, 
 .post > .entry-content > ol > li > ul > li > ol > li,
-.post > .entry-content > ul > li > ol > li > ol > li {
+.post > .entry-content > ul > li > ol > li > ol > li,
+.page > .entry-content > ul > li > ol > li, 
+.page > .entry-content > ol > li, 
+.page > .entry-content > ol > li > ol > li, 
+.page > .entry-content > ol > li > ol > li > ol > li, 
+.page > .entry-content > ol > li > ul > li > ol > li,
+.page > .entry-content > ul > li > ol > li > ol > li {
     display: block;
 }
 
@@ -1225,12 +1266,25 @@ li::marker {
 .post > .entry-content > ol > li > ol > li > ol > li, 
 .post > .entry-content > ol > li > ul > li, 
 .post > .entry-content > ol > li > ul > li > ol > li, 
-.post > .entry-content > ol > li > ul > li > ul > li {
+.post > .entry-content > ol > li > ul > li > ul > li,
+.page > .entry-content > ul > li, 
+.page > .entry-content > ul > li > ul > li, 
+.page > .entry-content > ul > li > ul > li > ul > li, 
+.page > .entry-content > ul > li > ol > li, 
+.page > .entry-content > ul > li > ol > li > ul > li, 
+.page > .entry-content > ol > li, 
+.page > .entry-content > ol > li > ol > li, 
+.page > .entry-content > ol > li > ol > li > ol > li, 
+.page > .entry-content > ol > li > ul > li, 
+.page > .entry-content > ol > li > ul > li > ol > li, 
+.page > .entry-content > ol > li > ul > li > ul > li {
     margin-bottom: 20px;
 }
 
 .post > .entry-content > ul > li::before, 
-.post > .entry-content > ol > li > ul > li::before {
+.post > .entry-content > ol > li > ul > li::before,
+.page > .entry-content > ul > li::before, 
+.page > .entry-content > ol > li > ul > li::before {
     content: '\2022 ';
     font-size: 25px;
     color: #ffcede;
@@ -1240,7 +1294,9 @@ li::marker {
 }
 
 .post > .entry-content > ul > li > ul > li::before,
-.post > .entry-content > ol > li > ul > li > ul > li::before {
+.post > .entry-content > ol > li > ul > li > ul > li::before,
+.page > .entry-content > ul > li > ul > li::before,
+.page > .entry-content > ol > li > ul > li > ul > li::before {
     content: '\26AC ';
     font-size: 15px;
     color: #ffcede;
@@ -1249,7 +1305,7 @@ li::marker {
     line-height: 0;
 }
 
-.post > .entry-content > ul > li > ul > li > ul > li::before {
+.post > .entry-content > ul > li > ul > li > ul > li::before, .page > .entry-content > ul > li > ul > li > ul > li::before {
     content: '■ ';
     font-size: 10px;
     color: #ffcede;
@@ -1258,7 +1314,7 @@ li::marker {
     line-height: 0;
 }
 
-.post > .entry-content > ol > li::before {
+.post > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, decimal )'. ';
     font-size: 48px;
@@ -1272,11 +1328,13 @@ li::marker {
 }
 
 .post > .entry-content > ol > li > ol, 
-.post > .entry-content > ol > li > ul {
+.post > .entry-content > ol > li > ul,
+.page > .entry-content > ol > li > ol, 
+.page > .entry-content > ol > li > ul {
     padding-inline-start: 0;
 }
 
-.post > .entry-content > ol > li > ol > li::before {
+.post > .entry-content > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-alpha ) '. ';
     color: #ffcede;
@@ -1287,7 +1345,7 @@ li::marker {
     width: 1em;
 }
 
-.post > .entry-content > ul > li > ol > li::before {
+.post > .entry-content > ul > li > ol > li::before, .page > .entry-content > ul > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-alpha ) '. ';
     color: #ffcede;
@@ -1298,7 +1356,7 @@ li::marker {
     width: 1em;
 }
 
-.post > .entry-content > ol > li > ol > li > ol > li::before {
+.post > .entry-content > ol > li > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-roman ) '. ';
     color: #ffcede;
@@ -1877,7 +1935,7 @@ blockquote p {
         margin-left: 5px !important;
     }
 
-    .single-post > #page-container > #body > #main-content > .container > .row > .col-md-8 > #content-area > .post > .entry-content > p:nth-child(2):first-letter {
+    .single-post > #page-container > #body > #main-content > .container > .row > .col-md-8 > #content-area > .post > .entry-content > p:first-of-type:first-letter {
         line-height: 0.75;
         margin: 0.1em 0.15em 0.05em 0;
     }
