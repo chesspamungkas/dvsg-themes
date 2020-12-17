@@ -24,7 +24,8 @@ class BeautyNewsfeed extends ShortCode {
       'tag_id' => 0,
       'post_status' => 'publish',
       's' => '',
-      'featured' => 1
+      'featured' => 1,
+      'post__not_in' => [],
     ), $args );
 
     foreach($model->additional_args as $key=>$value) {
@@ -88,8 +89,14 @@ class BeautyNewsfeed extends ShortCode {
   }
 
   public function generate() {
+    global $post;
     // $tip = new FeaturedDailyTips();
     // print_r( 'Tip Order: ' . FeaturedDailyTips::getTipOrder() );
+
+    if( $this->additional_args['title'] == 2 ) {
+      $this->search_args['post__not_in'] = array( $post->ID );
+      $this->additional_args['post__not_in'] = array( $post->ID );
+    }
 
     $offset = ( $this->additional_args['paged'] - 1 ) * $this->additional_args['posts_per_page'];
     $this->search_args['offset'] = $offset;
