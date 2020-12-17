@@ -98,7 +98,7 @@ img {
 .single-post > #page-container > #body > #main-content > .container > .row > .col-md-8 > #content-area > .post > .entry-content > p:first-of-type:first-letter {
     float: left;
     font-size: 4rem;
-    line-height: 0.65;
+    line-height: 0.75;
     margin: 0.1em 0.15em 0.05em 0;
     color: #f04084;
 }
