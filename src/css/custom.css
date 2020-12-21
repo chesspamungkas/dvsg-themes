@@ -72,13 +72,13 @@ img {
     height: auto;
 }
 
-.entry-content > .wp-caption {
+.wp-caption {
     position: relative;
     margin-bottom: 30px;
     max-width: 100%;
 }
 
-.entry-content > .wp-caption:after {
+.wp-caption:after {
     content: "";
     background: #E94A7F;
     position: absolute;
@@ -88,7 +88,7 @@ img {
     width: 15px;
 }
 
-.entry-content > .wp-caption > p.wp-caption-text {
+.wp-caption > p.wp-caption-text {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 300;
@@ -1317,8 +1317,9 @@ li::marker {
 .post > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, decimal )'. ';
-    font-size: 48px;
+    font-size: 30px;
     color: #ffcede;
+    margin-top: -11px;
     margin-right: 10px;
     margin-left: -59px;
     line-height: 0;
@@ -1391,8 +1392,8 @@ blockquote:before {
 
 blockquote p {
     font-family: 'EB Garamond', serif;
-    font-weight: 500;
-    font-weight: 400;
+    font-weight: 300;
+    color: #22201b;
     width: 89%;
     border-top: 2px solid #e8d9d9;
     display: inline-block;
@@ -1535,6 +1536,10 @@ blockquote p {
 
 #at-expanded-menu-host .at-branding-info.at-expanded-menu-branding, #at-expanded-menu-host .at-branding-logo.at-expanded-menu-branding {
     display: none !important;
+}
+
+.at-expanding-share-button[data-position=bottom-right] {
+    right: 160px;
 }
 
 .tags-container {
@@ -1918,7 +1923,7 @@ blockquote p {
     }
 
     .single-post > #page-container > #body > #page-header-container {
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
 
     .rtoc-mokuji-content > .rtoc-mokuji.level-1 > li {
@@ -1942,6 +1947,7 @@ blockquote p {
 
     blockquote {
         width: 90%;
+        margin-bottom: 20px;
     }
 
     blockquote:before {
@@ -1976,6 +1982,11 @@ blockquote p {
     .tags-container > .row > .tag-title, .tags-container > .row > .tag-link {
         padding-left:0 !important;
         padding-right:0 !important;
+    }
+
+    .at-expanding-share-button[data-position=bottom-right] {
+        bottom: 150px;
+        right: 10px;
     }
 }
 
@@ -2034,7 +2045,7 @@ blockquote p {
     }
 
     .single-post > #page-container > #body > #page-header-container {
-        margin-bottom: 120px;
+        margin-bottom: 60px;
     }
 
     blockquote p {
@@ -2132,11 +2143,12 @@ blockquote p {
     }
 
     .single-post > #page-container > #body > #page-header-container {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 
     blockquote p {
         width: 77%;
+        font-size: 23px;
     }
 
     blockquote:before {
@@ -2174,6 +2186,16 @@ blockquote p {
 
     .review-result-wrapper i, .review-result-wrapper img.wp-review-image {
         font-size: 14px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .single-post > #page-container > #body > #page-header-container {
+        margin-bottom: 40px;
+    }
+
+    .single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > #page-title {
+        font-size: 2rem;
     }
 }
 
@@ -2329,5 +2351,9 @@ blockquote p {
 
     #review > .review-total-wrapper {
         padding-right: 25px;
+    }
+
+    .single-post > #page-container > #body > #page-header-container {
+        margin-bottom: 20px;
     }
 }
