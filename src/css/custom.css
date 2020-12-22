@@ -1539,7 +1539,7 @@ blockquote p {
 }
 
 .at-expanding-share-button[data-position=bottom-right] {
-    right: 160px;
+    right: 160px !important;
 }
 
 .tags-container {
@@ -1985,8 +1985,8 @@ blockquote p {
     }
 
     .at-expanding-share-button[data-position=bottom-right] {
-        bottom: 150px;
-        right: 10px;
+        bottom: 150px !important;
+        right: 10px !important;
     }
 }
 
