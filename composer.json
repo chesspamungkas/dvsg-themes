@@ -18,15 +18,5 @@
         "classmap": [
             "../../../vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php"
         ]
-    },
-    "scripts": {
-        "post-update-cmd": [
-            "npm update",
-            "npm run build"
-        ],
-        "post-install-cmd": [
-            "npm update",
-            "npm run build"
-        ]
     }
 }
