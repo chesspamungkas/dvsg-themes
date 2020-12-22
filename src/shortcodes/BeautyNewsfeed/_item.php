@@ -66,7 +66,7 @@ if( $posts->have_posts() ):
           <div class="row no-gutters">
             <div class="col-md-12 col-5 col-sm-5">
               <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" target="_blank">
-                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" alt="<?php echo get_the_title(); ?>" class="post-thumbnail" />
+                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'article-thumbnail' ); ?>" alt="<?php echo get_the_title(); ?>" class="post-thumbnail" />
               </a>  
             </div>
             <div class="col-md-12 col-7 col-sm-7">
