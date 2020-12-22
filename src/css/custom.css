@@ -73,9 +73,9 @@ img {
 }
 
 .entry-content iframe {
-    max-width: 100%;
-    width: auto !important;
-    height: auto !important;
+    max-width: 100% !important;
+    /* width: auto !important;
+    height: auto !important; */
 }
 
 .wp-caption {
