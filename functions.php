@@ -1,5 +1,4 @@
 <?php
-include_once('vendor/autoload.php');
 DV\DailyVanity::init();
 
 include_once( __DIR__ . '/inc/Mobile_Detect.php' );
