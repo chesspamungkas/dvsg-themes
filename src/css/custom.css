@@ -72,6 +72,12 @@ img {
     height: auto !important;
 }
 
+.entry-content iframe {
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+}
+
 .wp-caption {
     position: relative;
     margin-bottom: 30px;
@@ -1609,14 +1615,9 @@ blockquote p {
         padding-top: 50px;
     }
 
-    .entry-content img {
+    /* .entry-content img {
         max-width: 450px;
-    }
-
-    .entry-content iframe {
-        max-width: 450px;
-        height: 250px;
-    }
+    } */
 
     #top-header-table > tbody > tr > td > a > #logo {
         width: 130px;
