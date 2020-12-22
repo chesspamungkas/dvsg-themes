@@ -67,9 +67,9 @@ img {
 }
 
 .entry-content img, .entry-content > div > p > img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
 }
 
 .wp-caption {
