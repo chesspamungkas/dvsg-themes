@@ -6,7 +6,7 @@
   <div class="container featured-container">
     <div class="row">
       <div class="col-md-3 col-10 col-sm-10" id="featured-header">
-        <img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/featured-beauty-reads-videos-malaysia.svg" alt="Featured beauty reads and videos in Malaysia" />
+        <img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/featured-beauty-reads-videos-malaysia.svg" alt="Featured beauty reads and videos in <?php echo COUNTRY; ?>" />
       </div>
     </div>
     <div class="row align-items-center">
