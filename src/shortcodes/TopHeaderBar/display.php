@@ -92,9 +92,23 @@
       <div class="container" id="menu-wrapper">
         <?php do_action( 'top_header_story_section' ); ?>
         <div class="row no-gutters" style="flex-grow: 1;">
-            <?php do_action( 'top_header_menu_column_1' ); ?>
-            <?php do_action( 'top_header_menu_column_2' ); ?>
-            <?php do_action( 'top_header_menu_column_3' ); ?>
+            <?php do_action( 'top_header_before_menu' ); ?>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+            <?php
+              wp_nav_menu( array(
+                  'theme_location'    => 'primary',
+                  'depth'             => 2,
+                  'container'         => 'nav',
+                  'container_class'   => 'nav flex-column',
+                  'container_id'      => '',
+                  'menu_class'        => 'list-style-none',
+                  'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'            => new WP_Bootstrap_Navwalker(),
+              ) );
+            ?>
+            </div>
+            <?php do_action( 'top_header_after_menu' ); ?>
+            <?php do_action( 'top_header_social_section' ); ?>
         </div>
       </div>
     </div>
