@@ -43,7 +43,7 @@
         <table id="top-header-table">
           <tr>
             <td><i class="fa fa-lg fa-search hover-pink-link grey-link cursor-pointer main-search-btn"></i></td>
-            <td><a href="<?php echo home_url(); ?>"><img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-logo-new.svg" id="logo" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Logo"></a></td>
+            <td><a href="<?php echo home_url(); ?>"><img src="<?php echo TOP_HEADER_LOGO; ?>" id="logo" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Logo"></a></td>
             <td>
               <!--i class="fa fa-lg fa-bars hover-pink-link grey-link cursor-pointer main-menu-btn"></i><img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-menu.svg" class="hover-pink-link cursor-pointer main-menu-btn" /-->
               <svg version="1.1" id="menu-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="25px" y="25px" viewBox="0 0 25 25" style="enable-background:new 0 0 25 25;" xml:space="preserve" class="cursor-pointer main-menu-btn">
