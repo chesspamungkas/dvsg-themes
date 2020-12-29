@@ -90,7 +90,9 @@
         </div>
       </div>
       <div class="container" id="menu-wrapper">
+        <?php do_action( 'top_header_story_section' ); ?>
         <div class="row no-gutters" style="flex-grow: 1;">
+            <?php do_action( 'top_header_before_menu' ); ?>
             <div class="col-xs-12 col-sm-12 col-md-4">
             <?php
               wp_nav_menu( array(
@@ -105,13 +107,8 @@
               ) );
             ?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8">
-              <p id="follow-us-title">FOLLOW US</p>
-              <ul class="justify-content-center" id="header-social-icon">
-                <li class="social-icon"><a href="<?php echo FB_LINK; ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="social-icon"><a href="<?php echo IG_LINK; ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-              </ul>
-            </div>
+            <?php do_action( 'top_header_after_menu' ); ?>
+            <?php do_action( 'top_header_social_section' ); ?>
         </div>
       </div>
     </div>
