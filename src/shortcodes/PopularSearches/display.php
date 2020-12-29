@@ -6,20 +6,20 @@
       <div class="col-12 popular-search-title poppins-regular">Popular Searches</div>
   </div>
   <div class="row no-gutters" style="flex-grow: 1;">
+    <div class="col-xs-12 col-sm-12 col-md-4">
     <?php
       $count = 1;
-      echo '<div class="col-xs-12 col-sm-12 col-md-4">';
-      foreach( $terms as $term ) {
-        if( $count == 6 ) {
-          echo '</div>';
-          echo '<div class="col-xs-12 col-sm-12 col-md-4">';
-        }
-
-        echo '<a href="' . BASE_PATH . '/?s=' . urlencode( $term->post_title ) . '" class="search-keyword poppins-semibold">' . $term->post_title . '</a></br>';
-
-        $count++;
-      }
-      echo '</div>';
+      foreach( $terms as $term ):
+        if( $count == 6 ):
     ?>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4">
+    <?php endif; ?>
+        <a href="<?php echo BASE_PATH; ?>/?s=<?php echo urlencode( $term->post_title ); ?>" class="search-keyword poppins-semibold"><?php echo $term->post_title ?></a></br>
+    <?php
+        $count++;
+      endforeach;
+    ?>
+    </div>
   </div>
 </div>

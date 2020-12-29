@@ -12,8 +12,8 @@ if( $posts->have_posts() ):
       $increment = 1;
     }
 
-    if( $count % 5 == 0 ) {
-      if( $increment == 1 ) {
+    if( $count % 5 == 0 ):
+      if( $increment == 1 ):
 ?>
 
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem post-sub-segment-1">
@@ -41,9 +41,7 @@ if( $posts->have_posts() ):
       </div>
       <?php endif; ?>
 
-<?php
-      } else {
-?>
+<?php else: ?>
 
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem post-sub-segment-2">
         <div class="row no-gutters">
@@ -56,10 +54,10 @@ if( $posts->have_posts() ):
       </div>
 
 <?php
-      }
+      endif;
 
       $increment++;
-    } else {
+    else:
 ?>
       <div class="col-md-6 col-sm-12 col-xs-12 pb-3 listItem">
         <div class="card">
@@ -81,7 +79,7 @@ if( $posts->have_posts() ):
         </div>
       </div>
 <?php
-    }
+    endif;
 
     $count++;
   endwhile;
