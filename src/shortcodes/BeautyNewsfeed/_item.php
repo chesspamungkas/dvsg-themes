@@ -15,7 +15,6 @@ if( $posts->have_posts() ):
     if( $count % 5 == 0 ):
       if( $increment == 1 ):
 ?>
-
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem post-sub-segment-1">
         <div class="card">
           <div class="row no-gutters align-items-center">
@@ -35,11 +34,12 @@ if( $posts->have_posts() ):
           </div>
         </div>
       </div>
-      <?php if( $featured == 1 ): ?>
+      <?php do_action( 'beauty-newsfeed-mid', [ 'page' => '0' ] ); ?>
+      <?php /*if( $featured == 1 ): ?>
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem featured-wrapper">
         <?php echo do_shortcode( '[featured-articles]' ); ?>
       </div>
-      <?php endif; ?>
+      <?php endif;*/ ?>
 
 <?php else: ?>
 
