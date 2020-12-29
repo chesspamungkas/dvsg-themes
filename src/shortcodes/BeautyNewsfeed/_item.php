@@ -41,9 +41,7 @@ if( $posts->have_posts() ):
       </div>
       <?php endif; ?>
 
-<?php
-      elseif:
-?>
+<?php else: ?>
 
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem post-sub-segment-2">
         <div class="row no-gutters">
@@ -59,7 +57,7 @@ if( $posts->have_posts() ):
       endif;
 
       $increment++;
-    elseif:
+    else:
 ?>
       <div class="col-md-6 col-sm-12 col-xs-12 pb-3 listItem">
         <div class="card">
@@ -81,7 +79,7 @@ if( $posts->have_posts() ):
         </div>
       </div>
 <?php
-    endif:
+    endif;
 
     $count++;
   endwhile;
