@@ -33,15 +33,15 @@ foreach( $posts as $post ) {
         </div>
       </div>
     </div>
-<?php
-  if( $count == 1 ):
-    echo '</div>';
-    echo '</div>';
-    echo '<div class="col-md-6 col-12 col-sm-12 featured-02">';
-    echo '<div class="row no-gutters align-items-center">';
-  elseif( $count == 3 ):
-    echo '</div>';
-    echo '</div>';
+<?php if( $count == 1 ): ?>
+  </div>
+</div>
+<div class="col-md-6 col-12 col-sm-12 featured-02">
+<div class="row no-gutters align-items-center">
+<?php elseif( $count == 3 ): ?>
+  </div>
+</div>
+<?php 
   endif;
 
   $count++;
