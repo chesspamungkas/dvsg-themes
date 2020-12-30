@@ -1,5 +1,5 @@
 <?php 
-namespace DV\scripts;
+namespace DV\core;
 
 class BaseStyle {
   private static $_registeredStyle = [
