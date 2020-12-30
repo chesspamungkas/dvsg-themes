@@ -7,11 +7,11 @@ class DailyVanity {
     $own->_init();
     define('DV_SHORTCODE_PATH', __DIR__.'/shortcodes/');
   }
-  private function _init() {
-    add_action( 'wp_enqueue_scripts', ['\DV\core\BaseStyle', 'init'] );
+  private function _init() {    
     core\Menu::init();
     core\ShortCode::init();
     core\ImageSize::init();
+    core\BaseStyle::init();
     add_action( 'widgets_init', ['\DV\core\Widget', 'init'] );
     add_action( 'widgets_init', ['\DV\core\SideBar', 'init'] );
     add_action( 'wp_ajax_ajaxCallListPosts', ['\DV\core\Ajax', 'init'] );
