@@ -1590,7 +1590,7 @@ blockquote p {
     white-space: nowrap;
 }
 
-@media (min-width: 1921px) {
+@media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
     }
