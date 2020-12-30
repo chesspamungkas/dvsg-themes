@@ -6,7 +6,10 @@ class ListPosts extends ShortCode {
   private $search_args = null;
 
   private $additional_args = [
-    'title'=>"1"
+    'title'=>"1",
+    'header' => 'LATEST',
+    'sub_header' => 'BEAUTY READS',
+    'taxonomy' => 'cat',
   ];
   public static function init($args) {
     $model = new ListPosts();
@@ -16,10 +19,14 @@ class ListPosts extends ShortCode {
       'offset'  => 0,
       'paged' => 1,
       'orderby' => 'date',
+      'post_type' => 'post',
       'title' => "1",
+      'header' => 'LATEST',
+      'sub_header' => 'BEAUTY READS',
       'author' => 0,
       'cat' => 0,
       'tag_id' => 0,
+      'taxonomy' => 'cat',
       'post_status' => 'publish'
     ), $args );
 
@@ -44,7 +51,7 @@ class ListPosts extends ShortCode {
     $model->generate();
   }
 
-  public function getTitle( $mode=null, $id=null ) {
+  public function getTaxonomy( $mode=null, $id=null, $postID=null ) {
     global $post;
 
     if( isset( $id ) ) {
