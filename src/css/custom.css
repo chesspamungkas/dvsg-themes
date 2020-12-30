@@ -1590,6 +1590,12 @@ blockquote p {
     white-space: nowrap;
 }
 
+@media (min-width: 1921px) {
+    .at-expanding-share-button[data-position=bottom-right] {
+        right: 400px !important;
+    }
+}
+
 @media (max-width: 480px) {
     html, body {
         overflow-x: hidden;
