@@ -10,13 +10,7 @@
         <div class="row">
           <div class="col">
             <?php if( $args['title']=="1" ): ?>
-              <?= do_shortcode("[section-header header='LATEST' subheader='BEAUTY READS']"); ?>
-            <?php elseif( $args['title']=="2" ): ?>
-              <?php $shortcode = "[section-header header='' subheader='" . strtoupper( $this->getTitle( 'cat', $args['cat'] ) ) . "']"; ?>
-              <?= do_shortcode( $shortcode ); ?>
-            <?php elseif( $args['title']=="3" ): ?>
-              <?php $shortcode = "[section-header header='' subheader='" . strtoupper( $this->getTitle( 'tag', $args['tag_id'] ) ) . "']"; ?>
-              <?= do_shortcode( $shortcode ); ?>
+              <?= do_shortcode("[section-header header='".$args['header']."' subheader='".$args['header']."']"); ?>
             <?php endif; ?>
           </div>
         </div>
