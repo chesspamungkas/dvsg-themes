@@ -31,7 +31,7 @@
       </div>
       <div class="row justify-content-between newsfeed-content">
         <?php 
-          echo $this->render( 'BeautyNewsfeed/_item', [ 'posts' => $posts, 'featured' => $featured, 'args' => $args ] ); 
+          echo $this->render( 'BeautyNewsfeed/_item', [ 'posts' => apply_filters_ref_array('beauty_newsfeed_post_filter', [$posts, $args]), 'featured' => $featured, 'args' => $args ] ); 
         ?>
       </div>
       <?php if( $totalPages > 1 ): ?>
