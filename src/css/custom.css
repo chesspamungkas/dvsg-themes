@@ -1590,6 +1590,133 @@ blockquote p {
     white-space: nowrap;
 }
 
+/* Contact Form */
+
+.wpcf7 { font-family: 'Poppins', sans-serif; }
+
+.wpcf7 input[type="text"], .wpcf7 input[type="email"] {
+    border-radius: 15px;
+    padding: 1.5rem 1.2rem;
+    font-size: 14px;
+}
+
+.wpcf7 input[type="text"]::placeholder, .wpcf7 input[type="email"]::placeholder {
+    color: #a3a3a3;
+}
+
+span.wpcf7-list-item { display: block; }
+
+.submit-btn-container {
+    text-align: center;
+}
+
+.wpcf7-submit {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: .15rem !important;
+    background-color: #EA4A7F !important;
+    color:#fff !important;
+    padding: 18px 60px !important;
+    -webkit-border-radius: 2rem !important;
+    -moz-border-radius: 2rem !important;
+    border-radius: 2rem !important;
+    border: 0 !important;
+    text-transform: uppercase;
+}
+
+.page #content-area .entry-content .wpcf7 a {
+    display: block;
+    background-size: unset;
+    background-repeat: unset;
+    background-position: unset;
+    background-image: unset;
+    background-image: unset;
+    background-image: unset;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 300;
+}
+
+.page #content-area .entry-content .wpcf7 .dropdown .btn {
+    width: 100%;
+    text-align: left;
+    color: #a3a3a3;
+    background-color: #fff;
+    border-color: #ced4da;
+    border-radius: 15px;
+    padding: .9rem 1.2rem;
+    font-size: 14px;
+}
+
+.page #content-area .entry-content .wpcf7 .dropdown .btn::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    border-top:0;
+}
+
+.page #content-area .entry-content .wpcf7 .dropdown .dropdown-menu {
+    width: 100%;
+    -moz-box-shadow: 4px 4px 10px #eee;
+    -webkit-box-shadow: 4px 4px 10px #eee;
+    box-shadow: 4px 4px 10px #eee;
+}
+
+.page #content-area .entry-content .wpcf7 .wpcf7-form .wpcf7-list-item .custom-control-label {
+    font-size: 16px;
+}
+
+.wpcf7 input[type="text"].wpcf7-free-text {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #EA4A7F !important;
+    background-color: #EA4A7F !important;
+}
+
+#dropdownMenuButton:focus,
+.wpcf7-free-text:focus,
+.form-control:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #EA4A7F !important;
+  box-shadow: unset;
+  outline: 0 none;
+}
+
+.wpcf7-not-valid-tip {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #EA4A7F;
+}
+
 @media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
