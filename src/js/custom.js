@@ -64,4 +64,12 @@ jQuery( document ).ready( function() {
             }
         }
     } );
+
+    jQuery( '.subject-matter' ).on( 'click', function() {
+        var value = jQuery( this ).text();
+        console.log( value );
+        jQuery( '#subject-matter' ).val( value );
+        jQuery( '.subject-matter-btn' ).text( value );
+        jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
+    } );
 });
