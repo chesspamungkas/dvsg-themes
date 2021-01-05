@@ -468,15 +468,22 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
     color: #f04084 !important;
 }
 
-.search-keyword {
+#menu-popular-searches {
+    padding-inline-start: unset;
+}
+
+#menu-popular-searches > li > a.nav-link {
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
     line-height: 2.5rem;
     letter-spacing: .1rem;
     font-size: .7em;
+    padding: 0;
 }
 
-.search-keyword:hover {
+#menu-popular-searches > li > a.nav-link:hover {
     text-decoration: none;
 }
 

@@ -95,3 +95,8 @@ add_filter( 'rank_math/frontend/breadcrumb/html', function( $html, $crumbs, $cla
 	$html = str_replace('<span class="separator"> - </span>', '<span class="separator">&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;</span>', $html);
 	return $html;
 }, 10, 3);
+
+function wpb_popular_searches_menu() {
+    register_nav_menu('popular-searches-menu',__( 'Popular Searches Menu' ));
+}
+add_action( 'init', 'wpb_popular_searches_menu' );

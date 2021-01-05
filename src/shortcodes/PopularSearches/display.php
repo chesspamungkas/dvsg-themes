@@ -8,17 +8,16 @@
   <div class="row no-gutters" style="flex-grow: 1;">
     <div class="col-xs-12 col-sm-12 col-md-4">
     <?php
-      $count = 1;
-      foreach( $terms as $term ):
-        if( $count == 6 ):
-    ?>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-4">
-    <?php endif; ?>
-        <a href="<?php echo BASE_PATH; ?>/?s=<?php echo urlencode( $term->post_title ); ?>" class="search-keyword poppins-semibold"><?php echo $term->post_title ?></a></br>
-    <?php
-        $count++;
-      endforeach;
+      wp_nav_menu( array(
+          'theme_location'    => 'popular-searches-menu',
+          'depth'             => 1,
+          'container'         => 'nav',
+          'container_class'   => 'nav flex-column',
+          'container_id'      => '',
+          'menu_class'        => 'list-style-none',
+          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'            => new WP_Bootstrap_Navwalker(),
+      ) );
     ?>
     </div>
   </div>
