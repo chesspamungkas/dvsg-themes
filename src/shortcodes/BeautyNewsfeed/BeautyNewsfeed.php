@@ -104,21 +104,25 @@ class BeautyNewsfeed extends ShortCode {
 
     $posts = new \WP_Query( $this->search_args );
 
+    $returnPosts = apply_filters_ref_array( 'beauty_newsfeed_filters', [ $posts, $this->additional_args ] );
+
+    // print_r( $returnPosts );
+
     if( $this->search_args['paged'] > 1 ) {
       echo $this->render('BeautyNewsfeed/_item', [
-        'posts'         => $posts,
+        'posts'         => $returnPosts,
         'args'          => $this->additional_args,
-        'count'         => $posts->found_posts,
-        'totalPages'    => $posts->max_num_pages,
+        // 'count'         => $returnPosts->found_posts,
+        // 'totalPages'    => $returnPosts->max_num_pages,
         'paged'         => $this->search_args['paged'],
         'featured'      => $this->search_args['featured']
       ]);
     } else {
       echo $this->render('BeautyNewsfeed/display', [
-        'posts'         => $posts,
+        'posts'         => $returnPosts,
         'args'          => $this->additional_args,
-        'count'         => $posts->found_posts,
-        'totalPages'    => $posts->max_num_pages,
+        // 'count'         => $returnPosts->found_posts,
+        // 'totalPages'    => $returnPosts->max_num_pages,
         'paged'         => $this->search_args['paged'],
         'featured'      => $this->search_args['featured']
       ]);
