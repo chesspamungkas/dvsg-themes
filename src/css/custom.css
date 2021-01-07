@@ -1640,19 +1640,24 @@ span.wpcf7-list-item { display: block; }
     text-transform: uppercase;
 }
 
-.page #content-area .entry-content .wpcf7 a {
-    display: block;
-    background-size: unset;
-    background-repeat: unset;
-    background-position: unset;
-    background-image: unset;
-    background-image: unset;
-    background-image: unset;
-    font-family: 'Poppins',sans-serif;
-    font-weight: 300;
+.wpcf7-submit:focus {
+    border:0;
+    outline: unset;
 }
 
-.page #content-area .entry-content .wpcf7 .dropdown .btn {
+.wpcf7 a {
+    display: block !important;
+    background-size: unset !important;
+    background-repeat: unset !important;
+    background-position: unset !important;
+    background-image: unset !important;
+    background-image: unset !important;
+    background-image: unset !important;
+    font-family: 'Poppins',sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.wpcf7 .dropdown .btn {
     width: 100%;
     text-align: left;
     color: #a3a3a3;
@@ -1663,24 +1668,24 @@ span.wpcf7-list-item { display: block; }
     font-size: 16px;
 }
 
-.page #content-area .entry-content .wpcf7 .dropdown .btn::after {
+.wpcf7 .dropdown .btn::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f078";
     position: absolute;
     right: 10px;
-    top: 25px;
+    top: 20px;
     border-top:0;
 }
 
-.page #content-area .entry-content .wpcf7 .dropdown .dropdown-menu {
+.wpcf7 .dropdown .dropdown-menu {
     width: 100%;
     -moz-box-shadow: 4px 4px 10px #eee;
     -webkit-box-shadow: 4px 4px 10px #eee;
     box-shadow: 4px 4px 10px #eee;
 }
 
-.page #content-area .entry-content .wpcf7 .wpcf7-form .wpcf7-list-item .custom-control-label {
+.wpcf7 .wpcf7-form .wpcf7-list-item .custom-control-label {
     font-size: 16px;
 }
 
@@ -1737,6 +1742,15 @@ input[type="color"]:focus,
     font-weight: 500;
     font-size: 14px;
     color: #EA4A7F;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+    border: 0;
+    background-color: #EA4A7F;
+    color: #fff;
+    font-size: 14px;
+    padding: 1em;
+    margin-bottom: 2em;
 }
 
 @media (min-width: 1441px) {
