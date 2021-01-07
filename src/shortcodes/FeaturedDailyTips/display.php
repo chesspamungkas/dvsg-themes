@@ -33,4 +33,5 @@
       </div>
     </div>
   </div>
+  <?php do_action( 'featured-daily-tip-after' ); ?>
 </div>
