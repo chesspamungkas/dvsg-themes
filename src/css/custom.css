@@ -1601,13 +1601,21 @@ blockquote p {
 
 .wpcf7 { font-family: 'Poppins', sans-serif; }
 
-.wpcf7 input[type="text"], .wpcf7 input[type="email"] {
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], textarea {
     border-radius: 15px;
-    padding: 1.5rem 1.2rem;
-    font-size: 14px;
+    padding: 1rem 1.2rem;
+    font-size: 16px;
+    width: 100%;
+    color: #a3a3a3;
+    background-color: #fff;
+    border: 1px solid #ced4da;
 }
 
-.wpcf7 input[type="text"]::placeholder, .wpcf7 input[type="email"]::placeholder {
+textarea {
+    resize: none;
+}
+
+.wpcf7 input[type="text"]::placeholder, .wpcf7 input[type="email"]::placeholder, .wpcf7 textarea::placeholder {
     color: #a3a3a3;
 }
 
@@ -1651,8 +1659,8 @@ span.wpcf7-list-item { display: block; }
     background-color: #fff;
     border-color: #ced4da;
     border-radius: 15px;
-    padding: .9rem 1.2rem;
-    font-size: 14px;
+    padding: 1rem 1.2rem;
+    font-size: 16px;
 }
 
 .page #content-area .entry-content .wpcf7 .dropdown .btn::after {
@@ -1661,7 +1669,7 @@ span.wpcf7-list-item { display: block; }
     content: "\f078";
     position: absolute;
     right: 10px;
-    top: 18px;
+    top: 25px;
     border-top:0;
 }
 
@@ -1679,13 +1687,20 @@ span.wpcf7-list-item { display: block; }
 .wpcf7 input[type="text"].wpcf7-free-text {
     display: block;
     width: 100%;
-    height: calc(1.5em + .75rem + 2px);
+    /* height: calc(1.5em + .75rem + 10px); */
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    padding: 1rem 1.2rem;
+    font-size: 16px;
+}
+
+.wpcf7 input[type="text"].wpcf7-free-text:disabled {
+    background-color: #f9f9f9;
+    padding: 1rem 1.2rem;
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
