@@ -81,7 +81,7 @@ class BeautyNewsfeed extends ShortCode {
     if( !empty( $content ) ) {
       return $content;
     } else {
-      return "No Title";
+      return "";
     }
   }
 
