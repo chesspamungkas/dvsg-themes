@@ -77,12 +77,8 @@ add_filter( "rank_math/opengraph/facebook/og_locale", function( $content ) {
     return $content;
 });
 
+// create custom post type for Daily Beauty Tips
 function register_daily_beauty_tips() {
-
-	/**
-	 * Post Type: Daily Beauty Tips.
-	 */
-
 	$labels = [
 		"name" => __( "Daily Beauty Tips", "dailyvanity-child" ),
 		"singular_name" => __( "Daily Beauty Tip", "dailyvanity-child" ),
