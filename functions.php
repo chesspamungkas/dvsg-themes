@@ -77,6 +77,45 @@ add_filter( "rank_math/opengraph/facebook/og_locale", function( $content ) {
     return $content;
 });
 
+function register_daily_beauty_tips() {
+
+	/**
+	 * Post Type: Daily Beauty Tips.
+	 */
+
+	$labels = [
+		"name" => __( "Daily Beauty Tips", "dailyvanity-child" ),
+		"singular_name" => __( "Daily Beauty Tip", "dailyvanity-child" ),
+	];
+
+	$args = [
+		"label" => __( "Daily Beauty Tips", "dailyvanity-child" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"rewrite" => [ "slug" => "daily_beauty_tips", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+	];
+
+	register_post_type( "daily_beauty_tips", $args );
+}
+
+add_action( 'init', 'register_daily_beauty_tips' );
+
 function SearchFilter( $query ) {
     if ( $query->is_search ) {
         $query->set( 'post_type', 'post' );
