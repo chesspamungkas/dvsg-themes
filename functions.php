@@ -13,7 +13,11 @@ define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );
 define( 'READ_MORE', 'READ MORE' );
 
 if( $detect->isMobile() || $detect->isTablet() ) {
-    $fb = 'fb://profile/103966130960487';
+    if( $detect->is( "iOS" ) ) {
+        $fb = 'fb://profile/103966130960487';
+    } else {
+        $fb = 'fb://page/103966130960487';
+    }
     $ig = 'instagram://user?username=dailyvanitymy';
 } else {
     $fb = 'https://facebook.com/dailyvanitymy';
