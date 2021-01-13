@@ -14,14 +14,14 @@ define( 'READ_MORE', 'READ MORE' );
 
 if( $detect->isMobile() || $detect->isTablet() ) {
     if( $detect->is( "iOS" ) ) {
-        $fb = 'fb://profile/103966130960487';
+        $fb = 'fb://profile/' . FB_APP_ID;
     } else {
-        $fb = 'fb://page/103966130960487';
+        $fb = 'fb://page/' . FB_APP_ID;
     }
-    $ig = 'instagram://user?username=dailyvanitymy';
+    $ig = 'instagram://user?username=' . IG_USERNAME;
 } else {
-    $fb = 'https://facebook.com/dailyvanitymy';
-    $ig = 'https://instagram.com/dailyvanitymy';
+    $fb = 'https://facebook.com/' . FB_PAGE_NAME;
+    $ig = 'https://instagram.com/' . IG_USERNAME;
 }
 
 define( 'FB_LINK', $fb );
