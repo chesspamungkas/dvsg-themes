@@ -26,7 +26,6 @@ if( $detect->isMobile() || $detect->isTablet() ) {
 
 define( 'FB_LINK', $fb );
 define( 'IG_LINK', $ig );
-define( 'GTM_ID', 'GTM-WTML7X9' );
 
 
 if( !is_admin() ) {
