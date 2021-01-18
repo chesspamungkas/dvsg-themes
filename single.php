@@ -70,7 +70,7 @@ get_header();
       </div>
     </div>    
   </div> <!-- .container -->
-  <?= do_shortcode('[content-upgrade]') ?>
+  <?//= do_shortcode('[content-upgrade]') ?>
   <?php
     $tags = get_the_tags(); 
 
