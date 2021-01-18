@@ -1583,7 +1583,7 @@ blockquote p {
 }
 
 .tags-container > .row > .tag-link {
-    overflow: scroll;
+    overflow: auto;
 }
 
 .tags-container > .row > .tag-link > a {
