@@ -1584,6 +1584,12 @@ blockquote p {
 
 .tags-container > .row > .tag-link {
     overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* firefox */
+}
+
+.tags-container > .row > .tag-link::-webkit-scrollbar {
+    display: none;
 }
 
 .tags-container > .row > .tag-link > a {
