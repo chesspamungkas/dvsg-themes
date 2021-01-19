@@ -11,10 +11,10 @@ class BaseStyle {
   private static $_registeredScript = [
     'boot2'=>['https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', 'jquery', true],
     'boot3'=>['https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', 'jquery', true],
-    'jquery-ui'=>['https://code.jquery.com/ui/1.12.1/jquery-ui.js']
+    'jquery-ui'=>['https://code.jquery.com/ui/1.12.1/jquery-ui.js', 'jquery', true]
   ];
   static function init() {
-    self::AddScript('DV_coreScript', get_template_directory_uri().'/src/.dist/index.js', ['query'], true);
+    self::AddScript('DV_coreScript', get_template_directory_uri().'/src/.dist/index.js', 'query', true);
     self::AddStyle('DV_coreStyle', get_template_directory_uri().'/src/.dist/index.css');
 
     foreach(self::$_registeredScript as $key=>$script) {
