@@ -91,7 +91,8 @@ get_header();
   <?php 
     endif;
     
-    echo do_shortcode( '[beauty-newsfeed featured="0" title="2"]' );
+    // echo do_shortcode( '[beauty-newsfeed featured="0" title="2"]' );
+    do_action( 'single_before_footer' );
   ?>
 </div> <!-- #main-content -->
 
