@@ -47,4 +47,5 @@
     <?php googleTagManagerBodyScript(); ?>
     <div id="page-container"> 
       <?php do_shortcode( '[top-header-bar]' ); ?>
+      <?php do_action( 'top-header-bar-after' ); ?>
       <div id="body" class="container-fluid no-padding">
