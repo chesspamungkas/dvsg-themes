@@ -14,6 +14,8 @@
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />	
+    <link rel="icon" type="image/svg+xml" href="<?php echo S3_PATH; ?>/wp-content/uploads/svg/favicon.svg">
+    <link rel="alternate icon" href="<?php echo S3_PATH; ?>/wp-content/uploads/favicon.ico">
     <?php wp_head(); ?>
     <script>
       var homeBase = '<?php echo home_url(); ?>';

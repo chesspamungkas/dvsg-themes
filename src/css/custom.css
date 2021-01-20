@@ -1875,8 +1875,12 @@ input[type="color"]:focus,
         text-align:center;
     }
 
-    #footerMenu > .row > .col-md-3 > .widget_custom_html > .widget-content > .custom-html-widget, #footerMenu > .row > .col-md-3 > .widget_execphp > .widget-content > .execphpwidget {
+    #footerMenu > .row > .col-md-3 > .widget_custom_html > .widget-content > .custom-html-widget, #footerMenu > .row > .col-md-3 > .widget_execphp > .widget-content > .execphpwidget, #footerMenu > .row > .col-md-4 > .widget_execphp > .widget-content > .execphpwidget {
         text-align: center;
+    }
+
+    #footerMenu > .row > .col-md-4 > .widget_execphp > .widget-content > .execphpwidget {
+        margin-bottom: 20px;
     }
 
     #footerMenu > .row > .col-md-3 > .widget_execphp > .widget-content > .execphpwidget > ul > li.social-icon {
@@ -1887,6 +1891,10 @@ input[type="color"]:focus,
     #footerMenu > .row > .col-md-4 > .widget_custom_html > .widget-content > .custom-html-widget {
         text-align: center;
         padding-bottom: 20px;
+    }
+
+    #footerMenu > .row > .col-md-3 > .widget_custom_html > .widget-content > .custom-html-widget {
+        padding-left: 0;
     }
 
     .main-menu-header-table > tbody > tr > td > .main-menu-btn, .close-search-btn {
