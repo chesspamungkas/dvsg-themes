@@ -25,7 +25,7 @@
         </div>
       <?php elseif( $paged == 1 && $args['title'] == 2 ): ?>
         <div class="col poppins-semibold" id="related-article-header">
-          <h4>Related Articles</h4>
+          <h4><?php echo $args['titlename']; ?></h4>
         </div>
       <?php endif; ?>
       </div>
