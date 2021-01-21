@@ -1,8 +1,8 @@
 <?php
 
-include_once( __DIR__ . '/inc/Mobile_Detect.php' );
+// include_once( __DIR__ . '/inc/Mobile_Detect.php' );
 
-$detect = new Mobile_Detect;
+// $detect = new Mobile_Detect;
 
 get_header();
 
@@ -28,11 +28,8 @@ get_header();
         </div>
     </div>
 </div>
-<?php if( $detect->isMobile() || $detect->isTablet() ): ?>
-<div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
-<?php else: ?>
+<div id="div-gpt-ad-5207510-3" class="dfp-div hidden"></div>
 <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
-<?php endif; ?>
 
 <div id="main-content" class="d-flex">  
 	<div class="container">
