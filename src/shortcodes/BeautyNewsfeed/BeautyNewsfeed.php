@@ -19,6 +19,7 @@ class BeautyNewsfeed extends ShortCode {
       'paged' => 1,
       'orderby' => 'date',
       'title' => "1",
+      'titlename' => "Related Articles",
       'author' => 0,
       'cat' => 0,
       'tag_id' => 0,
