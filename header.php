@@ -41,10 +41,11 @@
       }
 
       if( isMobile ) {
+        document.cookie( "device=mobile;" );
         if( isAndroid ) {
-          document.cookie( "device=mobile; os=android" );
+          document.cookie( "os=android;" );
         } else if( isIOS ) {
-          document.cookie( "device=mobile; os=ios" );
+          document.cookie( "os=ios;" );
         }
       }
 
