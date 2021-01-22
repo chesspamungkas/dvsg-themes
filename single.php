@@ -16,7 +16,7 @@ get_header();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <?php if( $isMobile ): ?>
+                      <?php if( $_COOKIE['device'] == 'mobile' ): ?>
                       <div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
                       <?php else: ?>
                       <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>

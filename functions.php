@@ -19,6 +19,9 @@ if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|D
   }
 }
 
+setcookie( 'device', $device );
+setcookie( 'os', $os );
+
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
 define( 'SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...' );
@@ -40,8 +43,6 @@ if( $isMobile ) {
 
 define( 'FB_LINK', $fb );
 define( 'IG_LINK', $ig );
-define( 'DEVICE', $device );
-define( 'OS', $os );
 
 
 if( !is_admin() ) {
