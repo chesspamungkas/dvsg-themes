@@ -21,6 +21,7 @@
       var homeBase = '<?php echo home_url(); ?>';
       var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
       var isCategory = <?php echo is_category()?1:0; ?>;
+      var device = '<?php echo $device; ?>';
 
       <?php if( is_category() ): ?>
       var categoryID = <?php echo $wp_query->get_queried_object_id(); ?>;
