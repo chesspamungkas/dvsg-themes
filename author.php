@@ -24,7 +24,7 @@ get_header();
         </div>
     </div>
 </div>
-<?php if( $_COOKIE['device'] == 'mobile' ): ?>
+<?php if( $isMobile ): ?>
 <div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
 <?php else: ?>
 <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>

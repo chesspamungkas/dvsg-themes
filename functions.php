@@ -8,8 +8,8 @@ define( 'DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!' );
 define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );
 define( 'READ_MORE', 'READ MORE' );
 
-if( $_COOKIE['device'] == 'mobile' ) {
-    if( $_COOKIE['os'] == 'ios' ) {
+if( $isMobile ) {
+    if( $isIOS ) {
         $fb = 'fb://profile/' . FB_APP_ID;
     } else {
         $fb = 'fb://page/' . FB_APP_ID;
