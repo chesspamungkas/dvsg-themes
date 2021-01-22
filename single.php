@@ -1,9 +1,5 @@
 <?php
 
-include_once( __DIR__ . '/inc/Mobile_Detect.php' );
-
-$detect = new Mobile_Detect;
-
 get_header();
 
 ?>
@@ -20,10 +16,10 @@ get_header();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <?php if( $detect->isMobile() || $detect->isTablet() ): ?>
-                        <div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
+                      <?php if( $isMobile ): ?>
+                      <div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
                       <?php else: ?>
-                        <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
+                      <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
                       <?php endif; ?>
                     </div>
                 </div>

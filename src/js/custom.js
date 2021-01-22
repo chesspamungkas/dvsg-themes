@@ -72,4 +72,16 @@ jQuery( document ).ready( function() {
         jQuery( '.subject-matter-btn' ).text( value );
         jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
     } );
+
+    if( isMobile ) {
+        if( jQuery( "#div-gpt-ad-5207510-3" ).hasClass( "hidden" ) ) {
+            jQuery( "#div-gpt-ad-5207510-3" ).removeClass( "hidden" );
+            jQuery( "#div-gpt-ad-5207510-2" ).addClass( "hidden" );
+        }
+    } else {
+        if( jQuery( "#div-gpt-ad-5207510-2" ).hasClass( "hidden" ) ) {
+            jQuery( "#div-gpt-ad-5207510-2" ).removeClass( "hidden" );
+            jQuery( "#div-gpt-ad-5207510-3" ).addClass( "hidden" );
+        }
+    }
 });

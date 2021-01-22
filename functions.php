@@ -1,9 +1,18 @@
 <?php
 DV\DailyVanity::init();
 
-include_once( __DIR__ . '/inc/Mobile_Detect.php' );
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$isMobile = false;
+$isIOS = false;
 
-$detect = new Mobile_Detect;
+if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$useragent) ) {
+  $isMobile = true;
+
+  if( stripos( $useragent, 'iphone' ) !== false || stripos( $useragent, 'ipad' ) !== false ) {
+    // $isIOS = true;
+    $isIOS = true;
+  }
+}
 
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
@@ -12,8 +21,8 @@ define( 'DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!' );
 define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );
 define( 'READ_MORE', 'READ MORE' );
 
-if( $detect->isMobile() || $detect->isTablet() ) {
-    if( $detect->is( "iOS" ) ) {
+if( $isMobile ) {
+    if( $isIOS ) {
         $fb = 'fb://profile/' . FB_APP_ID;
     } else {
         $fb = 'fb://page/' . FB_APP_ID;
