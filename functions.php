@@ -4,15 +4,23 @@ DV\DailyVanity::init();
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 $isMobile = false;
 $isIOS = false;
+$device = 'desktop';
 
 if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$useragent) ) {
   $isMobile = true;
+  $device = 'mobile';
 
   if( stripos( $useragent, 'iphone' ) !== false || stripos( $useragent, 'ipad' ) !== false ) {
     // $isIOS = true;
     $isIOS = true;
+    $os = 'ios';
+  } else {
+    $os = 'android';
   }
 }
+
+setcookie( 'device', $device );
+setcookie( 'os', $os );
 
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
