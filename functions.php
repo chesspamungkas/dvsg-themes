@@ -1,10 +1,6 @@
 <?php
 DV\DailyVanity::init();
 
-// include_once( __DIR__ . '/inc/Mobile_Detect.php' );
-
-// $detect = new Mobile_Detect;
-
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
 define( 'SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...' );

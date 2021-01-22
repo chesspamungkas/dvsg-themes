@@ -1,9 +1,5 @@
 <?php
 
-// include_once( __DIR__ . '/inc/Mobile_Detect.php' );
-
-// $detect = new Mobile_Detect;
-
 get_header();
 
 ?>
