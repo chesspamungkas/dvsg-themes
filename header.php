@@ -17,20 +17,6 @@
     <link rel="icon" type="image/svg+xml" href="<?php echo S3_PATH; ?>/wp-content/uploads/svg/favicon.svg">
     <link rel="alternate icon" href="<?php echo S3_PATH; ?>/wp-content/uploads/favicon.ico">
     <?php wp_head(); ?>
-    <?php
-      $useragent = strtolower($_SERVER['HTTP_USER_AGENT']);
-      $isMobile = false;
-      $isIOS = false;
-      
-      if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$useragent) ) {
-        $isMobile = true;
-
-        if( stripos( $useragent, 'iphone' ) !== false || stripos( $useragent, 'ipad' ) !== false ) {
-          // $isIOS = true;
-          $isIOS = true;
-        }
-      }
-    ?>
     <script>
       var homeBase = '<?php echo home_url(); ?>';
       var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
