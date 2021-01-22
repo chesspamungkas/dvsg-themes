@@ -22,8 +22,11 @@ get_header();
     </div>
 </div>
 
-<div id="div-gpt-ad-5207510-3" class="dfp-div hidden"></div>
+<?php if( $_COOKIE['device'] == 'mobile' ): ?>
+<div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
+<?php else: ?>
 <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
+<?php endif; ?>
 <?= get_template_part('template_parts/category'); ?>
 <div id="div-gpt-ad-5207510-1" class="dfp-div"></div>
 <?php get_footer(); ?>

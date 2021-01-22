@@ -1,9 +1,9 @@
 <?php
 DV\DailyVanity::init();
 
-include_once( __DIR__ . '/inc/Mobile_Detect.php' );
+// include_once( __DIR__ . '/inc/Mobile_Detect.php' );
 
-$detect = new Mobile_Detect;
+// $detect = new Mobile_Detect;
 
 define( 'BASE_PATH', home_url() );
 define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
@@ -12,8 +12,8 @@ define( 'DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!' );
 define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );
 define( 'READ_MORE', 'READ MORE' );
 
-if( $detect->isMobile() || $detect->isTablet() ) {
-    if( $detect->is( "iOS" ) ) {
+if( $_COOKIE['device'] == 'mobile' ) {
+    if( $_COOKIE['os'] == 'ios' ) {
         $fb = 'fb://profile/' . FB_APP_ID;
     } else {
         $fb = 'fb://page/' . FB_APP_ID;

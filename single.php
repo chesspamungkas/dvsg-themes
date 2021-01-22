@@ -20,8 +20,11 @@ get_header();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                        <div id="div-gpt-ad-5207510-3" class="dfp-div hidden"></div>
-                        <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
+                      <?php if( $_COOKIE['device'] == 'mobile' ): ?>
+                      <div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
+                      <?php else: ?>
+                      <div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
+                      <?php endif; ?>
                     </div>
                 </div>
             </div>

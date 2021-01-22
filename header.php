@@ -22,6 +22,17 @@
       var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
       var isCategory = <?php echo is_category()?1:0; ?>;
 
+      var isAndroid = false;
+      var isIOS = false;
+
+      $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+
+      if( stripos( $userAgent, 'android' ) !== false ) {
+        isAndroid = true;
+      } else if( stripos( $userAgent, 'ios' ) !== false ) {
+        isIOS = true;
+      }
+
       var isMobile = false; //initiate as false
       // device detection
       if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -29,7 +40,15 @@
           isMobile = true;
       }
 
-      console.log( 'Is Mobile: ' + isMobile );
+      if( isMobile ) {
+        if( isAndroid ) {
+          document.cookie( "device=mobile; os=android" );
+        } else if( isIOS ) {
+          document.cookie( "device=mobile; os=ios" );
+        }
+      }
+
+      console.log( 'Is Mobile: ' + isMobile  );
 
       <?php if( is_category() ): ?>
       var categoryID = <?php echo $wp_query->get_queried_object_id(); ?>;
