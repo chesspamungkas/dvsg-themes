@@ -15,6 +15,7 @@
     echo '</style>';
   endif;
 ?>
+<a name="beauty-newsfeed"></a>
 <?php if($posts): ?>
   <div class="list-post-wrapper p-5 mt-2 mb-2 newsfeed-wrapper">
     <div class="container list-post-content">
