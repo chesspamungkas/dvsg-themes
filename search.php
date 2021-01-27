@@ -24,10 +24,13 @@ get_header();
     </div>
 </div>
 <?php if( $_COOKIE['device'] == 'mobile' ): ?>
-<div id="div-gpt-ad-5207510-3" class="dfp-div"></div>
+<!-- DFP Ad Size 320 x 50 - div-gpt-ad-5207510-3 -->
+<div id="<?php echo DFP_MOBILE_TOP; ?>" class="dfp-div"></div>
 <?php else: ?>
-<div id="div-gpt-ad-5207510-2" class="dfp-div"></div>
+<!-- DFP Ad Size 780 x 90 - div-gpt-ad-5207510-2 -->
+<div id="<?php echo DFP_DESKTOP_TOP; ?>" class="dfp-div"></div>
 <?php endif; ?>
 <?= get_template_part('template_parts/search'); ?>
-<div id="div-gpt-ad-5207510-1" class="dfp-div"></div>
+<!-- DFP Ad Size 300 x 250 - div-gpt-ad-5207510-1 -->
+<div id="<?php echo DFP_BOTTOM; ?>" class="dfp-div"></div>
 <?php get_footer(); ?>
