@@ -31,8 +31,10 @@ get_header();
                     <div class="col-12 col-md-8 text-center">
                         <h3 class="post_category"><?php the_category(",  "); ?></h3>
                         <h1 class="eb-garamond-medium" id="page-title"><?php echo the_title(); ?></h1>
+                        <?php if( !is_singular( 'perks' ) ): ?>
                         <div class="authorName poppins-medium">By <?php the_author_posts_link(); ?></div>
                         <div class="publishDate poppins-light"><?php echo get_the_date(); ?></div>
+                        <?php endif; ?>
                         <div class="post-featured-image">
                           <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'article-featured' ); ?>" alt="<?php echo the_title(); ?>" class="post-thumbnail" />
                         </div>
