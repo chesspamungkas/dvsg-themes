@@ -18,11 +18,11 @@ class BaseStyle {
     self::AddStyle('DV_coreStyle', get_template_directory_uri().'/src/.dist/index.css');
 
     foreach(self::$_registeredScript as $key=>$script) {
-      wp_enqueue_script($key, $script[0], $script[1]?$script[1]:[], DEPLOY_VERSION, $script[2]?$script[2]:false);
+      wp_enqueue_script($key, $script[0], array_key_exists(1,$script)?$script[1]:[], DEPLOY_VERSION, array_key_exists(2,$script)?$script[2]:false);
     }
 
     foreach(self::$_registeredStyle as $key=>$style) {
-      wp_enqueue_style($key, $style[0], $style[1]?$style[1]:[], DEPLOY_VERSION, $style[2]?$style[2]:false);
+      wp_enqueue_style($key, $style[0], array_key_exists(1,$style)?$style[1]:[], DEPLOY_VERSION, array_key_exists(2,$style)?$style[2]:false);
     }
     
   }
