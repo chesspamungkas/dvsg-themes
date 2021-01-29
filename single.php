@@ -31,7 +31,7 @@ get_header();
                     <div class="col-12 col-md-8 text-center">
                         <h3 class="post_category"><?php the_category(",  "); ?></h3>
                         <h1 class="eb-garamond-medium" id="page-title"><?php echo the_title(); ?></h1>
-                        <?php if( !is_singular( 'perks' ) ): ?>
+                        <?php if( !is_singular( 'deal' ) ): ?>
                         <div class="authorName poppins-medium">By <?php the_author_posts_link(); ?></div>
                         <div class="publishDate poppins-light"><?php echo get_the_date(); ?></div>
                         <?php endif; ?>
