@@ -16,15 +16,20 @@ class BaseStyle {
   static function init() {
     self::AddScript('DV_coreScript', get_template_directory_uri().'/src/.dist/index.js', 'jquery', true);
     self::AddStyle('DV_coreStyle', get_template_directory_uri().'/src/.dist/index.css');
+    add_action( 'wp_enqueue_scripts', [__CLASS__, 'registerScript'] );
+    add_action( 'wp_enqueue_scripts', [__CLASS__, 'registerStyle'] );
+  }
 
+  public static function registerScript() {
     foreach(self::$_registeredScript as $key=>$script) {
       wp_enqueue_script($key, $script[0], array_key_exists(1,$script)?$script[1]:[], DEPLOY_VERSION, array_key_exists(2,$script)?$script[2]:false);
     }
+  }
 
+  public static function registerStyle() {
     foreach(self::$_registeredStyle as $key=>$style) {
       wp_enqueue_style($key, $style[0], array_key_exists(1,$style)?$style[1]:[], DEPLOY_VERSION, array_key_exists(2,$style)?$style[2]:false);
     }
-    
   }
 
   public static function AddStyle($key, $link, $dependency=[], $footer=false) {
