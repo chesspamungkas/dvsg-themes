@@ -14,7 +14,7 @@ class BaseStyle {
     'jquery-ui'=>['https://code.jquery.com/ui/1.12.1/jquery-ui.js', 'jquery', true]
   ];
   static function init() {
-    self::AddScript('DV_coreScript', get_template_directory_uri().'/src/.dist/index.js', 'query', true);
+    self::AddScript('DV_coreScript', get_template_directory_uri().'/src/.dist/index.js', 'jquery', true);
     self::AddStyle('DV_coreStyle', get_template_directory_uri().'/src/.dist/index.css');
 
     foreach(self::$_registeredScript as $key=>$script) {
