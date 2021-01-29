@@ -39,11 +39,6 @@ if( $posts->have_posts() ):
           do_action( 'beauty_newsfeed_mid', [ 'page' => $args[ 'paged' ] ] ); 
         endif;
       ?>
-      <?php /*if( $featured == 1 ): ?>
-      <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem featured-wrapper">
-        <?php echo do_shortcode( '[featured-articles]' ); ?>
-      </div>
-      <?php endif;*/ ?>
 
 <?php else: ?>
 
