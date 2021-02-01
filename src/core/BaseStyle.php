@@ -22,7 +22,7 @@ class BaseStyle {
     }
 
     foreach(self::$_registeredStyle as $key=>$style) {
-      wp_enqueue_style($key, $style[0], $style[1]?$style[1]:[], DEPLOY_VERSION, $style[2]?$style[2]:false);
+      wp_enqueue_style($key, $style[0], isset( $style[1] )&&!empty( $style[1] )?$style[1]:[], DEPLOY_VERSION, isset( $style[2] )?$style[2]:false);
     }
     
   }
