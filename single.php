@@ -2,6 +2,7 @@
 
 get_header();
 
+while ( have_posts() ) : the_post(); 
 ?>
 <div class="container-fluid" id="page-header-container">
     <div class="row no-gutters">
@@ -54,7 +55,7 @@ get_header();
         <div id="content-area" class="clearfix">			
           <?php
             // echo do_shortcode( '[rtoc_mokuji]' ); 
-            while ( have_posts() ) : the_post(); 
+            // while ( have_posts() ) : the_post(); 
           ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <!--h3 class="post_category"><?php //the_category(",  "); ?></h3>
@@ -97,6 +98,7 @@ get_header();
     do_action( 'single_before_footer' );
   ?>
 </div> <!-- #main-content -->
+<?php endwhile; ?>
 
 <!-- DFP Ad Size 300 x 250 - div-gpt-ad-5207510-1 -->
 <div id="<?php echo DFP_BOTTOM; ?>" class="dfp-div"></div>
