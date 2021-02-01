@@ -29,7 +29,9 @@ get_header();
             <div class="container" id="page-header">
                 <div class="row no-gutters justify-content-center">
                     <div class="col-12 col-md-8 text-center">
+                        <?php if( !is_singular( 'deal' ) ): ?>
                         <h3 class="post_category"><?php the_category(",  "); ?></h3>
+                        <?php endif; ?>
                         <h1 class="eb-garamond-medium" id="page-title"><?php echo the_title(); ?></h1>
                         <?php if( !is_singular( 'deal' ) ): ?>
                         <div class="authorName poppins-medium">By <?php the_author_posts_link(); ?></div>
