@@ -115,8 +115,7 @@ class BeautyNewsfeed extends ShortCode {
         'args'          => $this->additional_args,
         'count'         => $returnPosts->found_posts,
         'totalPages'    => $returnPosts->max_num_pages,
-        'paged'         => $this->search_args['paged'],
-        'featured'      => $this->search_args['featured']
+        'paged'         => $this->search_args['paged']
       ]);
     } else {
       echo $this->render('BeautyNewsfeed/display', [
@@ -124,8 +123,7 @@ class BeautyNewsfeed extends ShortCode {
         'args'          => $this->additional_args,
         'count'         => $returnPosts->found_posts,
         'totalPages'    => $returnPosts->max_num_pages,
-        'paged'         => $this->search_args['paged'],
-        'featured'      => $this->search_args['featured']
+        'paged'         => $this->search_args['paged']
       ]);
     }
   }

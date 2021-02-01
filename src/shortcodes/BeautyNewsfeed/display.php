@@ -38,7 +38,7 @@
       <?php if( $totalPages > 1 ): ?>
       <div class="row">
         <div class="col-md-12 col-12 col-sm-12 text-center">
-          <button type="button" class="btn inter-bold more-stories-btn" id="<?php echo $totalPages>0?$totalPages:0; ?>-<?php echo $args['cat']>0?$args['cat']:0; ?>-<?php echo $args['author']>0?$args['author']:0; ?>-<?php echo $args['tag_id']>0?$args['tag_id']:0; ?>-<?php echo !empty($args['s'])?urlencode($args['s']):0; ?>"><?php echo MORE_STORIES_BUTTON_TEXT; ?></button>
+          <button type="button" class="btn inter-bold more-stories-btn" id="<?php echo $totalPages>0?$totalPages:0; ?>-<?php echo isset( $args['cat'] )?$args['cat']:0; ?>-<?php echo isset( $args['author'] )?$args['author']:0; ?>-<?php echo isset( $args['tag_id'] )?$args['tag_id']:0; ?>-<?php echo !empty($args['s'])?urlencode($args['s']):0; ?>"><?php echo MORE_STORIES_BUTTON_TEXT; ?></button>
         </div>
       </div>
       <?php endif; ?>
