@@ -1,0 +1,45 @@
+on:
+  workflow_run:
+    workflows: ["Build compile javascript and css"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: DailyVanity/dailyvanity-sg
+        ref: dev
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install dependencies
+      uses: php-actions/composer@v4
+      with:
+        ssh_key: ${{ secrets.DV_BASE_THEME_SECRET_KEY }}
+        ssh_key_pub: ${{ secrets.DV_BASE_THEME_PUBLIC_KEY }}
+    - name: Commit files
+      run: |
+        git config --local user.email "tech@dailyvanity.sg"
+        git config --local user.name "Daily Vanity Tech Bot"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+        repository: DailyVanity/dailyvanity-sg
+    - name: pull-request
+      id: open-pr
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: dev
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: output-url
+      run: echo ${{steps.open-pr.outputs.pr_url}}
+    - name: output-number
+      run: echo ${{steps.open-pr.outputs.pr_number}}
