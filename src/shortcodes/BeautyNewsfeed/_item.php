@@ -26,7 +26,7 @@ if( $posts->have_posts() ):
             <div class="col-md-5 col-12 col-sm-12">
               <div class="card-body text-center">
                 <div class="catName">
-                  <?php echo $args['cat']==0?$this->getTitle():''; ?>
+                  <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
                 </div>
                 <h2 class="card-title eb-garamond-medium"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
               </div>
@@ -45,7 +45,7 @@ if( $posts->have_posts() ):
       <div class="col-md-12 col-sm-12 col-xs-12 pb-3 listItem post-sub-segment-2">
         <div class="row no-gutters">
           <div class="col">
-              <?php echo $args['cat']==0?$this->getTitle():''; ?>
+              <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
               <h2 class="card-title"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
               <p><a href="<?php the_permalink(); ?>" class="read-more-btn inter-bold" target="_blank"><?php echo READ_MORE; ?> <i class="fas fa-arrow-right"></i></a></p>
           </div>
@@ -69,7 +69,7 @@ if( $posts->have_posts() ):
             <div class="col-md-12 col-7 col-sm-7">
               <div class="card-body">
                 <div class="catName">
-                  <?php echo $args['cat']==0?$this->getTitle():''; ?>
+                  <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
                 </div>
                 <h2 class="card-title eb-garamond-medium"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
               </div>
