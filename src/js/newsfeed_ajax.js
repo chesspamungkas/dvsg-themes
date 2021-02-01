@@ -30,7 +30,7 @@ jQuery( document ).ready( function() {
                 }
             },
             error : function(jqXHR, textStatus, errorThrown) {
-                $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+                // console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
             }
     
         });

@@ -35,7 +35,7 @@ if( $posts->have_posts() ):
         </div>
       </div>
       <?php 
-        if( $args['featured'] > 0 ):
+        if( isset( $args['featured'] ) && $args['featured'] > 0 ):
           do_action( 'beauty_newsfeed_mid', [ 'page' => $args[ 'paged' ] ] ); 
         endif;
       ?>
