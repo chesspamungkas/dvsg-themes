@@ -13,6 +13,13 @@ get_header();
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12 poppins-light">
+                      <div id="top-dfp" class="dfp-div"></div>
+                    </div>
+                </div>
+            </div>
             <div class="container" id="search-header">
                 <div class="row no-gutters">
                     <div class="col-12 text-center">
@@ -23,7 +30,6 @@ get_header();
         </div>
     </div>
 </div>
-<div id="top-dfp" class="dfp-div"></div>
 <?= get_template_part('template_parts/search'); ?>
 <div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>
