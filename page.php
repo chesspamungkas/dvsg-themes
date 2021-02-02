@@ -31,7 +31,6 @@ get_header();
         </div>
     </div>
 </div>
-<div id="top-dfp" class="dfp-div"></div>
 <div id="main-content" class="d-flex">  
 	<div class="container">
 		<div class="row no-gutters">
