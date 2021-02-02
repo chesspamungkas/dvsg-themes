@@ -37,8 +37,8 @@ get_header();
 								<?php
 									the_content();
 
-									if ( ! $is_page_builder_used )
-										wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
+									// if ( ! $is_page_builder_used )
+									// 	wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 								?>
 							</div> <!-- .entry-content -->
 						</article> <!-- .et_pb_post -->
