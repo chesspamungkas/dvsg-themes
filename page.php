@@ -13,6 +13,13 @@ get_header();
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12 poppins-light">
+                      <div id="top-dfp" class="dfp-div"></div>
+                    </div>
+                </div>
+            </div>
             <div class="container" id="page-header">
                 <div class="row no-gutters">
                     <div class="col-12 text-center">
