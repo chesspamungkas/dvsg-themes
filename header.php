@@ -31,8 +31,6 @@
           }
       }
 
-      console.log( isMobile );
-
       var homeBase = '<?php echo home_url(); ?>';
       var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
       var isCategory = <?php echo is_category()?1:0; ?>;

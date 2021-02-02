@@ -20,6 +20,5 @@ get_header();
     <?php endif; ?>  
 	</div> <!-- #content-area -->	
 </div> <!-- #main-content -->
-<!-- DFP Ad Size 300 x 250 - div-gpt-ad-5207510-1 -->
-<div id="<?php echo DFP_BOTTOM; ?>" class="dfp-div"></div>
+<div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>
