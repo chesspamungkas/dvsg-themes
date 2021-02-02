@@ -4,11 +4,12 @@ DV\DailyVanity::init();
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 $isMobile = false;
 $isIOS = false;
-$device = 'desktop';
+// $device = 'desktop';
 
 if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$useragent) ) {
   $isMobile = true;
   $device = 'mobile';
+  $os = 'android';
 
   if( stripos( $useragent, 'iphone' ) !== false || stripos( $useragent, 'ipad' ) !== false ) {
     // $isIOS = true;
@@ -18,9 +19,6 @@ if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|D
     $os = 'android';
   }
 }
-
-setcookie( 'device', $device );
-setcookie( 'os', $os );
 
 if ( !defined('DFP_MOBILE_TOP') ) {
     define('DFP_MOBILE_TOP', '');
