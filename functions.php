@@ -75,9 +75,9 @@ add_action( 'wp_head', function() {
 function wpdocs_dailyvanity_main_scripts() {
     // google tag
     // wp_enqueue_script( 'ga-async', 'https://www.googletagmanager.com/gtag/js?id=UA-145339205-1', '', 2, false );
-    wp_register_script( 'ga-script', get_template_directory_uri() . '/src/js/ga.js' );
-    wp_localize_script( 'ga-script', 'ga_object', [ 'gtm_id' => GTM_ID ] );
-    wp_enqueue_script( 'ga-script' );
+    // wp_register_script( 'ga-script', get_template_directory_uri() . '/src/js/ga.js' );
+    // wp_localize_script( 'ga-script', 'ga_object', [ 'gtm_id' => GTM_ID ] );
+    // wp_enqueue_script( 'ga-script' );
 
     // custom
     wp_enqueue_style( 'font-style', get_template_directory_uri() . '/src/css/font.css?v=' . DEPLOY_VERSION );
