@@ -2,6 +2,8 @@
 
 get_header();
 
+while ( have_posts() ) : the_post();
+
 ?>
 <div class="container-fluid" id="page-header-container">
     <div class="row no-gutters">
@@ -36,7 +38,7 @@ get_header();
 		<div class="row no-gutters">
 			<div class="col">
 				<div id="content-area" class="clearfix">			
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php // while ( have_posts() ) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>				
 							<!--h1 class="entry-title main_title"><?php //the_title(); ?></h1-->
 							<div class="entry-content">
@@ -48,12 +50,12 @@ get_header();
 								?>
 							</div> <!-- .entry-content -->
 						</article> <!-- .et_pb_post -->
-					<?php endwhile; ?>
+					<?php // endwhile; ?>
 				</div> <!-- #content-area -->
 			</div> <!-- .col -->
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </div> <!-- #main-content -->
-
+<?php endwhile; ?>
 <div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>
