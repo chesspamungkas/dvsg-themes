@@ -36,10 +36,10 @@ class FeaturedArticles extends ShortCode {
     $model->generate();
   }
 
-  public function getTitle() {
-    global $post;
+  public function getTitle( $postID ) {
+    // global $post;
 
-    $categories = get_the_category( $post->ID );
+    $categories = get_the_category( $postID );
 
     // print_r( $categories );
 
