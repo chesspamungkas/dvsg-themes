@@ -58,6 +58,8 @@
       <?php endif; ?>
 
     </script>
+    
+    <script data-ad-client="ca-pub-<?php echo ADSENSE_ID; ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
