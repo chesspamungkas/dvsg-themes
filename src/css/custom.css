@@ -1098,7 +1098,7 @@ nav.rank-math-breadcrumb > p > .separator {
     min-height: 100px;
 }
 
-.single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > .post-featured-image > img {
+.single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > .post-featured-image > img, .single-deal > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > .post-featured-image > img {
     position: absolute;
     top: 50px;
     left: 0;

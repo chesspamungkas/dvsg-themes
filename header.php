@@ -31,7 +31,7 @@
           }
       }
 
-      var nonce = '<?php echo wp_create_nonce("my_user_vote_nonce"); ?>';
+      var nonce = '<?php echo wp_create_nonce("wp_nonce"); ?>';
 
       var homeBase = '<?php echo home_url(); ?>';
       var ajaxUrl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
