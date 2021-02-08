@@ -1111,7 +1111,7 @@ nav.rank-math-breadcrumb > p > .separator {
     margin-bottom: 280px;
 }
 
-.single-post #content-area .entry-content a, .page #content-area .entry-content a {
+.single-post #content-area .entry-content a, .single-deal #content-area .entry-content a, .page #content-area .entry-content a {
     font-weight: 700;
     color: #000;
     display: inline;
@@ -1123,7 +1123,7 @@ nav.rank-math-breadcrumb > p > .separator {
     background-image: linear-gradient(#ffcede,#ffcede);
 }
 
-.single-post #content-area .entry-content a:hover, .page #content-area .entry-content a:hover {
+.single-post #content-area .entry-content a:hover, .single-deal #content-area .entry-content a:hover, .page #content-area .entry-content a:hover {
     display: inline;
     background-size: 2px 2px;
     background-repeat: repeat-x;
