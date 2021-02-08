@@ -1061,7 +1061,7 @@ nav.rank-math-breadcrumb > p > .separator {
     margin-left: 5px;
 }*/
 
-.single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > #page-title {
+.single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > #page-title， .single-deal > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > #page-title {
     margin-bottom: 50px;
 }
 
