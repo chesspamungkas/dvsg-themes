@@ -15,9 +15,9 @@
     echo '</style>';
   endif;
 ?>
-<a name="beauty-newsfeed"></a>
 <?php if($posts): ?>
   <div class="list-post-wrapper p-5 mt-2 mb-2 newsfeed-wrapper">
+    <a name="beauty-newsfeed"></a>
     <div class="container list-post-content">
       <div class="row no-gutters">
       <?php if( $paged == 1 && $args['title'] == 1 ): ?>
