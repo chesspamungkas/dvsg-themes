@@ -2,7 +2,7 @@
 
 get_header(); 
 
-print_r( get_the_author_meta( 'ID' ) );
+print_r( get_queried_object() );
 
 ?>
 <div class="container-fluid" id="author-header-container">
