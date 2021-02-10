@@ -32,6 +32,6 @@ $author = get_queried_object();
         </div>
     </div>
 </div>
-<?= get_template_part('template_parts/author'); ?>
+<?php include( local_template('template_parts/author.php', false, false ) ); ?>
 <div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>
