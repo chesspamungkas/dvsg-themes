@@ -2,8 +2,7 @@
 
 get_header(); 
 
-print_r( get_queried_object() );
-
+$author = get_queried_object();
 ?>
 <div class="container-fluid" id="author-header-container">
     <div class="row no-gutters">
@@ -25,8 +24,8 @@ print_r( get_queried_object() );
             <div class="container" id="author-header">
                 <div class="row no-gutters">
                     <div class="col-12 text-center">
-                        <h1 class="eb-garamond-regular" id="author-title"><?php echo get_the_author(); ?></h1>
-                        <?php echo get_the_author_meta( 'description' ); ?>
+                        <h1 class="eb-garamond-regular" id="author-title"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h1>
+                        <?php echo get_the_author_meta( 'description', $author->ID ); ?>
                     </div>
                 </div>
             </div>
