@@ -2,6 +2,8 @@
 
 get_header(); 
 
+print_r( get_the_author_meta( 'ID' ) );
+
 ?>
 <div class="container-fluid" id="author-header-container">
     <div class="row no-gutters">
