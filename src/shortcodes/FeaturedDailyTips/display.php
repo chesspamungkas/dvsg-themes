@@ -23,7 +23,6 @@
             <img src="<?php echo get_the_post_thumbnail_url( $tip->ID ); ?>" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php echo $orderNo+1; ?>" />
           </div>
         </div>
-        <?php do_action( 'featured-daily-tips-before-caption' ); ?>
         <div class="row no-gutters mobile-view">
           <div class="col-12 col-sm-12 col-md-7 eb-garamond-regular" id="featured-daily-tip">
             <!-- <h1 class="eb-garamond-regular"><?php //echo $tip->post_title; ?></h1> -->
@@ -31,6 +30,7 @@
             <p class="poppins-semibold"><?php echo DAILY_BEAUTY_TIP_CAPTION; ?></p>
           </div>
         </div>
+        <?php do_action( 'featured-daily-tips-before-caption' ); ?>
       </div>
     </div>
   </div>
