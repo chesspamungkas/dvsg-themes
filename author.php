@@ -3,6 +3,7 @@
 get_header(); 
 
 $author = get_queried_object();
+set_query_var( 'author_id', absint( $author->ID ) );
 ?>
 <div class="container-fluid" id="author-header-container">
     <div class="row no-gutters">
@@ -32,6 +33,6 @@ $author = get_queried_object();
         </div>
     </div>
 </div>
-<?php include( locate_template('template_parts/author.php', false, false ) ); ?>
+<?php get_template_part('template_parts/author'); ?>
 <div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>
