@@ -1,7 +1,7 @@
 jQuery( document ).ready( function() {
     console.log( 'Browser width: ' + jQuery( window ).width() );
     //fix for admin bar
-    if ( jQuery( '#wpadminbar' )[0] ) {
+    /*if ( jQuery( '#wpadminbar' )[0] ) {
         console.log( 'fix wpadminbar' );
         // jQuery( 'div#page-container' ).css( { 'margin-top': '32px' } );
         if( jQuery( window ).width() > 480 ) {
@@ -31,7 +31,7 @@ jQuery( document ).ready( function() {
         } else {
             jQuery( '#content-area' ).css( { 'margin-top': '50px' } );
         }
-    }
+    }*/
 
     if( jQuery( '#menu-footer-one' )[0] ) {
         jQuery( '#menu-footer-one' ).addClass( 'justify-content-center' );
