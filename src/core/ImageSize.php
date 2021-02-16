@@ -6,6 +6,7 @@ class ImageSize {
   private static $_registeredImageSize = [
     'list-post'=>[340, 190, true],
     'full-size'=>[900, 467, true],
+    'article-page-image'=>[ 760, 394, true],
     'article-thumbnail'=>[ 506, 262, true],
     'article-featured'=>[506, 262, true],
     'shopable-image'=>[409, 522, true],
