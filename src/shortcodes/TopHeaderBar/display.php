@@ -36,6 +36,7 @@
     }
   }
 </style>
+<?php do_action( 'top_header_bar_before' ); ?>
 <nav class="navbar navbar-expand-md navbar-light fixed-top" id="main-header-container">
   <div class="container">
     <div class="row no-gutters align-items-center" style="flex-grow: 1;">
