@@ -68,6 +68,10 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','<?php echo GTM_ID; ?>');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Adsense -->
+    <script data-ad-client="ca-pub-<?php echo ADS_ID; ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- End Google Adsense -->
   </head>
   <body <?php body_class(); ?>>
     <?php googleTagManagerBodyScript(); ?>
