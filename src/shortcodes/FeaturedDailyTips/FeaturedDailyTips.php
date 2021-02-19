@@ -30,9 +30,10 @@ class FeaturedDailyTips extends ShortCode {
 
     $tipID = get_field( 'tips_id', $page->queried_object_id );
     $tipOrder = get_field( 'order_id', $page->queried_object_id );
-    $tipDate = date( 'd/m/Y', strtotime( str_replace('/', '-', get_field( 'display_date', $page->queried_object_id ) ) ) );
+    // $tipDate = date( 'd/m/Y', strtotime( str_replace('/', '-', get_field( 'display_date', $page->queried_object_id ) ) ) );
+    $tipDate = date( 'd/m/Y', get_field( 'display_date', $page->queried_object_id ) );
 
-    // print_r( $tipDate );
+    // print_r( $tipDate == current_time( 'd/m/Y' ) );
     // print_r( date( 'd/m/Y', strtotime( str_replace('/', '-', $tipDate ) ) ) );
     // print_r( current_time( 'd/m/Y' ) );
 
@@ -51,7 +52,7 @@ class FeaturedDailyTips extends ShortCode {
       }
 
       $tipID = $group[$tipOrder]['tips']->ID;
-      $tipDate = current_time( 'd/m/Y' );
+      $tipDate = current_time( 'timestamp' );
 
       $tip = get_post( $tipID );
 
