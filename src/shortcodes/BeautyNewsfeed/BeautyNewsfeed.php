@@ -58,25 +58,32 @@ class BeautyNewsfeed extends ShortCode {
   public function getTitle() {
     global $post;
 
-    $categories = get_the_category( $post->ID );
-
-    // print_r( $categories );
-
     $content = '';
 
-    $count = 1;
+    if( $post->post_type == 'deal' ) {
+      $content .= '<a href="' . get_permalink( $post->ID ) . '" class="category-link poppins-light" target="_blank">' . PERKS . '</a>';
+    } elseif( $post->post_type == 'sf_promotions' ) {
+      $content .= '<a href="' . SF_LINK . '" class="category-link poppins-light" target="_blank">' . SALON_FINDER . '</a>';
+    // } elseif( $post->post_type == 'post' ) {
+    } else {
+      $categories = get_the_category( $post->ID );
 
-    $totalCat = count( $categories );
-    
-    foreach( $categories as $cat ) {
-      // print_r( $cat );
-      $catLink = get_category_link( $cat->term_id );
-      $content .= '<a href="' . esc_url( $catLink ) . '" class="category-link poppins-light" target="_blank">' . $cat->name . '</a>';
+      // print_r( $categories );
 
-      if( $count < $totalCat ) {
-        $content .= ', ';
+      $count = 1;
+
+      $totalCat = count( $categories );
+      
+      foreach( $categories as $cat ) {
+        // print_r( $cat );
+        $catLink = get_category_link( $cat->term_id );
+        $content .= '<a href="' . esc_url( $catLink ) . '" class="category-link poppins-light" target="_blank">' . $cat->name . '</a>';
+
+        if( $count < $totalCat ) {
+          $content .= ', ';
+        }
+        $count++;
       }
-      $count++;
     }
       
     if( !empty( $content ) ) {
