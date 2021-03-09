@@ -17,7 +17,7 @@ while ( have_posts() ) : the_post();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <div id="top-dfp" class="dfp-div"></div>
+                      <?php do_action( 'top_dfp_ad' ); ?>
                     </div>
                 </div>
             </div>
@@ -94,5 +94,4 @@ while ( have_posts() ) : the_post();
 <?php endwhile; ?>
 
 <!-- DFP Ad Size 300 x 250 - div-gpt-ad-5207510-1 -->
-<div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>

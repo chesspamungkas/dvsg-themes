@@ -18,7 +18,7 @@ while ( have_posts() ) : the_post();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <div id="top-dfp" class="dfp-div"></div>
+                        <?php do_action( 'top_dfp_ad' ); ?>
                     </div>
                 </div>
             </div>
@@ -57,5 +57,4 @@ while ( have_posts() ) : the_post();
 	</div> <!-- .container -->
 </div> <!-- #main-content -->
 <?php endwhile; ?>
-<div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>

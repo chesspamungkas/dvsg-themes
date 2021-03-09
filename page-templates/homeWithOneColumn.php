@@ -21,5 +21,5 @@ get_header();
 	</div> <!-- #content-area -->	
 </div> <!-- #main-content -->
 <!--div id="bottom-dfp" class="dfp-div"></div-->
-<div id="<?php echo DFP_BOTTOM; ?>" class="dfp-div"></div>
+<!--div id="<?php //echo DFP_BOTTOM; ?>" class="dfp-div"></div-->
 <?php get_footer(); ?>
