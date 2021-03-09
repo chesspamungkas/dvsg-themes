@@ -16,7 +16,7 @@ get_header();
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <div id="top-dfp" class="dfp-div"></div>
+                        <?php do_action( 'top_dfp_ad' ); ?>
                     </div>
                 </div>
             </div>
@@ -32,5 +32,4 @@ get_header();
     </div>
 </div>
 <?= get_template_part('template_parts/tag'); ?>
-<div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>

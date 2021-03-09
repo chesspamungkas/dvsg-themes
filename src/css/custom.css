@@ -920,8 +920,9 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
     margin-bottom:0;
 }
 
-.dfp-div > div {
-    margin: 0 auto;
+.dfp-div {
+    /* margin: 0 auto; */
+    text-align:center;
 }
 
 nav.rank-math-breadcrumb > p > .separator {

@@ -18,7 +18,7 @@ set_query_var( 'author_id', absint( $author->ID ) );
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
-                      <div id="top-dfp" class="dfp-div"></div>
+                    <?php do_action( 'top_dfp_ad' ); ?>
                     </div>
                 </div>
             </div>
@@ -34,5 +34,5 @@ set_query_var( 'author_id', absint( $author->ID ) );
     </div>
 </div>
 <?php get_template_part('template_parts/author'); ?>
-<div id="bottom-dfp" class="dfp-div"></div>
+<!--div id="bottom-dfp" class="dfp-div"></div-->
 <?php get_footer(); ?>

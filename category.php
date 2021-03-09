@@ -18,7 +18,6 @@ get_header();
     </div>
 </div>
 
-<div id="top-dfp" class="dfp-div"></div>
+<?php do_action( 'top_dfp_ad' ); ?>
 <?= get_template_part('template_parts/category'); ?>
-<div id="bottom-dfp" class="dfp-div"></div>
 <?php get_footer(); ?>

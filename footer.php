@@ -5,7 +5,7 @@
         </div>
     </div>
     <script>
-      function initDFP() {
+      /*function initDFP() {
         if( document.getElementById("top-dfp") ) {
           if( isMobile ) {
             document.getElementById("top-dfp").innerHTML = '<div id="<?php echo DFP_MOBILE_TOP; ?>"></div>';
@@ -19,7 +19,7 @@
         }
       }
 
-      initDFP();
+      initDFP();*/
     </script>
     <?php 
       wp_footer(); 

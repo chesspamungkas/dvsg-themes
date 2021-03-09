@@ -150,3 +150,23 @@ function wpb_popular_searches_menu() {
     register_nav_menu('popular-searches-menu',__( 'Popular Searches Menu' ));
 }
 add_action( 'init', 'wpb_popular_searches_menu' );
+
+
+function register_dfp_bottom() {
+    echo '<div id="' . DFP_BOTTOM . '" class="dfp-div"></div>';
+}
+
+add_action( 'body_div_after', 'register_dfp_bottom' );
+
+
+function register_dfp_top() {
+    echo "<script>\n";
+    echo "\tif( isMobile ) {\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_MOBILE_TOP ."\" class=\"dfp_div\"></div>');\n";
+    echo "\t} else {\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_DESKTOP_TOP ."\" class=\"dfp_div\"></div>');\n";
+    echo "\t}\n";
+    echo "</script>";
+}
+
+add_action( 'top_dfp_ad', 'register_dfp_top' );
