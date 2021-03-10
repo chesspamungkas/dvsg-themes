@@ -921,8 +921,8 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
 }
 
 .dfp-div {
-    /* margin: 0 auto; */
-    text-align:center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 nav.rank-math-breadcrumb > p > .separator {

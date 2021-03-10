@@ -153,7 +153,7 @@ add_action( 'init', 'wpb_popular_searches_menu' );
 
 
 function register_dfp_bottom() {
-    echo '<div id="' . DFP_BOTTOM . '" class="dfp-div"></div>';
+    echo '<div id="' . DFP_BOTTOM . '" class="dfp-div" style="width: 300px; height: 250px;"></div>';
 }
 
 add_action( 'body_div_after', 'register_dfp_bottom' );
@@ -162,9 +162,9 @@ add_action( 'body_div_after', 'register_dfp_bottom' );
 function register_dfp_top() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_MOBILE_TOP ."\" class=\"dfp_div\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_MOBILE_TOP ."\" class=\"dfp-div\" style=\"width: 320px; height: 50px;\"></div>');\n";
     echo "\t} else {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_DESKTOP_TOP ."\" class=\"dfp_div\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_DESKTOP_TOP ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
     echo "</script>";
 }
