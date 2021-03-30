@@ -127,13 +127,13 @@ function register_daily_beauty_tips() {
 
 add_action( 'init', 'register_daily_beauty_tips' );
 
-function SearchFilter( $query ) {
-    if ( $query->is_search ) {
-        $query->set( 'post_type', 'post' );
-    }
-    return $query;
-}
-add_filter( 'pre_get_posts', 'SearchFilter' );
+// function SearchFilter( $query ) {
+//     if ( $query->is_search ) {
+//         $query->set( 'post_type', 'post' );
+//     }
+//     return $query;
+// }
+// add_filter( 'pre_get_posts', 'SearchFilter' );
 
 function googleTagManagerBodyScript() {
     echo '<!-- Google Tag Manager (noscript) -->';
