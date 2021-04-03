@@ -258,16 +258,28 @@ img {
     font-weight: 700;
     font-size: 1.2em;
     letter-spacing: 0.05em;
-    color:#22201b;
+    color:#22201b !important;
+    text-decoration: none !important;
 }
 
 #menu-main-menu > li > a:hover {
-    color:#f04084;
+    color:#f04084 !important;
+    text-decoration: none !important;
     /* padding-left: 1.5em; */
 }
 
 #menu-wrapper > .row > .col-md-8 {
     text-align: left;
+}
+
+#myaccount-title > a, #salon-finder-title > a {
+    color: #22201b !important;
+    text-decoration: none !important;
+}
+
+#myaccount-title > a:hover, #salon-finder-title > a:hover {
+    color: #f04084 !important;
+    text-decoration: none !important;
 }
 
 #follow-us-title {
