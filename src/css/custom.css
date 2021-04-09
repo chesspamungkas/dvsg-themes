@@ -1164,10 +1164,22 @@ nav.rank-math-breadcrumb > p > .separator {
 .page > .entry-content > h3, 
 .page > .entry-content > h4, 
 .page > .entry-content > h5, 
-.page > .entry-content > h6  {
+.page > .entry-content > h6,
+.post > .entry-content > .listicle-content > h1, 
+.post > .entry-content > .listicle-content > h2, 
+.post > .entry-content > .listicle-content > h3, 
+.post > .entry-content > .listicle-content > h4, 
+.post > .entry-content > .listicle-content > h5, 
+.post > .entry-content > .listicle-content > h6,
+.page > .entry-content > .listicle-content > h1, 
+.page > .entry-content > .listicle-content > h2, 
+.page > .entry-content > .listicle-content > h3, 
+.page > .entry-content > .listicle-content > h4, 
+.page > .entry-content > .listicle-content > h5, 
+.page > .entry-content > .listicle-content > h6  {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-} 
+}
 
 /* Ordered and Unordered List styling */
 
