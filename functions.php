@@ -17,12 +17,12 @@ if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|D
   }
 }
 
-define( 'BASE_PATH', home_url() );
-define( 'S3_PATH', 'https://uploads.dailyvanity.sg' );
-define( 'SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...' );
-define( 'DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!' );
-define( 'MORE_STORIES_BUTTON_TEXT', 'MORE STORIES' );
-define( 'READ_MORE', 'READ MORE' );
+DV\core\Constants::Define('BASE_PATH', home_url());
+DV\core\Constants::Define('S3_PATH', 'https://uploads.dailyvanity.sg');
+DV\core\Constants::Define('SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...');
+DV\core\Constants::Define('DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!');
+DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
+DV\core\Constants::Define('READ_MORE', 'READ MORE');
 
 if( $isMobile ) {
     if( $isIOS ) {
@@ -38,6 +38,9 @@ if( $isMobile ) {
 
 define( 'FB_LINK', $fb );
 define( 'IG_LINK', $ig );
+
+DV\core\Constants::Define('FB_LINK', $fb);
+DV\core\Constants::Define('IG_LINK', $ig);
 
 
 if( !is_admin() ) {
