@@ -36,9 +36,6 @@ if( $isMobile ) {
     $ig = 'https://instagram.com/' . IG_USERNAME;
 }
 
-define( 'FB_LINK', $fb );
-define( 'IG_LINK', $ig );
-
 DV\core\Constants::Define('FB_LINK', $fb);
 DV\core\Constants::Define('IG_LINK', $ig);
 
