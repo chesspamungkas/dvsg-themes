@@ -63,7 +63,7 @@ class BeautyNewsfeed extends ShortCode {
     if( $post->post_type == 'deal' ) {
       $content .= '<a href="' . BASE_PATH . '/deal/" class="category-link poppins-light" target="_blank">' . PERKS . '</a>';
     } elseif( $post->post_type == 'sf_promotions' ) {
-      $content .= '<a href="' . SF_LINK . '" class="category-link poppins-light" target="_blank">' . SALON_FINDER . '</a>';
+      $content .= '<a href="' . SF_LINK . '" class="category-link poppins-light" target="_blank" rel="noopener noreferrer">' . SALON_FINDER . '</a>';
     // } elseif( $post->post_type == 'post' ) {
     } else {
       $categories = get_the_category( $post->ID );
