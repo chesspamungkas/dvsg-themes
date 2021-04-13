@@ -137,7 +137,7 @@ add_action( 'init', 'register_daily_beauty_tips' );
 
 function googleTagManagerBodyScript() {
     echo '<!-- Google Tag Manager (noscript) -->';
-    echo '<noscript><iframe title="Daily Vanity Singapore Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=' . GTM_ID . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+    echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . GTM_ID . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
     echo '<!-- End Google Tag Manager (noscript) -->';
 }
 
