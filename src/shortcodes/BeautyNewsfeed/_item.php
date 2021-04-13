@@ -46,8 +46,8 @@ if( $posts->have_posts() ):
         <div class="row no-gutters">
           <div class="col">
               <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
-              <h2 class="card-title"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
-              <p><a href="<?php the_permalink(); ?>" class="read-more-btn inter-bold" target="_blank"><?php echo READ_MORE; ?> <i class="fas fa-arrow-right"></i></a></p>
+              <h2 class="card-title"><a href="<?php the_permalink(); ?>" target="_blank" title="<?php the_title(); ?>"><span class="listTitle"><?php the_title(); ?></span></a></h2>
+              <p><a href="<?php the_permalink(); ?>" class="read-more-btn inter-bold" target="_blank" title="<?php the_title(); ?>"><?php echo READ_MORE; ?> <i class="fas fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
