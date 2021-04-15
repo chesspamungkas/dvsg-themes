@@ -170,3 +170,17 @@ function register_dfp_top() {
 }
 
 add_action( 'top_dfp_ad', 'register_dfp_top' );
+
+// rewrite wp_review json to add in the aggragateRating for google search result
+function add_aggreagate_rating( $args, $review ) {
+    global $post;
+    
+    $args['itemReviewed']['aggregateRating'] = array( 
+        'type' => 'AggregateRating',
+        'ratingValue' => $review['total'],
+        'reviewCount' => intval( get_field( 'total_reviewers', $post->ID ) )
+    );
+    
+    return $args;
+}
+add_filter( 'wp_review_get_schema_review_rating_args', 'add_aggreagate_rating', 10, 2 );
