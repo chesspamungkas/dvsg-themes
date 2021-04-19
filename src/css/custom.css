@@ -1432,6 +1432,12 @@ blockquote:before {
     vertical-align: .65em; */
 }
 
+blockquote:after {
+    position: absolute;
+    content: close-quote;
+    visibility: hidden;
+}
+
 blockquote p {
     font-family: 'EB Garamond', serif;
     font-weight: 300;
