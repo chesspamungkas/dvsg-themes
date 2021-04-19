@@ -11,7 +11,7 @@
           <div class="catName">
             <?php echo $this->getTitle( $post->ID ); ?>
           </div>
-          <h4 class="card-title eb-garamond-medium"><a href="<?php echo get_permalink( $post->ID ); ?>" target="_blank"><span class="listTitle"><?php echo $post->post_title; ?></span></a></h4>
+          <h2 class="card-title eb-garamond-medium"><a href="<?php echo get_permalink( $post->ID ); ?>" target="_blank"><span class="listTitle"><?php echo $post->post_title; ?></span></a></h2>
         </div>
       </div>
     </div>
