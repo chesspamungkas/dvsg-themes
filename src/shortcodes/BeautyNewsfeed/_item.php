@@ -25,7 +25,7 @@ if( $posts->have_posts() ):
             </div>
             <div class="col-md-5 col-12 col-sm-12">
               <div class="card-body text-center">
-                <div class="catName">
+                <div class="catName poppins-light">
                   <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
                 </div>
                 <h2 class="card-title eb-garamond-medium"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
@@ -68,7 +68,7 @@ if( $posts->have_posts() ):
             </div>
             <div class="col-md-12 col-7 col-sm-7">
               <div class="card-body">
-                <div class="catName">
+                <div class="catName poppins-light">
                   <?php echo !isset($args['cat'])?$this->getTitle():''; ?>
                 </div>
                 <h2 class="card-title eb-garamond-medium"><a href="<?php the_permalink(); ?>" target="_blank"><span class="listTitle"><?php the_title(); ?></span></a></h2>
