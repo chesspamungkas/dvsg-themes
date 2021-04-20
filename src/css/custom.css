@@ -760,6 +760,7 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
 
 .post-sub-segment-2 > .row > .col {
     text-align: center;
+    color: #EA4A7F;
 }
 
 .post-sub-segment-2 > .row > .col > .card-title {
@@ -1081,6 +1082,7 @@ nav.rank-math-breadcrumb > p > .separator {
 
 .single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > .post_category {
     margin-bottom: 25px;
+    color: #EA4A7F;
 }
 
 .single-post > #page-container > #body > #page-header-container > .row > .col > #page-header >.row > .col-md-8 > .post_category > a {
