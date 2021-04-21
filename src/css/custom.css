@@ -700,6 +700,8 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
 }
 
 .newsfeed-wrapper > .container > .row:nth-child(2) > .listItem > .card > .row > .col-7 > .card-body > .catName {
+    font-family: 'Poppins', sans-serif;
+    font-weight: light;
     margin-bottom: 10px;
     font-size: 12px;
     text-transform: uppercase;
@@ -2208,6 +2210,15 @@ input[type="color"]:focus,
     .at-expanding-share-button[data-position=bottom-right] {
         bottom: 150px !important;
         right: 10px !important;
+    }
+
+    .post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
+        padding-inline-start: 50px;
+    }
+
+    .post > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
+        margin-left: -50px;
+        width: 1.3em;
     }
 }
 
