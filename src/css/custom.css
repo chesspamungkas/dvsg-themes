@@ -1371,7 +1371,7 @@ li::marker {
     line-height: 0;
     vertical-align: middle;
     display: inline-block;
-    width: 1em;
+    width: 1.6em;
 }
 
 .post > .entry-content > ol > li > ol, 
