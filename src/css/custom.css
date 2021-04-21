@@ -2213,6 +2213,10 @@ input[type="color"]:focus,
     }
 
     .post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
+        margin-left: 0;
+    }
+
+    .post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
         padding-inline-start: 50px;
     }
 
