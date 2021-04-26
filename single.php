@@ -33,7 +33,14 @@ while ( have_posts() ) : the_post();
                         <div class="publishDate poppins-light"><?php echo get_the_date(); ?></div>
                         <?php endif; ?>
                         <div class="post-featured-image">
-                          <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'article-page-image' ); ?>" alt="<?php echo the_title(); ?>" class="post-thumbnail" />
+                        <?php
+                          if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
+                            $thumbnailSize = 'article-page-image';
+                          else:
+                            $thumbnailSize = 'full';
+                          endif;
+                        ?>
+                          <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), $thumbnailSize ); ?>" alt="<?php echo the_title(); ?>" class="post-thumbnail" />
                         </div>
                     </div>
                 </div>
