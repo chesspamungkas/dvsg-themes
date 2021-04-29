@@ -34,13 +34,27 @@ while ( have_posts() ) : the_post();
                         <?php endif; ?>
                         <div class="post-featured-image">
                         <?php
+                          $thumbnail = '';
+                          $imgId = get_post_thumbnail_id();
+                          $imgSrcset = '';
+
                           if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
-                            $thumbnailSize = 'article-page-image';
+                            $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-page-image' );
+                            
+                            $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
                           else:
-                            $thumbnailSize = 'full';
+                            $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'full' ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
                           endif;
+
+                          echo $thumbnail;
+
+                          // if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
+                          //   $thumbnailSize = 'article-page-image';
+                          // else:
+                          //   $thumbnailSize = 'full';
+                          // endif;
                         ?>
-                          <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), $thumbnailSize ); ?>" alt="<?php echo the_title(); ?>" class="post-thumbnail" />
+                          <!--img src="<?php //echo get_the_post_thumbnail_url( get_the_ID(), $thumbnailSize ); ?>" alt="<?php //echo the_title(); ?>" class="post-thumbnail" /-->
                         </div>
                     </div>
                 </div>
