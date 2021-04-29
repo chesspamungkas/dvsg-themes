@@ -3,10 +3,20 @@
 // print_r( $args );
 $count = 1;
 $increment = 1;
+$thumbnail = '';
 
 if( $posts->have_posts() ):
   while( $posts->have_posts() ):
     $posts->the_post();
+
+    if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
+      $imgId = get_post_thumbnail_id();
+      $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-thumbnail' );
+      
+      $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
+    else:
+      $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'full' ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
+    endif;
 
     if( $increment > 2 ) {
       $increment = 1;
@@ -20,7 +30,8 @@ if( $posts->have_posts() ):
           <div class="row no-gutters align-items-center">
             <div class="col-md-7 col-12 col-sm-12">
               <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" target="_blank">
-                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'article-thumbnail' ); ?>" alt="<?php echo get_the_title(); ?>" class="post-thumbnail" />
+                <!--img src="<?php //echo get_the_post_thumbnail_url( get_the_ID(), 'article-thumbnail' ); ?>" alt="<?php //echo get_the_title(); ?>" class="post-thumbnail" /-->
+                <?php echo $thumbnail; ?>
               </a>  
             </div>
             <div class="col-md-5 col-12 col-sm-12">
@@ -63,14 +74,7 @@ if( $posts->have_posts() ):
           <div class="row no-gutters">
             <div class="col-md-12 col-5 col-sm-5">
               <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" target="_blank">
-              <?php 
-                if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
-                  $thumbnailSize = 'article-thumbnail';
-                else:
-                  $thumbnailSize = 'full';
-                endif;
-              ?>
-                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), $thumbnailSize ); ?>" alt="<?php echo get_the_title(); ?>" class="post-thumbnail" />
+                <?php echo $thumbnail; ?>
               </a>  
             </div>
             <div class="col-md-12 col-7 col-sm-7">
