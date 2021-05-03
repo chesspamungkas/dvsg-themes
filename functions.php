@@ -81,7 +81,7 @@ function wpdocs_dailyvanity_main_scripts() {
 
     // custom
     wp_enqueue_style( 'font-style', get_template_directory_uri() . '/src/css/font.css?v=' . DEPLOY_VERSION );
-    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/src/css/custom.css?v=' . DEPLOY_VERSION );
+    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/src/css/custom.min.css?v=' . DEPLOY_VERSION );
     wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/src/js/custom.js', array(), DEPLOY_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_dailyvanity_main_scripts' );
