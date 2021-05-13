@@ -15,6 +15,6 @@ class NewsfeedAjax {
       echo do_shortcode( '[beauty-newsfeed paged=' . $_POST['pageno'] . ' featured="0"]' );
     }
     
-    die();
+    wp_die();
   }
 }

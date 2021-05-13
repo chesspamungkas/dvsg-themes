@@ -3,7 +3,17 @@
     <div class="row no-gutters align-items-center">
       <div class="col-md-6 col-12 col-sm-12">
         <a href="<?php echo get_permalink( $post->ID ); ?>" title="<?php echo $post->post_title; ?>" target="_blank">
-          <img src="<?php echo get_the_post_thumbnail_url( $post->ID ); ?>" alt="<?php echo $post->post_title; ?>" class="post-thumbnail" />
+          <?php
+              if( strpos( get_the_post_thumbnail_url( $post->ID ), '.gif' ) === false ):
+                  $imgId = get_post_thumbnail_id();
+                  $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-thumbnail' );
+                  
+                  echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
+              else:
+                  echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'full' ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
+              endif;
+          ?>
+          <!--img src="<?php //echo get_the_post_thumbnail_url( $post->ID ); ?>" alt="<?php //echo $post->post_title; ?>" class="post-thumbnail" /-->
         </a>  
       </div>
       <div class="col-md-6 col-12 col-sm-12">

@@ -6,6 +6,6 @@ class SearchResultAjax {
 
         echo do_shortcode( '[search-results paged=' . $_POST['pageno'] . ' s="'. $_POST['keyword'] .'"]' );
 
-        die();
+        wp_die();
     }
 }

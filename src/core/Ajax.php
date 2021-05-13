@@ -16,6 +16,6 @@ class Ajax {
     }
     
     // echo $_POST['pageno'];
-    die();
+    wp_die();
   }
 }

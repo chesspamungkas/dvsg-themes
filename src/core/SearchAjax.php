@@ -28,6 +28,6 @@ class SearchAjax {
 
     print_r( json_encode( $result ) );
 
-    die();
+    wp_die();
   }
 }
