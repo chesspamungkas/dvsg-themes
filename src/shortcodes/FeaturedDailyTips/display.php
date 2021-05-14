@@ -25,7 +25,7 @@
                     $imgId = get_post_thumbnail_id();
                     $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'daily-tips-thumbnail' );
                     
-                    echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . $orderNo+1 . '" class="post-thumbnail" />';
+                    echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
                 else:
                     echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'full' ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . $orderNo+1 . '" class="post-thumbnail" />';
                 endif;
