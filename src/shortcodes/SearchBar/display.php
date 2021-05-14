@@ -16,7 +16,7 @@
     height: 300px;
   }
 </style-->
-<form method="get" id="searchform" action="<?php bloginfo( 'url' ); ?>/">
+<form method="get" id="searchform" action="<?php bloginfo( 'url' ); ?>/" role="search">
     <div>
         <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php echo SEARCH_PLACEHOLDER; ?>" class="poppins-light" />
         <!--input type="submit" id="searchsubmit" value="Search" /-->
