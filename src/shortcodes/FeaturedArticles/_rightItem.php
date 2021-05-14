@@ -5,7 +5,7 @@
         <a href="<?php echo get_permalink( $post->ID ); ?>" title="<?php echo $post->post_title; ?>" target="_blank">
           <?php
               if( strpos( get_the_post_thumbnail_url( $post->ID ), '.gif' ) === false ):
-                  $imgId = get_post_thumbnail_id();
+                  $imgId = get_post_thumbnail_id( $post->ID );
                   $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-thumbnail' );
                   
                   echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
