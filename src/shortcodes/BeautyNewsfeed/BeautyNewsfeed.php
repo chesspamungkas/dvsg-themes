@@ -110,9 +110,22 @@ class BeautyNewsfeed extends ShortCode {
     $this->search_args['offset'] = $offset;
     $this->additional_args['offset'] = $offset;
 
+    if( !empty( $this->search_args['s'] ) ) {
+      // $posts->parse_query( $args );
+      // relevanssi_do_query( $posts );
+      $this->search_args['relevanssi'] = true;
+      // $this->search_qrgs['orderby'] = '';
+    }
+
     $posts = new \WP_Query( $this->search_args );
 
-    $returnPosts = apply_filters_ref_array( 'beauty_newsfeed_filters', [ $posts, $this->additional_args ] );
+    // print_r( $posts );
+
+    if( empty( $this->search_args['s'] ) ) {
+      $returnPosts = apply_filters_ref_array( 'beauty_newsfeed_filters', [ $posts, $this->additional_args ] );
+    } else {
+      $returnPosts = $posts;
+    }
 
     // print_r( $returnPosts );
 
