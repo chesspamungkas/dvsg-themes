@@ -114,7 +114,7 @@ class BeautyNewsfeed extends ShortCode {
       // $posts->parse_query( $args );
       // relevanssi_do_query( $posts );
       $this->search_args['relevanssi'] = true;
-      // $this->search_qrgs['orderby'] = '';
+      $this->search_qrgs['orderby'] = 'relevanssi_hits';
     }
 
     $posts = new \WP_Query( $this->search_args );
