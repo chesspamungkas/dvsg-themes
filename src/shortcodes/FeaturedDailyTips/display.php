@@ -22,12 +22,12 @@
             <div class="tip-order-no inter-bold">#<?php echo $orderNo+1; ?></div>
             <?php
                 if( strpos( get_the_post_thumbnail_url( $tip->ID ), '.gif' ) === false ):
-                    $imgId = get_post_thumbnail_id();
+                    $imgId = get_post_thumbnail_id( $tip->ID );
                     $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'daily-tips-thumbnail' );
                     
                     echo '<img src="' . get_the_post_thumbnail_url( $tip->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
                 else:
-                    echo '<img src="' . get_the_post_thumbnail_url( $tip->ID, 'full' ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . $orderNo+1 . '" class="post-thumbnail" />';
+                    echo '<img src="' . get_the_post_thumbnail_url( $tip->ID, 'full' ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
                 endif;
             ?>
             <!--img src="<?php //echo get_the_post_thumbnail_url( $tip->ID ); ?>" alt="Beauty Magazine <?php //echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php //echo $orderNo+1; ?>" /-->
