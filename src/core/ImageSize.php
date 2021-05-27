@@ -14,6 +14,8 @@ class ImageSize {
     'related-article-thumbnail-mobile'=>[ 358, 186, true],
     'daily-tips-thumbnail'=>[ 439, 553, true],
     'daily-tips-thumbnail-mobile'=>[ 450, 567, true],
+    'dv-splash-image'=>[ 400, 520, true],
+    'dv-splash-image-mobile'=>[ 320, 416, true],
     'article-featured'=>[506, 262, true],
     'shopable-image'=>[409, 522, true],
     'sml_size'=>[300, 0, false],
