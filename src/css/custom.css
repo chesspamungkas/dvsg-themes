@@ -1951,6 +1951,10 @@ Gravity form Styling
     display: none !important;
 }
 
+.gform_wrapper .gfield_error .gfield_repeater_cell label, .gform_wrapper .gfield_error legend, .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message, .gform_wrapper [aria-invalid=true]+label, .gform_wrapper label+[aria-invalid=true] {
+    color: #ea4a7f !important;
+}
+
 @media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
