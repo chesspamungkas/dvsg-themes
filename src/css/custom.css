@@ -1919,43 +1919,36 @@ Gravity form Styling
 }
 
 .gform_validation_errors > h2 {
-    border: 0;
-    background-color: #EA4A7F;
-    color: #fff;
-    font-size: 14px;
-    padding: 1em;
-    margin-bottom: 2em;
+    border: 0 !important;
+    background-color: #EA4A7F !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    padding: 1em !important;
+    margin-bottom: 2em !important;
 }
 
 .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
-    background: #fff;
-    border: 0;
-    margin-top: 0;
-    padding: 12.992px 0;
+    background: #fff !important;
+    border: 0 !important;
+    margin-top: 0 !important;
+    padding: 12.992px 0 !important;
 }
 
 .gform_wrapper .gform_validation_errors {
-    background: #ea4a7f;
-    border-radius: 5px;
-    border: 1.5px solid #ea4a7f;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 11%), 0 0 4px rgb(18 25 97 / 4%);
-    margin-bottom: 8px;
-    margin-top: 8px;
-    padding: 16px;
-    position: relative;
-    width: 100%;
+    background: #ea4a7f !important;
+    border: 1.5px solid #ea4a7f !important;
+    padding: 16px !important;
 }
 
 .gform_wrapper .gform_validation_errors>h2 {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 17.6px;
-    margin: 0;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
 }
 
 .gform_wrapper .gform_validation_errors>h2 .gform-icon {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 1441px) {
