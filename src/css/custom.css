@@ -1927,6 +1927,37 @@ Gravity form Styling
     margin-bottom: 2em;
 }
 
+.gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
+    background: #fff;
+    border: 0;
+    margin-top: 0;
+    padding: 12.992px 0;
+}
+
+.gform_wrapper .gform_validation_errors {
+    background: #ea4a7f;
+    border-radius: 5px;
+    border: 1.5px solid #ea4a7f;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 11%), 0 0 4px rgb(18 25 97 / 4%);
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.gform_wrapper .gform_validation_errors>h2 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    margin: 0;
+}
+
+.gform_wrapper .gform_validation_errors>h2 .gform-icon {
+    display: none;
+}
+
 @media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
