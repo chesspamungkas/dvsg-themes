@@ -1805,13 +1805,13 @@ Gravity form Styling
 .gform_body.gform-body { font-family: 'Poppins', sans-serif; }
 
 .gform_body.gform-body input[type="text"], .gform_body.gform-body input[type="email"], textarea {
-    border-radius: 15px;
-    padding: 1rem 1.2rem;
-    font-size: 16px;
-    width: 100%;
-    color: #a3a3a3;
-    background-color: #fff;
-    border: 1px solid #ced4da;
+    border-radius: 15px !important;
+    padding: 1rem 1.2rem !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    color: #a3a3a3 !important;
+    background-color: #fff !important;
+    border: 1px solid #ced4da !important;
 }
 
 .gform_body.gform-body input[type="text"]::placeholder, .gform_body.gform-body input[type="email"]::placeholder, .gform_body.gform-body textarea::placeholder {
