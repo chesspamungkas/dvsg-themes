@@ -1955,6 +1955,40 @@ Gravity form Styling
     color: #ea4a7f !important;
 }
 
+.gform_body.gform-body input[type='radio'] {
+  display: none;
+}
+
+/* .radio-item label {
+  color: #666;
+  font-weight: normal;
+} */
+
+.gform_body.gform-body label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #ea4a7f;
+  background-color: transparent;
+}
+
+.gform_body.gform-body input[type=radio]:checked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #ea4a7f;
+}
+
 @media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
