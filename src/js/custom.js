@@ -69,11 +69,12 @@ jQuery( document ).ready( function() {
         var value = jQuery( this ).text();
         console.log( value );
         // jQuery( '#subject-matter' ).val( value );
-        jQuery('input:hidden').each( function() {
+        jQuery( 'input[type="hidden"]' ).each( function() {
             var id = jQuery( this ).id;
-            if( id.indexOf( "input_" ) != -1 ) {
-                jQuery( '#' + id ).val( value );
-            }
+            // if( id.indexOf( "input_" ) != -1 ) {
+            //     jQuery( '#' + id ).val( value );
+            // }
+            console.log( id + ": " + id.indexOf( "input_" ) );
         } );
         jQuery( '.subject-matter-btn' ).text( value );
         jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
