@@ -74,7 +74,7 @@ jQuery( document ).ready( function() {
             // if( id.indexOf( "input_" ) != -1 ) {
             //     jQuery( '#' + id ).val( value );
             // }
-            console.log( id + ": " + id.indexOf( "input_" ) );
+            console.log( id );
         } );
         jQuery( '.subject-matter-btn' ).text( value );
         jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
