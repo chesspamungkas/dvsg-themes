@@ -1955,14 +1955,14 @@ Gravity form Styling
     color: #ea4a7f !important;
 }
 
-.gform_body.gform-body .gfield_radio .gchoice {
+.gform_body.gform-body .gfield_radio .gchoice, .gform_body.gform-body .gfield_checkbox .gchoice {
     display: block;
     position: relative;
     padding: 0 6px;
     margin: 10px 0 0;
 }
 
-.gform_body.gform-body input[type='radio'] {
+.gform_body.gform-body input[type='radio'], .gform_body.gform-body input[type='checkbox'] {
     display: none;
 }
 
@@ -1971,7 +1971,7 @@ Gravity form Styling
   font-weight: normal;
 } */
 
-.gform_body.gform-body .gfield_radio label:before {
+.gform_body.gform-body .gfield_radio label:before, .gform_body.gform-body .gfield_checkbox label:before {
     content: " ";
     display: inline-block;
     position: relative;
@@ -1984,7 +1984,7 @@ Gravity form Styling
     background-color: transparent;
 }
 
-.gform_body.gform-body input[type=radio]:checked + label:after {
+.gform_body.gform-body input[type=radio]:checked + label:after, .gform_body.gform-body input[type=checkbox]:checked + label:after {
     border-radius: 11px;
     width: 12px;
     height: 12px;
