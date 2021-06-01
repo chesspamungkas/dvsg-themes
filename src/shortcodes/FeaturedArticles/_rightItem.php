@@ -8,7 +8,7 @@
                   $imgId = get_post_thumbnail_id( $post->ID );
                   $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-thumbnail' );
                   $sizes = wp_get_attachment_image_sizes( $imgId, 'article-thumbnail' );
-                  echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" srcset="' . esc_attr( $imgSrcset ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
+                  echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" sizes="' . esc_attr( $sizes ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
               else:
                   echo '<img src="' . get_the_post_thumbnail_url( $post->ID, 'full' ) . '" alt="' . $post->post_title . '" class="post-thumbnail" />';
               endif;
