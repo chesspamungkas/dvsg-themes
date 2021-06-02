@@ -70,7 +70,7 @@ jQuery( document ).ready( function() {
         console.log( value );
         // jQuery( '#subject-matter' ).val( value );
         jQuery( 'input[type="hidden"]' ).each( function() {
-            var id = jQuery( this ).attr(id);
+            var id = this.id;
             // if( id.indexOf( "input_" ) != -1 ) {
             //     jQuery( '#' + id ).val( value );
             // }
