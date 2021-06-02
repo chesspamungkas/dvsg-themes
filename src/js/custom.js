@@ -69,13 +69,7 @@ jQuery( document ).ready( function() {
         var value = jQuery( this ).text();
         console.log( value );
         // jQuery( '#subject-matter' ).val( value );
-        jQuery( 'input[type="hidden"]' ).each( function() {
-            var id = this.id;
-            // if( id.indexOf( "input_" ) != -1 ) {
-            //     jQuery( '#' + id ).val( value );
-            // }
-            console.log( id.indexOf( "input_" ) );
-        } );
+        jQuery( "input[name^='input_'] + .gform_hidden" ).val( value );
         jQuery( '.subject-matter-btn' ).text( value );
         jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
     } );
