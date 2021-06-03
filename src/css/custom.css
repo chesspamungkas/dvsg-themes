@@ -1955,14 +1955,14 @@ Gravity form Styling
     color: #ea4a7f !important;
 }
 
-.gform_body.gform-body .gfield_radio .gchoice, .gform_body.gform-body .gfield_checkbox .gchoice {
+.gform_body.gform-body .gfield_radio .gchoice {
     display: block;
     position: relative;
     padding: 0 6px;
     margin: 10px 0 0;
 }
 
-.gform_body.gform-body input[type='radio'], .gform_body.gform-body input[type='checkbox'] {
+.gform_body.gform-body input[type='radio'] {
     display: none;
 }
 
@@ -1971,7 +1971,7 @@ Gravity form Styling
   font-weight: normal;
 } */
 
-.gform_body.gform-body .gfield_radio label:before, .gform_body.gform-body .gfield_checkbox label:before {
+.gform_body.gform-body .gfield_radio label:before {
     content: " ";
     display: inline-block;
     position: relative;
@@ -1984,7 +1984,7 @@ Gravity form Styling
     background-color: transparent;
 }
 
-.gform_body.gform-body input[type=radio]:checked + label:after, .gform_body.gform-body input[type=checkbox]:checked + label:after {
+.gform_body.gform-body input[type=radio]:checked + label:after {
     border-radius: 11px;
     width: 12px;
     height: 12px;
@@ -1994,6 +1994,36 @@ Gravity form Styling
     content: " ";
     display: block;
     background: #ea4a7f;
+}
+
+.gform_body.gform-body input[type="checkbox"] {
+    -webkit-appearance: initial;
+    appearance: initial;
+    border: 1px solid #A9A9A9;
+    border-radius: 3px;
+    width: 25px;
+    height: 25px;
+    background: #FFFFFF;
+    position: relative;
+}
+
+.gform_body.gform-body input[type="checkbox"]:checked {
+    background: #ea4a7f;
+    border: 1px solid #ea4a7f;
+}
+
+.gform_body.gform-body input[type="checkbox"]:checked:after {
+    font-family: 'FONT AWESOME 5 FREE';
+    content: "\f00c";
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    outline: 0;
 }
 
 @media (min-width: 1441px) {
