@@ -2051,6 +2051,7 @@ Gravity form Styling
         /* CSS for other than iOS devices */ 
         .gform_body.gform-body input[type=radio]:checked + label:after {
             top: 12px;
+            height: 11px;
         }
     }
 }
