@@ -2038,16 +2038,20 @@ Gravity form Styling
 }
 
 @supports (-webkit-touch-callout: none) {
-    /* CSS for iOS devices */ 
-    .gform_body.gform-body input[type=radio]:checked + label:after {
-        top: 11px;
+    @media ( max-width: 480px ) {
+        /* CSS for iOS devices */ 
+        .gform_body.gform-body input[type=radio]:checked + label:after {
+            top: 11px;
+        }
     }
 }
 
 @supports not (-webkit-touch-callout: none) {
-    /* CSS for other than iOS devices */ 
-    .gform_body.gform-body input[type=radio]:checked + label:after {
-        top: 12px;
+    @media ( max-width: 480px ) {
+        /* CSS for other than iOS devices */ 
+        .gform_body.gform-body input[type=radio]:checked + label:after {
+            top: 12px;
+        }
     }
 }
 
