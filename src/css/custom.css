@@ -1983,6 +1983,7 @@ Gravity form Styling
     border-radius: 11px;
     border: 2px solid #A9A9A9;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .gform_body.gform-body input[type=radio]:checked + label:after {
@@ -1996,6 +1997,7 @@ Gravity form Styling
     display: block;
     background: #ea4a7f;
     border: 2px solid #ea4a7f;
+    cursor: pointer;
 }
 
 .gform_body.gform-body input[type="checkbox"] {
@@ -2007,6 +2009,7 @@ Gravity form Styling
     height: 25px;
     background: #FFFFFF;
     position: relative;
+    cursor: pointer;
 }
 
 .gform_body.gform-body input[type="checkbox"]:checked {
