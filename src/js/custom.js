@@ -69,11 +69,8 @@ jQuery( document ).ready( function() {
         var value = jQuery( this ).text();
         console.log( value );
         // jQuery( '#subject-matter' ).val( value );
-        jQuery('input:hidden').each( function() {
-            if( jQuery( this ).id.indexOf( "input_" ) != -1 ) {
-                jQuery( '#' + jQuery( this ).id ).val( value );
-            }
-        } );
+        jQuery( "input[type='hidden'][name^='input_']" ).val( value );
+        console.log( jQuery( "input[type='hidden'][name^='input_']" ).id );
         jQuery( '.subject-matter-btn' ).text( value );
         jQuery( '.subject-matter-btn' ).css( 'color', '#495057' );
     } );
