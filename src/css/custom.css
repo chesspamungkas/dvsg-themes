@@ -1986,6 +1986,10 @@ Gravity form Styling
     cursor: pointer;
 }
 
+.gform_body.gform-body input[type=radio]:checked + label:before {
+    border: 2px solid #ea4a7f;
+}
+
 .gform_body.gform-body input[type=radio]:checked + label:after {
     border-radius: 11px;
     width: 12px;
