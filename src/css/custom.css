@@ -2037,6 +2037,20 @@ Gravity form Styling
     outline: 0;
 }
 
+@supports (-webkit-touch-callout: none) {
+    /* CSS for iOS devices */ 
+    .gform_body.gform-body input[type=radio]:checked + label:after {
+        top: 11px;
+    }
+}
+
+@supports not (-webkit-touch-callout: none) {
+    /* CSS for other than iOS devices */ 
+    .gform_body.gform-body input[type=radio]:checked + label:after {
+        top: 12px;
+    }
+}
+
 @media (min-width: 1441px) {
     .at-expanding-share-button[data-position=bottom-right] {
         right: 400px !important;
