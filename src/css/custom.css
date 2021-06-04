@@ -1995,6 +1995,7 @@ Gravity form Styling
     content: " ";
     display: block;
     background: #ea4a7f;
+    border: 2px solid #ea4a7f;
 }
 
 .gform_body.gform-body input[type="checkbox"] {
