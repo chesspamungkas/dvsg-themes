@@ -1928,7 +1928,7 @@ Gravity form Styling
 }
 
 .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
-    background: unset;
+    background: transparent !important;
     border: 0 !important;
     margin-top: 0 !important;
     padding: 12.992px 0 !important;
