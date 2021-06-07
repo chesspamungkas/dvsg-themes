@@ -1923,12 +1923,12 @@ Gravity form Styling
     background-color: #EA4A7F !important;
     color: #fff !important;
     font-size: 14px !important;
-    padding: 1em !important;
+    padding: unset;
     margin-bottom: 2em !important;
 }
 
 .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
-    background: #fff !important;
+    background: unset;
     border: 0 !important;
     margin-top: 0 !important;
     padding: 12.992px 0 !important;
@@ -1959,7 +1959,7 @@ Gravity form Styling
     display: block;
     position: relative;
     padding: 0 6px;
-    margin: 10px 0 0;
+    margin: 0;
 }
 
 .gform_body.gform-body input[type='radio'] {
