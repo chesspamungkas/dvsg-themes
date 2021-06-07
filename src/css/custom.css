@@ -1947,16 +1947,16 @@ Gravity form Styling
     margin: 0 !important;
 }
 
-.gform_wrapper .gfield_error legend {
-    color: #000 !important;
-}
-
 .gform_wrapper .gform_validation_errors>h2 .gform-icon {
     display: none !important;
 }
 
-.gform_wrapper .gfield_error .gfield_repeater_cell label, .gform_wrapper .gfield_error legend, .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message, .gform_wrapper [aria-invalid=true]+label, .gform_wrapper label+[aria-invalid=true] {
+.gform_wrapper .gfield_error .gfield_repeater_cell label, .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message, .gform_wrapper [aria-invalid=true]+label, .gform_wrapper label+[aria-invalid=true] {
     color: #ea4a7f !important;
+}
+
+.gform_wrapper .gfield_error legend {
+    color: #000 !important;
 }
 
 .gform_body.gform-body .gfield_radio .gchoice {
