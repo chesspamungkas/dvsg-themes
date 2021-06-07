@@ -1947,6 +1947,10 @@ Gravity form Styling
     margin: 0 !important;
 }
 
+.gform_wrapper .gfield_error legend {
+    color: #000 !important;
+}
+
 .gform_wrapper .gform_validation_errors>h2 .gform-icon {
     display: none !important;
 }
