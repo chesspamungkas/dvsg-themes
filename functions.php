@@ -186,13 +186,19 @@ function add_aggreagate_rating( $args, $review ) {
 }
 add_filter( 'wp_review_get_schema_review_rating_args', 'add_aggreagate_rating', 10, 2 );
 
-add_filter('the_content', 'prefix_insert_post_ads');
+function register_video_ad() {
+    echo '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="' . VIDEO_ADS_1X1 . '" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
+}
 
+add_action( 'video_ad', 'register_video_ad' );
+
+
+// add_filter('the_content', 'prefix_insert_post_ads');
 
 /**
  * Content Filter 
  */
-function prefix_insert_post_ads( $content ) {
+/*function prefix_insert_post_ads( $content ) {
 
     $insertion = '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="'. VIDEO_ADS_1X1 .'" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
 
@@ -233,4 +239,4 @@ function prefix_insert_after_paragraphs( $content, $insertion, $paragraph_indexe
 
     return $content;
 
-}
+}*/
