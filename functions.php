@@ -194,7 +194,7 @@ add_filter('the_content', 'prefix_insert_post_ads');
  */
 function prefix_insert_post_ads( $content ) {
 
-    $insertion = '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="'. VIDEO_ADS_1X1 .'" class="dfp-div" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
+    $insertion = '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="'. VIDEO_ADS_1X1 .'" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
 
     if ( is_single() && !is_admin() ) {
         return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
