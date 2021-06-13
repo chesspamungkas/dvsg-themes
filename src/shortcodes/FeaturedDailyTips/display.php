@@ -10,7 +10,7 @@
         <div class="row no-gutters">
           <div class="col-12 col-sm-12 col-md-7">
             <div class="beauty-tip-of-the-day">
-              <h1><img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-beauty-tip-of-the-day-01.svg" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php echo $orderNo+1; ?>" /></h1>
+              <h1><img width="100%" height="auto" src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-beauty-tip-of-the-day-01.svg" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php echo $orderNo+1; ?>" /></h1>
             </div>
             <div id="featured-daily-tip" class="desktop-view">
               <!--p class="eb-garamond-regular"><?php echo $tip->post_title; ?></p-->
@@ -24,10 +24,11 @@
                 if( strpos( get_the_post_thumbnail_url( $tip->ID ), '.gif' ) === false ):
                     $imgId = get_post_thumbnail_id( $tip->ID );
                     $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'daily-tips-thumbnail' );
+                    $imgAttributes = wp_get_attachment_image_src( $imgId, 'daily-tips-thumbnail' );
                     $sizes = wp_get_attachment_image_sizes( $imgId, 'article-thumbnail' );
-                    echo '<img src="' . get_the_post_thumbnail_url( $tip->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" sizes="' . esc_attr( $sizes ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
+                    echo '<img width="' . $imgAttributes[1] .  '" heght="' . $imgAttributes[2]. '" src="' . get_the_post_thumbnail_url( $tip->ID, 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" sizes="' . esc_attr( $sizes ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
                 else:
-                    echo '<img src="' . get_the_post_thumbnail_url( $tip->ID, 'full' ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
+                    echo '<img width="' . $imgAttributes[1] .  '" heght="' . $imgAttributes[2]. '" src="' . get_the_post_thumbnail_url( $tip->ID, 'full' ) . '" alt="Beauty Magazine ' . COUNTRY . ' Daily Vanity Beauty Tip Of The Day #' . ($orderNo+1) . '" class="post-thumbnail" />';
                 endif;
             ?>
             <!--img src="<?php //echo get_the_post_thumbnail_url( $tip->ID ); ?>" alt="Beauty Magazine <?php //echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php //echo $orderNo+1; ?>" /-->
