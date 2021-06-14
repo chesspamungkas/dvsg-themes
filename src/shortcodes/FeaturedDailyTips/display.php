@@ -10,7 +10,7 @@
         <div class="row no-gutters">
           <div class="col-12 col-sm-12 col-md-7">
             <div class="beauty-tip-of-the-day">
-              <h1><img width="100%" height="auto" src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-beauty-tip-of-the-day-01.svg" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php echo $orderNo+1; ?>" /></h1>
+              <h1><img src="<?php echo S3_PATH; ?>/wp-content/uploads/svg/beauty-magazine-malaysia-daily-vanity-beauty-tip-of-the-day-01.svg" alt="Beauty Magazine <?php echo COUNTRY; ?> Daily Vanity Beauty Tip Of The Day #<?php echo $orderNo+1; ?>" /></h1>
             </div>
             <div id="featured-daily-tip" class="desktop-view">
               <!--p class="eb-garamond-regular"><?php echo $tip->post_title; ?></p-->
