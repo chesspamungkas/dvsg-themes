@@ -240,3 +240,34 @@ function prefix_insert_after_paragraphs( $content, $insertion, $paragraph_indexe
     return $content;
 
 }*/
+
+// content protection functions
+function content_protection() {
+    /* If user is snot an administrator then enable content protection */
+    if ( !current_user_can( 'administrator' ) ) {
+	?>
+        <script>
+            jQuery(document).ready(function(){
+                /* Disable right click */
+                jQuery(document).bind("contextmenu",function(e){
+                    return false;
+                });
+                /* Disable copy paste cut */
+                jQuery(document).bind('copy paste cut', function(e) {
+                    return false;
+                });
+                /* Disable text selection */
+                jQuery("body").css({
+                    '-webkit-touch-callout': 'none', /* iOS Safari */
+                    '-webkit-user-select': 'none', /* Safari */
+                    '-moz-user-select': 'none', /* Konqueror HTML */
+                    '-khtml-user-callout': 'none', /* Old versions of Firefox */
+                    '-ms-user-select': 'none', /* Internet Explorer/Edge */
+                    'user-select': 'none' /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+                })
+            });
+        </script>
+    <?php
+    }
+ }
+ add_action('wp_footer', 'content_protection');
