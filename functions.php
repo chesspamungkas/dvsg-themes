@@ -243,7 +243,7 @@ function prefix_insert_after_paragraphs( $content, $insertion, $paragraph_indexe
 
 // content protection functions
 function content_protection() {
-    /* If user is snot an administrator then enable content protection */
+    /* If user is not an administrator then enable content protection */
     if ( !current_user_can( 'administrator' ) ) {
 	?>
         <script>
