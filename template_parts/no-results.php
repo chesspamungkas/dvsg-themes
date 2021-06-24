@@ -1,14 +1,14 @@
 <style>
-.stories.carousel .story {
+#no-result .stories.carousel .story {
     width: 50vw;
     max-width: 150px;
 }
 
-#browse-categories-title {
+#no-result #browse-categories-title {
     display: none;
 }
 
-.category_tags a {
+#no-result .category_tags a {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
