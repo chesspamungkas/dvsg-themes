@@ -25,7 +25,7 @@
 <!--If no results are found-->
 	<h1>Oh no! This page seems to be broken just like the eyeshadows! :(</h1>
 	<p style="font-size: 26px;">You can browse our website via the links below, search for the content you want in the search bar above or report this issue to us at <a href="mailto:only@dailyvanity.sg">only@dailyvanity.sg</a>.</p>
-	<div class="container">
+	<div class="container" id="no-result">
 		<div class="row p-0 m-0">
 			<!--div class="col m-0 p-5"-->
 				<?php echo do_shortcode( '[igstory photo="no" noresult="yes"]' ); ?>
