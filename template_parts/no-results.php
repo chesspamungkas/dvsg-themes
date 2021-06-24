@@ -20,22 +20,27 @@
     margin-right: auto;
 }
 
+#no-result, .no-result-entry > p, .no-result-entry > h1 {
+    position:relative;
+    z-index: 10;
+}
+
 .no-result-background {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background-image: url( 'https://uploads.dailyvanity.sg/wp-content/uploads/2021/06/404.jpg' ); 
     background-size: contain; 
     background-repeat: no-repeat; 
     background-position: bottom left;
     z-index: 0;
-    opacity: 0.75;
+    opacity: 0.4;
 }
 </style>
 
-<div class="entry" style="min-height:400px; text-align:center; position: relative;">
+<div class="entry no-result-entry" style="min-height:400px; text-align:center; position: relative;">
 <!--If no results are found-->
 	<h1>Oh no! This page seems to be broken just like the eyeshadows! :(</h1>
 	<p style="font-size: 26px;">You can browse our website via the links below, search for the content you want in the search bar above or report this issue to us at <a href="mailto:only@dailyvanity.sg">only@dailyvanity.sg</a>.</p>
