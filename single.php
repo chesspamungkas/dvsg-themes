@@ -2,6 +2,8 @@
 
 get_header();
 
+do_action( 'single_header_after' );
+
 while ( have_posts() ) : the_post(); 
 ?>
 <div class="container-fluid" id="page-header-container">
