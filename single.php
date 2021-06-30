@@ -116,3 +116,4 @@ while ( have_posts() ) : the_post();
 
 <?php do_action( 'video_ad' ); ?>
 <?php get_footer(); ?>
+<?php do_action( 'single_footer_after' ); ?>
