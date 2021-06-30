@@ -189,7 +189,7 @@ add_filter( 'wp_review_get_schema_review_rating_args', 'add_aggreagate_rating', 
 function register_video_ad() {
 	global $post;
 	
-	if( get_field( 'disable_ads_injection', $post->ID ) === false || get_field( 'disable_teads_ads', $post->ID ) === false ) {
+	if( get_field( 'disable_ads_injection', $post->ID ) === false && get_field( 'disable_teads_ads', $post->ID ) === false ) {
     		echo '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="' . VIDEO_ADS_1X1 . '" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
 	}	
 }
