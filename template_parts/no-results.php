@@ -40,10 +40,12 @@
 }
 </style>
 
-<div class="entry no-result-entry" style="min-height:400px; text-align:center; position: relative;">
+<div class="entry no-result-entry" style="min-height:400px; position: relative;">
 <!--If no results are found-->
-	<?php echo do_action( '404-content' ); ?>
-	<div class="container" id="no-result">
+    <div class="container-noresult" id="no-result-text" style="text-align:center;">
+	    <?php echo do_action( '404-content' ); ?>
+    </div>
+	<div class="container" id="no-result"   >
 		<div class="row p-0 m-0">
 			<!--div class="col m-0 p-5"-->
 				<?php echo do_action( '404-content-after' ); ?>
