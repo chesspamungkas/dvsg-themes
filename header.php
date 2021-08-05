@@ -29,6 +29,8 @@
           if(/Android/i.test(navigator.userAgent.substr(0,4))) {
             isAndroid = true;
           }
+
+          console.log( isMobile );
       }
 
       var nonce = '<?php echo wp_create_nonce("wp_nonce"); ?>';
