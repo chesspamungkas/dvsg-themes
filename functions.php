@@ -204,12 +204,12 @@ function register_video_ad() {
 
 add_action( 'video_ad', 'register_video_ad' );
 
-
-// add_filter('the_content', 'prefix_insert_post_ads');
-
 /**
  * Content Filter 
  */
+
+add_filter('the_content', 'prefix_insert_post_ads');
+
 function prefix_insert_post_ads( $content ) {
 
     $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px;"></div>';
