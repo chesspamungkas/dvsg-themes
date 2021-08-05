@@ -197,7 +197,7 @@ function register_video_ad() {
 	global $post;
 	
 // 	if( get_field( 'disable_ads_injection', $post->ID ) === false && get_field( 'disable_teads_ads', $post->ID ) === false ) {
-	if( get_field( 'disable_ads_injection', $post->ID ) === false ) {
+	if( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) {
     		echo '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="' . VIDEO_ADS_1X1 . '" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
 	}	
 }
@@ -214,7 +214,7 @@ function prefix_insert_post_ads( $content ) {
 
     $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px;"></div>';
 
-    if ( is_single() && !is_admin() && get_field( 'disable_ads_injection', $post->ID ) === false ) {
+    if ( is_single() && !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ) {
         return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
     }
 

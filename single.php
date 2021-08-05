@@ -16,7 +16,7 @@ while ( have_posts() ) : the_post();
                     </div>
                 </div>
             </div>
-            <?php if( !is_admin() && get_field( 'disable_ads_injection', $post->ID ) === false ): ?>
+            <?php if( !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ): ?>
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
