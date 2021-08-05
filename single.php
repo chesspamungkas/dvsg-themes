@@ -5,6 +5,7 @@ get_header();
 do_action( 'single_header_after' );
 
 while ( have_posts() ) : the_post(); 
+print_r( get_field( 'disable_ads_injection', $post->ID ) );
 ?>
 <div class="container-fluid" id="page-header-container">
     <div class="row no-gutters">
@@ -16,7 +17,7 @@ while ( have_posts() ) : the_post();
                     </div>
                 </div>
             </div>
-            <?php if( !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ): ?>
+            <?php if( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ): ?>
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
