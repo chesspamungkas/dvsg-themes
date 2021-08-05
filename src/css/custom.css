@@ -1923,12 +1923,12 @@ Gravity form Styling
     background-color: #EA4A7F !important;
     color: #fff !important;
     font-size: 14px !important;
-    padding: 1em !important;
+    padding: unset;
     margin-bottom: 2em !important;
 }
 
 .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
-    background: #fff !important;
+    background: transparent !important;
     border: 0 !important;
     margin-top: 0 !important;
     padding: 12.992px 0 !important;
@@ -1951,15 +1951,19 @@ Gravity form Styling
     display: none !important;
 }
 
-.gform_wrapper .gfield_error .gfield_repeater_cell label, .gform_wrapper .gfield_error legend, .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message, .gform_wrapper [aria-invalid=true]+label, .gform_wrapper label+[aria-invalid=true] {
+.gform_wrapper .gfield_error .gfield_repeater_cell label, .gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message, .gform_wrapper [aria-invalid=true]+label, .gform_wrapper label+[aria-invalid=true] {
     color: #ea4a7f !important;
+}
+
+.gform_wrapper .gfield_error legend {
+    color: #000 !important;
 }
 
 .gform_body.gform-body .gfield_radio .gchoice {
     display: block;
     position: relative;
     padding: 0 6px;
-    margin: 10px 0 0;
+    margin: 0;
 }
 
 .gform_body.gform-body input[type='radio'] {
@@ -1983,6 +1987,11 @@ Gravity form Styling
     border-radius: 11px;
     border: 2px solid #A9A9A9;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.gform_body.gform-body input[type=radio]:checked + label:before {
+    border: 2px solid #ea4a7f;
 }
 
 .gform_body.gform-body input[type=radio]:checked + label:after {
@@ -1995,6 +2004,8 @@ Gravity form Styling
     content: " ";
     display: block;
     background: #ea4a7f;
+    border: 2px solid #ea4a7f;
+    cursor: pointer;
 }
 
 .gform_body.gform-body input[type="checkbox"] {
@@ -2006,6 +2017,7 @@ Gravity form Styling
     height: 25px;
     background: #FFFFFF;
     position: relative;
+    cursor: pointer;
 }
 
 .gform_body.gform-body input[type="checkbox"]:checked {
@@ -2027,6 +2039,25 @@ Gravity form Styling
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     outline: 0;
+}
+
+@supports (-webkit-touch-callout: none) {
+    @media ( max-width: 480px ) {
+        /* CSS for iOS devices */ 
+        .gform_body.gform-body input[type=radio]:checked + label:after {
+            top: 11px;
+        }
+    }
+}
+
+@supports not (-webkit-touch-callout: none) {
+    @media ( max-width: 480px ) {
+        /* CSS for other than iOS devices */ 
+        .gform_body.gform-body input[type=radio]:checked + label:after {
+            top: 12px;
+            height: 11px;
+        }
+    }
 }
 
 @media (min-width: 1441px) {

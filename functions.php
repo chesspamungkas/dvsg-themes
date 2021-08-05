@@ -185,3 +185,94 @@ function add_aggreagate_rating( $args, $review ) {
     return $args;
 }
 add_filter( 'wp_review_get_schema_review_rating_args', 'add_aggreagate_rating', 10, 2 );
+
+function register_video_ad() {
+	global $post;
+	
+// 	if( get_field( 'disable_ads_injection', $post->ID ) === false && get_field( 'disable_teads_ads', $post->ID ) === false ) {
+	if( get_field( 'disable_ads_injection', $post->ID ) === false ) {
+    		echo '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="' . VIDEO_ADS_1X1 . '" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
+	}	
+}
+
+add_action( 'video_ad', 'register_video_ad' );
+
+
+// add_filter('the_content', 'prefix_insert_post_ads');
+
+/**
+ * Content Filter 
+ */
+/*function prefix_insert_post_ads( $content ) {
+
+    $insertion = '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="'. VIDEO_ADS_1X1 .'" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
+
+    if ( is_single() && !is_admin() ) {
+        return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
+    }
+
+    return $content;
+
+}
+
+// Function that makes the magic happen correctly
+
+function prefix_insert_after_paragraphs( $content, $insertion, $paragraph_indexes ) {
+
+    // find all paragraph ending offsets
+
+    preg_match_all( '#</p>#i', $content, $matches, PREG_SET_ORDER+PREG_OFFSET_CAPTURE );
+
+    // reduce matches to offset positions
+
+    $matches = array_map( function( $match ) {
+        return $match[0][1] + 4; // return string offset + length of </p> Tag
+    }, $matches );
+
+    // reverse sort indexes: plain text insertion just works nicely in reverse order
+
+    rsort( $paragraph_indexes ); 
+
+    // cycle through and insert on demand
+
+    foreach ( $paragraph_indexes as $paragraph_index ) {
+        if ( $paragraph_index <= count( $matches ) ) {
+            $offset_position = $matches[$paragraph_index-1];
+            $content = substr( $content, 0, $offset_position ) . $insertion . substr( $content, $offset_position );
+        }
+    }
+
+    return $content;
+
+}*/
+
+// content protection functions
+function content_protection() {
+    /* If user not login then enable content protection */
+    if ( !is_user_logged_in() ) {
+	?>
+        <script>
+            jQuery(document).ready(function(){
+                /* Disable right click */
+                jQuery(document).bind("contextmenu",function(e){
+                    return false;
+                });
+                /* Disable copy paste cut */
+                jQuery(document).bind('copy paste cut', function(e) {
+                    return false;
+                });
+                /* Disable text selection */
+                jQuery("body").css({
+                    '-webkit-touch-callout': 'none', /* iOS Safari */
+                    '-webkit-user-select': 'none', /* Safari */
+                    '-moz-user-select': 'none', /* Konqueror HTML */
+                    '-khtml-user-callout': 'none', /* Old versions of Firefox */
+                    '-ms-user-select': 'none', /* Internet Explorer/Edge */
+                    'user-select': 'none' /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+                })
+            });
+        </script>
+    <?php
+    }
+ }
+ add_action('wp_footer', 'content_protection');

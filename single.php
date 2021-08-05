@@ -2,6 +2,8 @@
 
 get_header();
 
+do_action( 'single_header_after' );
+
 while ( have_posts() ) : the_post(); 
 ?>
 <div class="container-fluid" id="page-header-container">
@@ -114,5 +116,6 @@ while ( have_posts() ) : the_post();
 </div> <!-- #main-content -->
 <?php endwhile; ?>
 
-<!-- DFP Ad Size 300 x 250 - div-gpt-ad-5207510-1 -->
+<?php do_action( 'video_ad' ); ?>
 <?php get_footer(); ?>
+<?php do_action( 'single_footer_after' ); ?>

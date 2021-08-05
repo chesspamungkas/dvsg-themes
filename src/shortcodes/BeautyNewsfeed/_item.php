@@ -12,10 +12,11 @@ if( $posts->have_posts() ):
     if( strpos( get_the_post_thumbnail_url( get_the_ID() ), '.gif' ) === false ):
       $imgId = get_post_thumbnail_id();
       $imgSrcset = wp_get_attachment_image_srcset( $imgId, 'article-thumbnail' );
+      $imgAttributes = wp_get_attachment_image_src( $imgId, 'article-thumbnail' );
       $sizes = wp_get_attachment_image_sizes( $imgId, 'article-thumbnail' );
-      $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" sizes="' . esc_attr( $sizes ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
+      $thumbnail = '<img width="' . $imgAttributes[1] .  '" heght="' . $imgAttributes[2]. '" src="' . get_the_post_thumbnail_url( get_the_ID(), 'large' ) . '" srcset="' . esc_attr( $imgSrcset ) . '" sizes="' . esc_attr( $sizes ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
     else:
-      $thumbnail = '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'full' ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
+      $thumbnail = '<img width="' . $imgAttributes[1] .  '" heght="' . $imgAttributes[2]. '" src="' . get_the_post_thumbnail_url( get_the_ID(), 'full' ) . '" alt="' . get_the_title() . '" class="post-thumbnail" />';
     endif;
 
     if( $increment > 2 ) {
