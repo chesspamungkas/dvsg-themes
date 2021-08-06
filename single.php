@@ -5,7 +5,6 @@ get_header();
 do_action( 'single_header_after' );
 
 while ( have_posts() ) : the_post(); 
-print_r( get_field( 'disable_ads_injection', $post->ID ) );
 ?>
 <div class="container-fluid" id="page-header-container">
     <div class="row no-gutters">
