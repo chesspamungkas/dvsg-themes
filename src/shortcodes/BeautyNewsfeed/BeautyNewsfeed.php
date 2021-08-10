@@ -146,5 +146,7 @@ class BeautyNewsfeed extends ShortCode {
         'paged'         => $this->search_args['paged']
       ]);
     }
+
+    wp_reset_postdata();
   }
 }
