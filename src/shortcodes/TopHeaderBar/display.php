@@ -1,6 +1,6 @@
 <style>
   .dv-background {
-    position: absolute;
+    position: fixed;
     bottom:50px;
     left:0;
     z-index:-1;
