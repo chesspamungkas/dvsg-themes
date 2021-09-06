@@ -67,6 +67,8 @@ while ( have_posts() ) : the_post();
     </div>
 </div>
 
+<?php do_action( 'section_before_content' ); ?>
+
 <div id="main-content">  
 	<div class="container">
     <div class="row justify-content-center">
