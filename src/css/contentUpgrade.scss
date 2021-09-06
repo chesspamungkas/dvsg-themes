@@ -1,0 +1,33 @@
+input.lp-flex-1.form-input-element {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 12px !important;
+    letter-spacing: .15rem !important;
+    padding: 20px 25px !important;
+}
+
+.moosend-designer-button {
+    padding: 20px 25px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: .15rem !important;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: #626262 !important;
+        color: #fff !important;
+    }
+}
+
+.content-upgrade-title {
+    font-family:'EB Garamond', serif !important;
+    font-weight: 500 !important;
+    font-size: 48px;
+}
+
+.content-upgrade-desc {
+    font-family:'EB Garamond', serif !important;
+    font-weight: 500 !important;
+    font-size: 20px;
+}

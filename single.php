@@ -93,7 +93,7 @@ while ( have_posts() ) : the_post();
       </div>
     </div>    
   </div> <!-- .container -->
-  <?//= do_shortcode('[content-upgrade]') ?>
+  <?php do_action( 'section_after_content' ) ?>
   <?php
     $tags = get_the_tags(); 
 

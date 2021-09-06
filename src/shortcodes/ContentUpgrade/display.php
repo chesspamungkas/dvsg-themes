@@ -104,59 +104,9 @@
 <?php if($post): ?>
   <div class="container-fluid content-upgrade-container">
     <div class="row">
-      <div class="col">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <?php 
-                //print_r( $segment );
-                if( $segment ) {
-                  $seg = $segment;
-                } else {
-                  $seg = 'all';
-                }
-
-                $args = [
-                  'post_type' => 'content_upgrade',
-                  'post_status' => 'publish',
-                  'posts_per_page' => 1,
-                  'orderby' => 'date',
-                  'order' => 'DESC',
-                  'meta_query' => [
-                    'relation' => 'AND',
-                    [
-                      'key' => 'segment',
-                      'value' => $seg
-                    ],
-                  ]
-                ]; 
-
-                $contentUpgrade = new WP_Query( $args );
-
-                // print_r( $contentUpgrade->posts[0]->post_title );
-              ?>
-              <p class="eb-garamond-medium content-upgrade-title"><?php echo $contentUpgrade->posts[0]->post_title; ?></p>
-              <p class="eb-garamond-medium"><?php echo $contentUpgrade->posts[0]->post_content; ?></p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-md-5">
-              <form method="post" action="<?php echo MAUTIC_LINK; ?>" name="contentUpgradeForm" id="contentUpgradeForm">
-                <input class="form-control form-control-sm" type="text" placeholder="YOUR NAME" aria-label=".form-control-sm example">
-                <input class="form-control form-control-sm" type="email" placeholder="EMAIL ADDRESS" aria-label=".form-control-sm example">
-                <div class="form-check form-check-inline male-radio">
-                  <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male">
-                  <label class="form-check-label" for="maleRadio">For Men</label>
-                </div>
-                <div class="form-check form-check-inline female-radio">
-                  <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female">
-                  <label class="form-check-label" for="femaleRadio">For Women</label>
-                </div>
-              </form>
-            </div>
-          </div>  
-        </div>
+      <div class="col"> 
+        <div data-mooform-id="<?php echo $moosendID; ?>" ></div>
       </div>
     </div>  
-</div>
+  </div>
 <?php endif; ?>
