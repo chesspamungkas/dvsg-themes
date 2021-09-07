@@ -924,7 +924,7 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
 }
 
 .header-breadcrumb {
-    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .breadcrumb {
@@ -938,6 +938,10 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
 .dfp-div {
     text-align: center;
     margin: 0 auto;
+}
+
+nav.rank-math-breadcrumb > p {
+    margin-bottom: 0 !important;
 }
 
 nav.rank-math-breadcrumb > p > .separator {
@@ -1595,7 +1599,7 @@ blockquote p {
 }
 
 .tags-container {
-    padding: 50px 0;
+    padding: 40px 0;
     /* margin-bottom: 50px; */
     border-bottom: 2px solid #e8d9d9;
     overflow: hidden;
