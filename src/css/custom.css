@@ -2241,7 +2241,7 @@ Gravity form Styling
 
     #featured-daily-tip-container > .row {
         /* min-height: 1100px; */
-        padding-top: 30px;
+        padding-top: 0px;
         padding-bottom: 30px;
     }
 
