@@ -66,14 +66,12 @@ class ContentUpgrade extends ShortCode {
 
     $moosendID = '';
 
-    if( false === ( $moosendID = get_field( 'moosend_form_id', $post->ID ) ) || empty( $moosendID ) ) {
-      $moosendID = GENERAL_CONTENT_UPGRADE;
+    if( $moosendID = get_field( 'moosend_form_id', $post->ID ) ) {
+      echo $this->render('ContentUpgrade/display', [
+        'post'=>$post,
+        'moosendID'=>$moosendID,
+        'args'=>$this->additional_args
+      ]);
     }
-
-    echo $this->render('ContentUpgrade/display', [
-      'post'=>$post,
-      'moosendID'=>$moosendID,
-      'args'=>$this->additional_args
-    ]);
   }
 }
