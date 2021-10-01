@@ -1173,6 +1173,12 @@ nav.rank-math-breadcrumb > p > .separator {
 .page > .entry-content > h4, 
 .page > .entry-content > h5, 
 .page > .entry-content > h6,
+.deal > .entry-content > h1, 
+.deal > .entry-content > h2, 
+.deal > .entry-content > h3, 
+.deal > .entry-content > h4, 
+.deal > .entry-content > h5, 
+.deal > .entry-content > h6,
 .post > .entry-content > .listicle-content > h1, 
 .post > .entry-content > .listicle-content > h2, 
 .post > .entry-content > .listicle-content > h3, 
@@ -1206,6 +1212,17 @@ li::marker {
 .post > .entry-content > ol > li > ul, 
 .post > .entry-content > ol > li > ul > li > ol, 
 .post > .entry-content > ol > li > ul > li > ul,
+.deal > .entry-content > ul, 
+.deal > .entry-content > ul > li > ul, 
+.deal > .entry-content > ul > li > ul > li > ul, 
+.deal > .entry-content > ul > li > ol, 
+.deal > .entry-content > ul > li > ol > li > ul, 
+.deal > .entry-content > ol, 
+.deal > .entry-content > ol > li > ol, 
+.deal > .entry-content > ol > li > ol > li > ol, 
+.deal > .entry-content > ol > li > ul, 
+.deal > .entry-content > ol > li > ul > li > ol, 
+.deal > .entry-content > ol > li > ul > li > ul,
 .page > .entry-content > ul, 
 .page > .entry-content > ul > li > ul, 
 .page > .entry-content > ul > li > ul > li > ul, 
@@ -1230,6 +1247,12 @@ li::marker {
 .post > .entry-content > ol > li > ol > li > ol, 
 .post > .entry-content > ol > li > ul > li > ol,
 .post > .entry-content > ul > li > ol > li > ol,
+.deal > .entry-content > ul > li > ol, 
+.deal > .entry-content > ol, 
+.deal > .entry-content > ol > li > ol, 
+.deal > .entry-content > ol > li > ol > li > ol, 
+.deal > .entry-content > ol > li > ul > li > ol,
+.deal > .entry-content > ul > li > ol > li > ol,
 .page > .entry-content > ul > li > ol, 
 .page > .entry-content > ol, 
 .page > .entry-content > ol > li > ol, 
@@ -1248,6 +1271,15 @@ li::marker {
 .post > .entry-content > ol > li > ul, 
 .post > .entry-content > ol > li > ul > li > ol, 
 .post > .entry-content > ol > li > ul > li > ul,
+.deal > .entry-content > ul > li > ul, 
+.deal > .entry-content > ul > li > ul > li > ul, 
+.deal > .entry-content > ul > li > ol, 
+.deal > .entry-content > ul > li > ol > li > ul, 
+.deal > .entry-content > ol > li > ol, 
+.deal > .entry-content > ol > li > ol > li > ol, 
+.deal > .entry-content > ol > li > ul, 
+.deal > .entry-content > ol > li > ul > li > ol, 
+.deal > .entry-content > ol > li > ul > li > ul,
 .page > .entry-content > ul > li > ul, 
 .page > .entry-content > ul > li > ul > li > ul, 
 .page > .entry-content > ul > li > ol, 
@@ -1260,34 +1292,37 @@ li::marker {
     margin-top: 20px;
 }
 
-.post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
+.post > .entry-content > ol, .post > .entry-content > ul, .deal > .entry-content > ol, .deal > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 15px;
 }
 
-.post > .entry-content > ol > li > ol, .page > .entry-content > ol > li > ol {
+.post > .entry-content > ol > li > ol, .deal > .entry-content > ol > li > ol, .page > .entry-content > ol > li > ol {
     margin-left: 27px;
 }
 
-.post > .entry-content > ol > li > ol > li > ol, .page > .entry-content > ol > li > ol > li > ol {
+.post > .entry-content > ol > li > ol > li > ol, .deal > .entry-content > ol > li > ol > li > ol, .page > .entry-content > ol > li > ol > li > ol {
     margin-left: -4px;
 }
 
-.post > .entry-content > ol > li > ul, .page > .entry-content > ol > li > ul {
+.post > .entry-content > ol > li > ul, .deal > .entry-content > ol > li > ul, .page > .entry-content > ol > li > ul {
     margin-left: 30px;
 }
 
 .post > .entry-content > ol > li > ul > li > ul, 
 .post > .entry-content > ul > li > ul,
 .post > .entry-content > ul > li > ul > li > ul,
+.deal > .entry-content > ol > li > ul > li > ul, 
+.deal > .entry-content > ul > li > ul,
+.deal > .entry-content > ul > li > ul > li > ul,
 .page > .entry-content > ol > li > ul > li > ul, 
 .page > .entry-content > ul > li > ul,
 .page > .entry-content > ul > li > ul > li > ul {
     margin-left: -10px;
 }
 
-.post > .entry-content > ul > li > ol, .page > .entry-content > ul > li > ol {
+.post > .entry-content > ul > li > ol, .deal > .entry-content > ul > li > ol, .page > .entry-content > ul > li > ol {
     margin-left: -12px;
 }
 
@@ -1297,6 +1332,12 @@ li::marker {
 .post > .entry-content > ol > li > ol > li > ol > li, 
 .post > .entry-content > ol > li > ul > li > ol > li,
 .post > .entry-content > ul > li > ol > li > ol > li,
+.deal > .entry-content > ul > li > ol > li, 
+.deal > .entry-content > ol > li, 
+.deal > .entry-content > ol > li > ol > li, 
+.deal > .entry-content > ol > li > ol > li > ol > li, 
+.deal > .entry-content > ol > li > ul > li > ol > li,
+.deal > .entry-content > ul > li > ol > li > ol > li,
 .page > .entry-content > ul > li > ol > li, 
 .page > .entry-content > ol > li, 
 .page > .entry-content > ol > li > ol > li, 
@@ -1327,12 +1368,25 @@ li::marker {
 .page > .entry-content > ol > li > ol > li > ol > li, 
 .page > .entry-content > ol > li > ul > li, 
 .page > .entry-content > ol > li > ul > li > ol > li, 
-.page > .entry-content > ol > li > ul > li > ul > li {
+.page > .entry-content > ol > li > ul > li > ul > li,
+.deal > .entry-content > ul > li, 
+.deal > .entry-content > ul > li > ul > li, 
+.deal > .entry-content > ul > li > ul > li > ul > li, 
+.deal > .entry-content > ul > li > ol > li, 
+.deal > .entry-content > ul > li > ol > li > ul > li, 
+.deal > .entry-content > ol > li, 
+.deal > .entry-content > ol > li > ol > li, 
+.deal > .entry-content > ol > li > ol > li > ol > li, 
+.deal > .entry-content > ol > li > ul > li, 
+.deal > .entry-content > ol > li > ul > li > ol > li, 
+.deal > .entry-content > ol > li > ul > li > ul > li {
     margin-bottom: 20px;
 }
 
 .post > .entry-content > ul > li::before, 
 .post > .entry-content > ol > li > ul > li::before,
+.deal > .entry-content > ul > li::before, 
+.deal > .entry-content > ol > li > ul > li::before,
 .page > .entry-content > ul > li::before, 
 .page > .entry-content > ol > li > ul > li::before {
     content: '\2022 ';
@@ -1345,6 +1399,8 @@ li::marker {
 
 .post > .entry-content > ul > li > ul > li::before,
 .post > .entry-content > ol > li > ul > li > ul > li::before,
+.deal > .entry-content > ul > li > ul > li::before,
+.deal > .entry-content > ol > li > ul > li > ul > li::before,
 .page > .entry-content > ul > li > ul > li::before,
 .page > .entry-content > ol > li > ul > li > ul > li::before {
     content: '\26AC ';
@@ -1355,7 +1411,7 @@ li::marker {
     line-height: 0;
 }
 
-.post > .entry-content > ul > li > ul > li > ul > li::before, .page > .entry-content > ul > li > ul > li > ul > li::before {
+.post > .entry-content > ul > li > ul > li > ul > li::before, .deal > .entry-content > ul > li > ul > li > ul > li::before, .page > .entry-content > ul > li > ul > li > ul > li::before {
     content: '■ ';
     font-size: 10px;
     color: #ffcede;
@@ -1364,7 +1420,7 @@ li::marker {
     line-height: 0;
 }
 
-.post > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
+.post > .entry-content > ol > li::before, .deal > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, decimal )'. ';
     font-size: 30px;
@@ -1380,12 +1436,14 @@ li::marker {
 
 .post > .entry-content > ol > li > ol, 
 .post > .entry-content > ol > li > ul,
+.deal > .entry-content > ol > li > ol, 
+.deal > .entry-content > ol > li > ul,
 .page > .entry-content > ol > li > ol, 
 .page > .entry-content > ol > li > ul {
     padding-inline-start: 0;
 }
 
-.post > .entry-content > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li::before {
+.post > .entry-content > ol > li > ol > li::before, .deal > .entry-content > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-alpha ) '. ';
     color: #ffcede;
@@ -1396,7 +1454,7 @@ li::marker {
     width: 1em;
 }
 
-.post > .entry-content > ul > li > ol > li::before, .page > .entry-content > ul > li > ol > li::before {
+.post > .entry-content > ul > li > ol > li::before, .deal > .entry-content > ul > li > ol > li::before, .page > .entry-content > ul > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-alpha ) '. ';
     color: #ffcede;
@@ -1407,7 +1465,7 @@ li::marker {
     width: 1em;
 }
 
-.post > .entry-content > ol > li > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li > ol > li::before {
+.post > .entry-content > ol > li > ol > li > ol > li::before, .deal > .entry-content > ol > li > ol > li > ol > li::before, .page > .entry-content > ol > li > ol > li > ol > li::before {
     counter-increment: my-counter;
     content: counter( my-counter, lower-roman ) '. ';
     color: #ffcede;
@@ -2478,15 +2536,27 @@ Gravity form Styling
         right: 10px !important;
     }
 
-    .post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
+    .post > .entry-content > ol, 
+    .post > .entry-content > ul, 
+    .deal > .entry-content > ol, 
+    .deal > .entry-content > ul, 
+    .page > .entry-content > ol, 
+    .page > .entry-content > ul {
         margin-left: 0;
     }
 
-    .post > .entry-content > ol, .post > .entry-content > ul, .page > .entry-content > ol, .page > .entry-content > ul {
+    .post > .entry-content > ol, 
+    .post > .entry-content > ul, 
+    .deal > .entry-content > ol, 
+    .deal > .entry-content > ul, 
+    .page > .entry-content > ol, 
+    .page > .entry-content > ul {
         padding-inline-start: 50px;
     }
 
-    .post > .entry-content > ol > li::before, .page > .entry-content > ol > li::before {
+    .post > .entry-content > ol > li::before, 
+    .deal > .entry-content > ol > li::before, 
+    .page > .entry-content > ol > li::before {
         margin-left: -50px;
         width: 1.3em;
     }
