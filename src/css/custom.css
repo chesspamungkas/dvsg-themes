@@ -935,6 +935,10 @@ svg#close-btn > #Component_10_1 > #Group_1 > .st0, svg#close-btn-2 > #Component_
     margin-bottom:0;
 }
 
+article > .entry-content > .dfp-div {
+    margin-bottom: 40px !important;	
+}
+
 .dfp-div {
     text-align: center;
     margin: 0 auto;
