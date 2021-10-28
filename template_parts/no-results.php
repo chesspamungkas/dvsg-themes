@@ -40,7 +40,7 @@
 }
 </style>
 
-<div class="entry no-result-entry" style="min-height:400px; position: relative;">
+<div class="entry no-result-entry" style="min-height:400px; text-align:center; position: relative;">
 <!--If no results are found-->
     <div class="container-noresult" id="no-result-text" style="text-align:center;">
 	    <?php echo do_action( '404-content' ); ?>
