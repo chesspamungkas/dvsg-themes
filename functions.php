@@ -154,7 +154,14 @@ add_action( 'init', 'wpb_popular_searches_menu' );
 
 
 function register_dfp_bottom() {
-    echo '<div id="' . DFP_BOTTOM . '" class="dfp-div" style="width: 300px; height: 250px;"></div>';
+    echo "<script>\n";
+    echo "\tif( isMobile ) {\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_B ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
+    echo "\t} else {\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_728x90_B ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
+    echo "\t}\n";
+    echo "</script>";
+    // echo '<div id="' . DFP_BOTTOM . '" class="dfp-div" style="width: 300px; height: 250px;"></div>';
 }
 
 add_action( 'body_div_after', 'register_dfp_bottom' );
@@ -163,9 +170,9 @@ add_action( 'body_div_after', 'register_dfp_bottom' );
 function register_dfp_top() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_MOBILE_TOP ."\" class=\"dfp-div\" style=\"width: 320px; height: 50px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_A ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
     echo "\t} else {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_DESKTOP_TOP ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_728x90_A ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
     echo "</script>";
 }
@@ -189,24 +196,26 @@ add_filter( 'wp_review_get_schema_review_rating_args', 'add_aggreagate_rating', 
 function register_video_ad() {
 	global $post;
 	
-	if( get_field( 'disable_ads_injection', $post->ID ) === false && get_field( 'disable_teads_ads', $post->ID ) === false ) {
+// 	if( get_field( 'disable_ads_injection', $post->ID ) === false && get_field( 'disable_teads_ads', $post->ID ) === false ) {
+	if( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) {
     		echo '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="' . VIDEO_ADS_1X1 . '" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
 	}	
 }
 
 add_action( 'video_ad', 'register_video_ad' );
 
-
-// add_filter('the_content', 'prefix_insert_post_ads');
-
 /**
  * Content Filter 
  */
-/*function prefix_insert_post_ads( $content ) {
 
-    $insertion = '<div class="container"><div class="row p-0 m-0"><div class="col-12 poppins-light"><div id="'. VIDEO_ADS_1X1 .'" class="dfp-div loadedads" style="width: 1px; height: 1px; margin: 0 auto;"></div></div></div></div>';
+add_filter('the_content', 'prefix_insert_post_ads');
 
-    if ( is_single() && !is_admin() ) {
+function prefix_insert_post_ads( $content ) {
+    global $post;
+	
+    $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px; margin-bottom: 40px;"></div>';
+
+    if ( is_single() && !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ) {
         return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
     }
 
@@ -243,7 +252,7 @@ function prefix_insert_after_paragraphs( $content, $insertion, $paragraph_indexe
 
     return $content;
 
-}*/
+}
 
 // content protection functions
 function content_protection() {

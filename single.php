@@ -16,6 +16,7 @@ while ( have_posts() ) : the_post();
                     </div>
                 </div>
             </div>
+            <?php if( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ): ?>
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 poppins-light">
@@ -23,6 +24,7 @@ while ( have_posts() ) : the_post();
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
             <div class="container" id="page-header">
                 <div class="row no-gutters justify-content-center">
                     <div class="col-12 col-md-8 text-center">
@@ -65,6 +67,8 @@ while ( have_posts() ) : the_post();
     </div>
 </div>
 
+<?php do_action( 'section_before_content' ); ?>
+
 <div id="main-content">  
 	<div class="container">
     <div class="row justify-content-center">
@@ -89,7 +93,7 @@ while ( have_posts() ) : the_post();
       </div>
     </div>    
   </div> <!-- .container -->
-  <?//= do_shortcode('[content-upgrade]') ?>
+  <?php do_action( 'section_after_content' ) ?>
   <?php
     $tags = get_the_tags(); 
 

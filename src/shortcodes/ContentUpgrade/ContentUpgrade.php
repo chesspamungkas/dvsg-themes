@@ -64,12 +64,14 @@ class ContentUpgrade extends ShortCode {
   public function generate() {
     global $post;
 
-    $segment = get_field( 'segment', $post->ID );
+    $moosendID = '';
 
-    echo $this->render('ContentUpgrade/display', [
-      'post'=>$post,
-      'segment'=>$segment,
-      'args'=>$this->additional_args
-    ]);
+    if( $moosendID = get_field( 'moosend_form_id', $post->ID ) ) {
+      echo $this->render('ContentUpgrade/display', [
+        'post'=>$post,
+        'moosendID'=>$moosendID,
+        'args'=>$this->additional_args
+      ]);
+    }
   }
 }
