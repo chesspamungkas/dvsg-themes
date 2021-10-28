@@ -42,9 +42,7 @@
 
 <div class="entry no-result-entry" style="min-height:400px; text-align:center; position: relative;">
 <!--If no results are found-->
-    <div class="container-noresult" id="no-result-text" style="text-align:center;">
-	    <?php echo do_action( '404-content' ); ?>
-    </div>
+	<?php echo do_action( '404-content' ); ?>
 	<div class="container" id="no-result">
 		<div class="row p-0 m-0">
 			<!--div class="col m-0 p-5"-->
