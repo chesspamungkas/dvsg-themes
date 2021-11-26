@@ -1870,7 +1870,7 @@ Gravity form Styling
 
 .gform_body.gform-body { font-family: 'Poppins', sans-serif; }
 
-.gform_body.gform-body input[type="text"], .gform_body.gform-body input[type="email"], textarea {
+.gform_body.gform-body input[type="text"], .gform_body.gform-body input[type="email"], .gform_body.gform-body input[type="number"], textarea {
     border-radius: 15px !important;
     padding: 1rem 1.2rem !important;
     font-size: 16px !important;
@@ -1880,7 +1880,7 @@ Gravity form Styling
     border: 1px solid #ced4da !important;
 }
 
-.gform_body.gform-body input[type="text"]::placeholder, .gform_body.gform-body input[type="email"]::placeholder, .gform_body.gform-body textarea::placeholder {
+.gform_body.gform-body input[type="text"]::placeholder, .gform_body.gform-body input[type="email"]::placeholder, .gform_body.gform-body input[type="number"]::placeholder, .gform_body.gform-body textarea::placeholder {
     color: #a3a3a3;
 }
 
