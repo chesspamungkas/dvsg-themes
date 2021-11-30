@@ -23,6 +23,7 @@ DV\core\Constants::Define('SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS E
 DV\core\Constants::Define('DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!');
 DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
 DV\core\Constants::Define('READ_MORE', 'READ MORE');
+DV\core\Constants::Define('SF_LINK', 'https://salonfinder.dailyvanity.sg');
 
 if( $isMobile ) {
     if( $isIOS ) {
