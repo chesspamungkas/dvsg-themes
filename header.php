@@ -34,6 +34,9 @@
     <meta name="msapplication-square150x150logo" content="<?= S3_PATH ?>/assets/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="<?= S3_PATH ?>/assets/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="<?= S3_PATH ?>/assets/mstile-310x310.png" />
+    <script>
+      var sfLink = <?php echo SF_LINK; ?>;
+    </script>
     <?php wp_head(); ?>
     <script>
 
