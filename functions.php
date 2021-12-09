@@ -148,7 +148,7 @@ add_action( 'init', 'wpb_popular_searches_menu' );
 function register_dfp_bottom() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_300x250_B ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_B ."\" class=\"dfp-div mobileAdBanner\" style=\"width: 300px; height: 250px;\"></div>');\n";
     echo "\t} else {\n";
     echo "\t\tdocument.write('<div id=\"". DFP_728x90_B ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
@@ -162,7 +162,7 @@ add_action( 'body_div_after', 'register_dfp_bottom' );
 function register_dfp_top() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_300x250_A ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_A ."\" class=\"dfp-div mobileAdBanner\" style=\"width: 300px; height: 250px;\"></div>');\n";
     echo "\t} else {\n";
     echo "\t\tdocument.write('<div id=\"". DFP_728x90_A ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
