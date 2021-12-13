@@ -266,8 +266,8 @@ function content_protection() {
                 jQuery(document).bind("contextmenu",function(e){
                     return false;
                 });
-                /* Disable copy paste cut */
-                jQuery(document).bind('copy paste cut', function(e) {
+                /* Disable copy cut */
+                jQuery(document).bind('copy cut', function(e) {
                     return false;
                 });
                 /* Disable text selection */
