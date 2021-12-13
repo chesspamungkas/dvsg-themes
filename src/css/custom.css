@@ -984,10 +984,12 @@ nav.rank-math-breadcrumb > p > .separator {
     font-weight: 300;
     color: #999;
     text-transform: uppercase;
+    padding: 0!important;
 }
 
 .rtoc-mokuji-content > .rtoc-mokuji.level-1 {
     padding-left: .8rem;
+    margin: 0 !important;
 }
 
 .rtoc-mokuji-content > .rtoc-mokuji.level-1 > li {
@@ -1026,7 +1028,7 @@ nav.rank-math-breadcrumb > p > .separator {
 .rtoc-mokuji-content .decimal_ol > .rtoc-item > span > a {
     font-family: 'EB Garamond', serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     color: #000000 !important;
     /* margin-left: .8rem; */
     line-height: 1.25;
@@ -1047,6 +1049,45 @@ nav.rank-math-breadcrumb > p > .separator {
 }
 
 .rtoc-mokuji-content .decimal_ol > .rtoc-item > span > a:hover {
+    display: inline;
+    background-size: 2px 2px;
+    background-repeat: repeat-x;
+    background-position: 0 94%;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#EA4A7F),to(#EA4A7F));
+    background-image: -webkit-linear-gradient(#EA4A7F,#EA4A7F);
+    background-image: linear-gradient(#EA4A7F,#EA4A7F);
+    text-decoration: none;
+    /* text-decoration-color: #EA4A7F;
+    text-decoration-thickness: .1em; */
+}
+
+.rtoc-mokuji-content .decimal_ol > .rtoc-item > a {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000 !important;
+    /* margin-left: .8rem; */
+    line-height: 1.25;
+    padding-left:0;
+    text-decoration: none;
+    /* text-decoration-color: #ffcede;
+    text-decoration-thickness: .25em; */
+    /* border-bottom: 5px solid #ffcede;
+    text-decoration:none;
+    display:inline-block; */
+    /* display: inline; */
+    background-size: 5px 5px;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#ffcede),to(#ffcede));
+    background-image: -webkit-linear-gradient(#ffcede,#ffcede);
+    background-image: linear-gradient(#ffcede,#ffcede);
+    display: block!important;
+    position: relative;
+    margin: 0 0 1rem 1rem;
+}
+
+.rtoc-mokuji-content .decimal_ol > .rtoc-item > a:hover {
     display: inline;
     background-size: 2px 2px;
     background-repeat: repeat-x;
