@@ -996,6 +996,7 @@ nav.rank-math-breadcrumb > p > .separator {
     width: 46%;
     display: inline-block;
     vertical-align: top;
+    padding: 16px 0 0 10px!important;
 }
 
 .rtoc-mokuji-content > .rtoc-mokuji.level-1 > li:nth-child(odd) {
@@ -1082,9 +1083,6 @@ nav.rank-math-breadcrumb > p > .separator {
     background-image: -webkit-gradient(linear,left top,left bottom,from(#ffcede),to(#ffcede));
     background-image: -webkit-linear-gradient(#ffcede,#ffcede);
     background-image: linear-gradient(#ffcede,#ffcede);
-    display: block!important;
-    position: relative;
-    margin: 0 0 1rem 1rem;
 }
 
 .rtoc-mokuji-content .decimal_ol > .rtoc-item > a:hover {
