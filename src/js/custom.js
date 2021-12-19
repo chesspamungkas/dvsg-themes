@@ -1,4 +1,5 @@
 jQuery( document ).ready( function() {
+
     console.log( 'Browser width: ' + jQuery( window ).width() );
     //fix for admin bar
     /*if ( jQuery( '#wpadminbar' )[0] ) {
