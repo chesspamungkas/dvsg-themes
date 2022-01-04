@@ -95,10 +95,17 @@
     <!-- Google Adsense -->
     <script data-ad-client="ca-pub-<?php echo ADS_ID; ?>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- End Google Adsense -->
+   
   </head>
   <body <?php body_class(); ?>>
+
     <?php googleTagManagerBodyScript(); ?>
     <div id="page-container"> 
-      <?php do_shortcode( '[top-header-bar]' ); ?>
+    <input type="hidden" id="fbName" value="<?php echo FB_PAGE_NAME ?>">
+    <input type="hidden" id="igName" value="<?php echo IG_USERNAME ?>">
+    <input type="hidden" id="fbApp" value="<?php echo FB_APP_ID ?>">
+      <?php
+      do_shortcode( '[top-header-bar]' ); ?>
       <?php do_action( 'top-header-bar-after' ); ?>
       <div id="body" class="container-fluid no-padding">
+      
