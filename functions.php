@@ -24,7 +24,7 @@ DV\core\Constants::Define('DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A 
 DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
 DV\core\Constants::Define('READ_MORE', 'READ MORE');
 DV\core\Constants::Define('SF_LINK', 'https://salonfinder.dailyvanity.sg');
-DV\core\Constants::Define('DFP_INGORE', ['listicle']);
+DV\core\Constants::Define('DFP_INGORE', []);
 
 $fb = 'https://facebook.com/' . FB_PAGE_NAME;
 $ig = 'https://instagram.com/' . IG_USERNAME;
