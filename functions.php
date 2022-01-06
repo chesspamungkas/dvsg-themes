@@ -207,7 +207,7 @@ add_filter('the_content', 'prefix_insert_post_ads');
 function prefix_insert_post_ads( $content ) {
     global $post;
 	
-    if (!in_array(get_post_type( $post->ID ), DFP_INGORE)) {
+    if (!in_array($post->post_type, DFP_INGORE)) {
         $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px; margin-bottom: 40px;"></div>';
     }
 
