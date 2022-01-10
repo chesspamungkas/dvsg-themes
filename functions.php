@@ -25,21 +25,11 @@ DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
 DV\core\Constants::Define('READ_MORE', 'READ MORE');
 DV\core\Constants::Define('SF_LINK', 'https://salonfinder.dailyvanity.sg');
 
-if( $isMobile ) {
-    if( $isIOS ) {
-        $fb = 'fb://profile/' . FB_APP_ID;
-    } else {
-        $fb = 'fb://page/' . FB_APP_ID;
-    }
-    $ig = 'instagram://user?username=' . IG_USERNAME;
-} else {
-    $fb = 'https://facebook.com/' . FB_PAGE_NAME;
-    $ig = 'https://instagram.com/' . IG_USERNAME;
-}
+$fb = 'https://facebook.com/' . FB_PAGE_NAME;
+$ig = 'https://instagram.com/' . IG_USERNAME;
 
 DV\core\Constants::Define('FB_LINK', $fb);
 DV\core\Constants::Define('IG_LINK', $ig);
-
 
 if( !is_admin() ) {
     function add_asyncdefer_attribute( $tag, $handle ) {
@@ -79,12 +69,14 @@ function wpdocs_dailyvanity_main_scripts() {
     // wp_register_script( 'ga-script', get_template_directory_uri() . '/src/js/ga.js' );
     // wp_localize_script( 'ga-script', 'ga_object', [ 'gtm_id' => GTM_ID ] );
     // wp_enqueue_script( 'ga-script' );
-
+   
     // custom
     wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/src/fontawesome-5.8.2/css/all.min.css', array(), DEPLOY_VERSION );
     wp_enqueue_style( 'font-style', get_template_directory_uri() . '/src/css/font.css?v=' . DEPLOY_VERSION );
     wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/src/css/custom.min.css?v=' . DEPLOY_VERSION );
     wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/src/js/custom.min.js', array(), DEPLOY_VERSION, true );
+    wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/src/js/TopHeaderBar/mobile-detect.js' );
+    
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_dailyvanity_main_scripts' );
 
@@ -157,7 +149,7 @@ add_action( 'init', 'wpb_popular_searches_menu' );
 function register_dfp_bottom() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_300x250_B ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_B ."\" class=\"dfp-div mobileAdBanner\" style=\"width: 300px; height: 250px;\"></div>');\n";
     echo "\t} else {\n";
     echo "\t\tdocument.write('<div id=\"". DFP_728x90_B ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
@@ -171,7 +163,7 @@ add_action( 'body_div_after', 'register_dfp_bottom' );
 function register_dfp_top() {
     echo "<script>\n";
     echo "\tif( isMobile ) {\n";
-    echo "\t\tdocument.write('<div id=\"". DFP_300x250_A ."\" class=\"dfp-div\" style=\"width: 300px; height: 250px;\"></div>');\n";
+    echo "\t\tdocument.write('<div id=\"". DFP_300x250_A ."\" class=\"dfp-div mobileAdBanner\" style=\"width: 300px; height: 250px;\"></div>');\n";
     echo "\t} else {\n";
     echo "\t\tdocument.write('<div id=\"". DFP_728x90_A ."\" class=\"dfp-div\" style=\"width: 780px; height: 90px;\"></div>');\n";
     echo "\t}\n";
