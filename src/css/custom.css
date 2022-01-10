@@ -237,7 +237,7 @@ img {
     top: 0;
     left:0;
     height: 100%;
-    z-index: 99999;
+    z-index: 1050;
     background-color: #f0f0f0;
 }
 
