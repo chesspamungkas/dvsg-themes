@@ -23,6 +23,7 @@ jQuery( document ).ready( function() {
         if( jQuery( '#top-search-container' ).is( ':hidden' ) ) {
             jQuery( '#top-search-container' ).fadeIn();
         }
+        jQuery("#s").focus();
     } );
 
     jQuery( 'body' ).on( 'click', '.close-search-btn', function() {
