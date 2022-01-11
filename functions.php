@@ -23,6 +23,8 @@ DV\core\Constants::Define('SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS E
 DV\core\Constants::Define('DAILY_BEAUTY_TIP_CAPTION', 'COME BACK EVERYDAY FOR A DIFFERENT TIP!');
 DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
 DV\core\Constants::Define('READ_MORE', 'READ MORE');
+DV\core\Constants::Define('SF_LINK', 'https://salonfinder.dailyvanity.sg');
+DV\core\Constants::Define('DFP_INGORE', []);
 
 $fb = 'https://facebook.com/' . FB_PAGE_NAME;
 $ig = 'https://instagram.com/' . IG_USERNAME;
@@ -70,10 +72,13 @@ function wpdocs_dailyvanity_main_scripts() {
     // wp_enqueue_script( 'ga-script' );
    
     // custom
+    // wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/src/js/mobile-detect.min.js', array(), DEPLOY_VERSION, true );
+   
     wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/src/fontawesome-5.8.2/css/all.min.css', array(), DEPLOY_VERSION );
     wp_enqueue_style( 'font-style', get_template_directory_uri() . '/src/css/font.css?v=' . DEPLOY_VERSION );
     wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/src/css/custom.min.css?v=' . DEPLOY_VERSION );
     wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/src/js/custom.min.js', array(), DEPLOY_VERSION, true );
+    wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/src/js/TopHeaderBar/mobile-detect.js' );
     
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_dailyvanity_main_scripts' );
@@ -204,8 +209,10 @@ add_filter('the_content', 'prefix_insert_post_ads');
 function prefix_insert_post_ads( $content ) {
     global $post;
 	
-    $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px; margin-bottom: 40px;"></div>';
-
+    if (!in_array($post->post_type, DFP_INGORE)) {
+        $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px; margin-bottom: 40px;"></div>';
+    }
+    
     if ( is_single() && !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ) {
         return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
     }
@@ -256,8 +263,8 @@ function content_protection() {
                 jQuery(document).bind("contextmenu",function(e){
                     return false;
                 });
-                /* Disable copy paste cut */
-                jQuery(document).bind('copy paste cut', function(e) {
+                /* Disable copy cut */
+                jQuery(document).bind('copy cut', function(e) {
                     return false;
                 });
                 /* Disable text selection */
