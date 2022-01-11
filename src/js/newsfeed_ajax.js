@@ -1,4 +1,4 @@
-jQuery( document ).ready( function() {
+jQuery(function() {
     var ppp = 2; // Post per page
     var pageNumber = 1;
 

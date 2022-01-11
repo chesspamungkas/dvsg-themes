@@ -1,22 +1,6 @@
 <?php
 DV\DailyVanity::init();
 
-$useragent = $_SERVER['HTTP_USER_AGENT'];
-$isMobile = false;
-$isIOS = false;
-// $device = 'desktop';
-
-if( preg_match('/(Mobile|Android|Tablet|GoBrowser|[0-9]x[0-9]*|uZardWeb\/|Mini|Doris\/|Skyfire\/|iPhone|Fennec\/|Maemo|Iris\/|CLDC\-|Mobi\/)/uis',$useragent) ) {
-  $isMobile = true;
-  $device = 'mobile';
-  $isIOS = false;
-
-  if( stripos( $useragent, 'iphone' ) !== false || stripos( $useragent, 'ipad' ) !== false ) {
-    // $isIOS = true;
-    $isIOS = true;
-  }
-}
-
 DV\core\Constants::Define('BASE_PATH', home_url());
 DV\core\Constants::Define('S3_PATH', 'https://uploads.dailyvanity.sg');
 DV\core\Constants::Define('SEARCH_PLACEHOLDER', 'TYPE SEARCH TERM(S) AND PRESS ENTER...');
@@ -25,12 +9,8 @@ DV\core\Constants::Define('MORE_STORIES_BUTTON_TEXT', 'MORE STORIES');
 DV\core\Constants::Define('READ_MORE', 'READ MORE');
 DV\core\Constants::Define('SF_LINK', 'https://salonfinder.dailyvanity.sg');
 DV\core\Constants::Define('DFP_INGORE', []);
-
-$fb = 'https://facebook.com/' . FB_PAGE_NAME;
-$ig = 'https://instagram.com/' . IG_USERNAME;
-
-DV\core\Constants::Define('FB_LINK', $fb);
-DV\core\Constants::Define('IG_LINK', $ig);
+DV\core\Constants::Define('FB_LINK', 'https://facebook.com/' . FB_PAGE_NAME);
+DV\core\Constants::Define('IG_LINK', 'https://instagram.com/' . IG_USERNAME);
 
 if( !is_admin() ) {
     function add_asyncdefer_attribute( $tag, $handle ) {
@@ -62,24 +42,6 @@ add_action( 'wp_head', function() {
     // viewport
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 } );
-
-// insert custom css and js
-function wpdocs_dailyvanity_main_scripts() {
-    // google tag
-    // wp_enqueue_script( 'ga-async', 'https://www.googletagmanager.com/gtag/js?id=UA-145339205-1', '', 2, false );
-    // wp_register_script( 'ga-script', get_template_directory_uri() . '/src/js/ga.js' );
-    // wp_localize_script( 'ga-script', 'ga_object', [ 'gtm_id' => GTM_ID ] );
-    // wp_enqueue_script( 'ga-script' );
-   
-    // custom
-    wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/src/fontawesome-5.8.2/css/all.min.css', array(), DEPLOY_VERSION );
-    wp_enqueue_style( 'font-style', get_template_directory_uri() . '/src/css/font.css?v=' . DEPLOY_VERSION );
-    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/src/css/custom.min.css?v=' . DEPLOY_VERSION );
-    wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/src/js/custom.min.js', array(), DEPLOY_VERSION, true );
-    wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/src/js/TopHeaderBar/mobile-detect.js' );
-    
-}
-add_action( 'wp_enqueue_scripts', 'wpdocs_dailyvanity_main_scripts' );
 
 // change og:locale to en_MY
 add_filter( "rank_math/opengraph/facebook/og_locale", function( $content ) {
@@ -210,7 +172,7 @@ function prefix_insert_post_ads( $content ) {
     if (!in_array($post->post_type, DFP_INGORE)) {
         $insertion = '<div id="' . DFP_300x250_C . '" class="dfp-div" style="width: 300px; height: 250px; margin-bottom: 40px;"></div>';
     }
-
+    
     if ( is_single() && !is_admin() && ( get_field( 'disable_ads_injection', $post->ID ) === false || !get_field( 'disable_ads_injection', $post->ID ) ) ) {
         return prefix_insert_after_paragraphs( $content, $insertion, array( 2 ) );
     }
