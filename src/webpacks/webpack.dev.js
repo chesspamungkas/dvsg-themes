@@ -3,6 +3,7 @@ const postcssPresetEnv = require( 'postcss-preset-env' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const IgnoreEmitPlugin = require( 'ignore-emit-webpack-plugin' );
 const production = process.env.NODE_ENV === '';
+const path = require('path');
 
 
 module.exports = {
@@ -11,6 +12,17 @@ module.exports = {
     ...defaultConfig.module,
     rules: [
       ...defaultConfig.module.rules,
+	  {
+		test: /\.(ttf|eot|woff|woff2|svg)$/,
+		use: {
+			loader: 'file-loader',
+			//include: path.resolve(__dirname, './src/webfonts'),
+			options: {
+				name: '[name].[ext]',
+				outputPath: 'fonts/'
+			},
+		},
+		},
       {
 				test: /\.(sc|sa|c)ss$/,
 				exclude: /node_modules/,
