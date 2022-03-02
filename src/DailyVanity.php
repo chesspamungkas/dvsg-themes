@@ -12,6 +12,7 @@ class DailyVanity {
     core\ShortCode::init();
     core\ImageSize::init();
     core\BaseStyle::init();
+    core\DVBA::init();
     add_action( 'widgets_init', ['\DV\core\Widget', 'init'] );
     add_action( 'widgets_init', ['\DV\core\SideBar', 'init'] );
     add_action( 'wp_ajax_ajaxCallListPosts', ['\DV\core\Ajax', 'init'] );
