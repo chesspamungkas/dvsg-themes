@@ -77,9 +77,12 @@ class FeaturedArticles extends ShortCode {
 
     $articles = get_field( 'articles_order', $page->posts[0]->ID );
 
-    foreach( $articles as $article ) {
-      $postID[] = $article['articles']->ID;
+    if( !empty($articles) && is_array($articles) ){
+      foreach( $articles as $article ) {
+        $postID[] = $article['articles']->ID;
+      }
     }
+    
 
     // print_r( $postID );
 
