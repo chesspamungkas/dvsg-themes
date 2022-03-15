@@ -2,6 +2,11 @@
 namespace DV\base;
 
 class ShortCode extends Factory {
+
+  public static function registerLibaray() {
+
+  }
+
   public function render($pathAlias, $params=[]) {
     $viewFile = path_join(DV_SHORTCODE_PATH,$pathAlias).'.php';
     $returnText = '';

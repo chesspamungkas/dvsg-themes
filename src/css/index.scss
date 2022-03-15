@@ -2,6 +2,8 @@
 @import "fontawesome";
 @import "header";
 @import './shortcode/listPosts.scss';
+@import '../shortcodes/ScrollableList/scrollable-list.scss';
+@import '../shortcodes/DVBAAwardsList/dvba_award_list.scss';
 @import 'contentUpgrade';
 @import 'single';
 @import 'footer';

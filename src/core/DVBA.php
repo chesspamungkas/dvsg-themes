@@ -6,7 +6,9 @@ use DV\base\Factory;
 class DVBA extends Factory {
 
   public static $LOGO_ACTION = "LOGO_ACTION";
-  public static $LOGO_ALT_FILTERS = "LOGO_ALT_FILTERS";
+  public static $LIST_POST_QUERY_FILTERS = "LIST_POST_QUERY_FILTERS";
+
+
 
   private $defaultSlug = "best-beauty-products";
 
@@ -57,7 +59,10 @@ class DVBA extends Factory {
     $model = self::getFactory();
     add_action('init',[$model, 'setUp']);
     add_action(self::$LOGO_ACTION, [$model, 'logo_action']);
-    
+  }
+
+  public static function additionalMedias($post) {
+    return get_field('product_media', $post );
   }
 
   public function logo_action($post) {
@@ -66,10 +71,11 @@ class DVBA extends Factory {
 
   public function setUp() {
     foreach($this->_registeredDVBA as $DVBA) {
-      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
+      
       foreach($DVBA['categories'] as $taxonomy) {
-        $this->createTaxonomy($DVBA['year'], array_merge(['args'=>[], 'hierarchical'=>false, 'slug'=>$DVBA['slug']], $taxonomy), $postType->name);
+        $this->createTaxonomy($DVBA['year'], array_merge(['args'=>[], 'hierarchical'=>false, 'baseSlug'=>$DVBA['slug']], $taxonomy), $this->makePostTypeName($DVBA['year']));
       }
+      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
       $this->setUpTemplates($DVBA);
     }
   }
@@ -79,28 +85,13 @@ class DVBA extends Factory {
       $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "page.php";
       foreach($templates as $_template) {
         if($_template === $templateFile) {
-          load_template($_template);
+          //load_template($_template);
           return $_template;
         }
       }
       return $template;
     }, 10, 3);
-    // add_filter( 'template_include', function($template) use ($DVBA) {
-    //   global $wp_query;
-    //   print_r($wp_query);
-    //   print_r($template);
-    //   print_r(wp_get_theme()->get_page_templates());
-    //   die();
-    //   if(file_exists($file)) {
-    //     $path = $file;
-    //   }
-    //   if(file_exists( $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . $file )) {
-    //     $path = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . $file;
-    //   }
-    //   print_r($path);
-    //   die();
-    //   return $path;
-    // });
+    
     if($DVBA['templateDirectory']) {
       $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "page.php";
       //if(file_exists($templateFile) || file_exists($templateFile)) {
@@ -109,24 +100,29 @@ class DVBA extends Factory {
           return $post_templates;
         });
       //}
-      
-        add_filter( 'template_include', function($template) use ($DVBA) {
-          if(is_single("dvba_{$DVBA['year']}_winners")) {
-            $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "single.php";
-          }
-          return $template;
-        });
-      
+    
+      add_filter( 'single_template', function($template, $type, $templates) use ($DVBA) {
+        global $post;
+        if($post->post_type === $this->makePostTypeName($DVBA['year'])) {
+          $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "single.php";
+        }
+        return $template;
+      }, 10, 3);
+    
       foreach($DVBA['categories'] as $taxonomy) {
-        $lowercaseName = $this->makeTaxonomyTypeName($taxonomy['name']);
-        $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive-{$lowercaseName}.php";
+        $lowercaseName = $this->makeTaxonomyTypeYearName($DVBA['year'], $taxonomy['name']);
+        $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "taxonomy-{$lowercaseName}.php";
 
-        add_filter( 'template_include', function($template) use ($DVBA, $templateFile, $lowercaseName) {
-          if(is_tax("dvba_{$DVBA['year']}_{$lowercaseName}")) {
-            $template = $templateFile;
+        add_filter( 'taxonomy_template', function($template, $type, $templates) use ($DVBA, $templateFile, $lowercaseName) {     
+          $term = get_queried_object();
+          print_r($term);
+          echo $lowercaseName;
+          die();
+          if($type === 'taxonomy' && $term->taxonomy === $lowercaseName) {            
+            return $templateFile;
           }
           return $template;
-        });
+        }, 10, 3);
       }
     }
   }
@@ -145,35 +141,48 @@ class DVBA extends Factory {
       ],
       $postArg
     );
-    return register_post_type( "dvba_{$year}_winners", $args );    
+    return register_post_type( $this->makePostTypeName($year), $args );    
   }
 
-  private function makeTaxonomyTypeName($name) {
+  public static function makePostTypeName($year) {
+    return "dvba_{$year}_winners";
+  }
+
+  public static function makeTaxonomyTypeName($name) {
     return str_replace(' ','_',strtolower($name));
   }
 
-  public function getPosts($year, $category, $page=0, $limit=11) {
-
+  public static function makeTaxonomyTypeYearName($year, $name) {
+    $tax_name = self::makeTaxonomyTypeName($name);
+    return "dvba_{$year}_{$tax_name}";
   }
+
+  
 
   private function createTaxonomy($year, $taxonomy, $postType) {
     $labels = [
       "name" => __( "DVBA {$year} {$taxonomy['name']}" ),
       "singular_name" => __( "DVBA {$year} {$taxonomy['singular_name']}" ),
-    ];
-    $lowercaseName = $this->makeTaxonomyTypeName($taxonomy['name']);
-    $slug = sanitize_title($taxonomy['name']);
+    ];    
+    $slug = $taxonomy['slug'] !== null?$taxonomy['slug']:sanitize_title($taxonomy['name']);
+    if($taxonomy['slug'] === "") {
+      $slug = $year;
+    } else {
+      $slug = "{$year}/{$slug}";
+    }
+
     $args = array_merge(
       $this->defaultTaxonomyArgs, 
       [
         "label" => __( "DVBA {$year} {$taxonomy['name']}" ),
         "labels" => $labels,
         "hierarchical" => $taxonomy['hierarchical'],
-        "rewrite" => [ 'slug' => "{$taxonomy['slug']}/{$year}/{$slug}", 'with_front' => true,  'hierarchical' => $taxonomy['hierarchical']],
-        "rest_base" => "dvba_{$year}_{$lowercaseName}",
+        "rewrite" => [ 'slug' => "{$taxonomy['baseSlug']}/{$slug}", 'with_front' => true],
+        "rest_base" => $this->makeTaxonomyTypeYearName($year, $taxonomy['name']),
+        "query_var" => true,
       ],
       $taxonomy['args']
     );
-    return register_taxonomy( "dvba_{$year}_{$lowercaseName}", [ $postType ], $args );    
+    return register_taxonomy( $this->makeTaxonomyTypeYearName($year, $taxonomy['name']), [ $postType ], $args );    
   }
 }
