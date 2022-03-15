@@ -1,7 +1,7 @@
 <?php
 namespace DV\base;
 
-class ShortCode {
+class ShortCode extends Factory {
   public function render($pathAlias, $params=[]) {
     $viewFile = path_join(DV_SHORTCODE_PATH,$pathAlias).'.php';
     $returnText = '';
