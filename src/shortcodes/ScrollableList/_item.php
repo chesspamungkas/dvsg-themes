@@ -8,7 +8,7 @@
     </a>
     <div class="card-body px-0">
       <?php do_action(ScrollableList::$SCROLLABLE_LIST_BEFORE_ITEM_TITLE, $post) ?>
-      <h5 class="card-title"><a href="<?php the_permalink(); ?>" class="poppins-medium" target="_blank" tabindex="0"><?php the_title(); ?></a></h5>
+      <h5 class="card-title"><a href="<?php the_permalink(); ?>" class="poppins-medium" target="_blank" tabindex="0"><?php echo apply_filters(ScrollableList::$SCROLLABLE_LIST_TITLE_FILTER, apply_filters('the_title', get_the_title())); ?></a></h5>
       <?php do_action(ScrollableList::$SCROLLABLE_LIST_AFTER_ITEM_TITLE, $post) ?>
       <?php do_action(ScrollableList::$SCROLLABLE_LIST_BEFORE_ITEM_LINK, $post) ?>
       <div class="more-detail-container">

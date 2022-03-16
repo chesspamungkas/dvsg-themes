@@ -8,7 +8,7 @@
     </a>
     <div class="card-body px-0">
       <?php do_action(CommonListPosts::$COMMON_LIST_POST_BEFORE_ITEM_TITLE) ?>
-      <h5 class="card-title"><a href="<?php the_permalink(); ?>" class="poppins-medium" target="_blank" tabindex="0"><?php the_title(); ?></a></h5>
+      <h5 class="card-title"><a href="<?php the_permalink(); ?>" class="poppins-medium" target="_blank" tabindex="0"><?php echo apply_filters(CommonListPosts::$COMMON_LIST_POST_TITLE_FILTER, apply_filters('the_title', get_the_title())); ?></a></h5>
       <?php do_action(CommonListPosts::$COMMON_LIST_POST_AFTER_ITEM_TITLE) ?>
       <?php do_action(CommonListPosts::$COMMON_LIST_POST_BEFORE_ITEM_LINK) ?>
       <div class="more-detail-container">
