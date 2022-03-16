@@ -8,8 +8,6 @@ class DVBA extends Factory {
   public static $LOGO_ACTION = "LOGO_ACTION";
   public static $LIST_POST_QUERY_FILTERS = "LIST_POST_QUERY_FILTERS";
 
-
-
   private $defaultSlug = "best-beauty-products";
 
   private $defaultPostTypeArgs = [
