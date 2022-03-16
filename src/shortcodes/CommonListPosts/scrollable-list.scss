@@ -1,0 +1,39 @@
+.dvba_list_card_item {
+  border: 0px !important;
+}
+.cat-products {
+  .more-detail-container {
+    text-align: center;
+  }
+  .card-title {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    min-height: 75px;
+    a {
+      text-transform: none !important;
+      text-decoration: none;
+      color: #000;
+      cursor: pointer; 
+      &:hover {
+        color: #f04084;
+      }
+    }
+  } 
+  .more-details-btn {
+    border: 1px solid #939393;
+    background-color: unset;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .1rem;
+    padding: 5px 20px;
+    border-radius: 30px;
+    color: #000;
+    min-width: 80%;
+    display: inline-block;
+    &:hover {
+      border: 1px solid #f04084;
+      background-color: #f04084;
+      color: #fff;
+    }
+  }
+}
