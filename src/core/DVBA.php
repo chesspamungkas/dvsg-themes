@@ -71,11 +71,11 @@ class DVBA extends Factory {
 
   public function setUp() {
     foreach($this->_registeredDVBA as $DVBA) {
-      
+      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
       foreach($DVBA['categories'] as $taxonomy) {
         $this->createTaxonomy($DVBA['year'], array_merge(['args'=>[], 'hierarchical'=>false, 'baseSlug'=>$DVBA['slug']], $taxonomy), $this->makePostTypeName($DVBA['year']));
       }
-      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
+      
       $this->setUpTemplates($DVBA);
     }
   }
@@ -131,7 +131,7 @@ class DVBA extends Factory {
       [
         "label" => __( "DVBA {$year} Winners" ),
         "labels" => $labels,
-        "rewrite" => [ "slug" => "{$slug}/{$year}", "with_front" => true ],
+        "rewrite" => [ "slug" => "{$slug}/{$year}/product", "with_front" => true ],
       ],
       $postArg
     );
