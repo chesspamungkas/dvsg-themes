@@ -8,8 +8,6 @@ class DVBA extends Factory {
   public static $LOGO_ACTION = "LOGO_ACTION";
   public static $LIST_POST_QUERY_FILTERS = "LIST_POST_QUERY_FILTERS";
 
-
-
   private $defaultSlug = "best-beauty-products";
 
   private $defaultPostTypeArgs = [
@@ -71,11 +69,11 @@ class DVBA extends Factory {
 
   public function setUp() {
     foreach($this->_registeredDVBA as $DVBA) {
-      
+      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
       foreach($DVBA['categories'] as $taxonomy) {
         $this->createTaxonomy($DVBA['year'], array_merge(['args'=>[], 'hierarchical'=>false, 'baseSlug'=>$DVBA['slug']], $taxonomy), $this->makePostTypeName($DVBA['year']));
       }
-      $postType = $this->createPostType($DVBA['year'], $DVBA['slug'], $DVBA['postArg']);
+      
       $this->setUpTemplates($DVBA);
     }
   }
@@ -111,15 +109,9 @@ class DVBA extends Factory {
     
       foreach($DVBA['categories'] as $taxonomy) {
         $lowercaseName = $this->makeTaxonomyTypeYearName($DVBA['year'], $taxonomy['name']);
-        $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "taxonomy-{$lowercaseName}.php";
-
-        add_filter( 'taxonomy_template', function($template, $type, $templates) use ($DVBA, $templateFile, $lowercaseName) {     
-          $term = get_queried_object();
-          print_r($term);
-          echo $lowercaseName;
-          die();
-          if($type === 'taxonomy' && $term->taxonomy === $lowercaseName) {            
-            return $templateFile;
+        add_filter( 'taxonomy_template', function($template, $type, $templates) use ($DVBA, $lowercaseName) {     
+          if(is_tax($lowercaseName)) {            
+            $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "taxonomy-{$lowercaseName}.php";;
           }
           return $template;
         }, 10, 3);
@@ -137,7 +129,7 @@ class DVBA extends Factory {
       [
         "label" => __( "DVBA {$year} Winners" ),
         "labels" => $labels,
-        "rewrite" => [ "slug" => "{$slug}/{$year}", "with_front" => true ],
+        "rewrite" => [ "slug" => "{$slug}/{$year}/product", "with_front" => true ],
       ],
       $postArg
     );
@@ -177,7 +169,7 @@ class DVBA extends Factory {
         "label" => __( "DVBA {$year} {$taxonomy['name']}" ),
         "labels" => $labels,
         "hierarchical" => $taxonomy['hierarchical'],
-        "rewrite" => [ 'slug' => "{$taxonomy['baseSlug']}/{$slug}", 'with_front' => true],
+        "rewrite" => [ 'slug' => "{$taxonomy['baseSlug']}/{$slug}", 'with_front' => true, "hierarchical" => $taxonomy['hierarchical']],
         "rest_base" => $this->makeTaxonomyTypeYearName($year, $taxonomy['name']),
         "query_var" => true,
       ],

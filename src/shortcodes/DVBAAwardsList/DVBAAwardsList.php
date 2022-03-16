@@ -26,6 +26,9 @@ class DVBAAwardsList extends ShortCode {
 
   public function generate() {
     $terms = get_the_terms($this->attributes['post_id'], $this->attributes['taxonomy']);
+    if(!$terms or $terms instanceof \WP_Error) {
+      return "";
+    }
     return $this->render('DVBAAwardsList/display', [
       'terms' => $terms,
     ]);

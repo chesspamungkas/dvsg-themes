@@ -18,7 +18,8 @@ class ShortCode {
     'scrollable-list'=>['\DV\shortcodes\ScrollableList\ScrollableList', 'init'],
     'dvba-awards-list'=>['\DV\shortcodes\DVBAAwardsList\DVBAAwardsList', 'init'],
     'dvba-where-to-buy'=>['\DV\shortcodes\DVBAWhereToBuy\DVBAWhereToBuy', 'init'],
-    'common-list-posts'=>['\DV\shortcodes\CommonListPosts\CommonListPosts', 'init']
+    'common-list-posts'=>['\DV\shortcodes\CommonListPosts\CommonListPosts', 'init'],
+    'taxonomy-filter-list'=>['\DV\shortcodes\TaxonomyFilterList\TaxonomyFilterList', 'init'],
   ];
 
   public static function Add($key, $class) {
