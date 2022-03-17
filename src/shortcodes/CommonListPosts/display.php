@@ -21,37 +21,3 @@
     </div>
   </div>
 </section>
-<script>
-  jQuery(document).ready(function($) {
-    var containerID = "<?php echo $id ?>-slider-container";
-    var prevBtn = "<?php echo $id;  ?>-prev";
-    var nextBtn = "<?php echo $id;  ?>-next"
-    var prodArgs = {
-      dots: false,
-      infinite: false,
-      speed: 300,
-      lazyLoad: 'ondemand',
-      slidesToShow: <?php echo $item_show ?>,
-      slidesToScroll: <?php echo $item_show ?>,
-      pauseOnFocus: true,
-      pauseOnHover: true,
-      responsive: [
-        {
-          breakpoint: 481,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: false,
-            dots: false
-          }
-        },
-      ],
-      arrows: true,
-      prevArrow: $('#'+prevBtn),
-      nextArrow: $('#'+nextBtn)
-      // appendArrows: '.slide-button-container'
-    };    
-    $('#'+containerID).slick( prodArgs );
-  });
-  
-</script>
