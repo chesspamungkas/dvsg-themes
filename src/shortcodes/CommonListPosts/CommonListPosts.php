@@ -30,7 +30,8 @@ class CommonListPosts extends ShortCode {
       'id'=>'COMMON_LIST_POST',
       'title'=>'',
       'title_link'=>'',
-      'identifier'=>null
+      'identifier'=>null,
+      'make_new_query'=>false
     ), $args );
     return $model->generate();
   }
@@ -59,12 +60,27 @@ class CommonListPosts extends ShortCode {
       $query['order'] = $this->attributes['order'];
     }
 
-    $query = apply_filters(self::$COMMON_LIST_POST_QUERY_FILTER, $query, $this->attributes);
-    return new \WP_Query($query);
+    $returnWPQuery = null;
+    if($this->attributes['make_new_query']) {
+      $query = apply_filters(self::$COMMON_LIST_POST_QUERY_FILTER, $query, $this->attributes);
+      $returnWPQuery = new \WP_Query($query); 
+    }
+    else {
+      global $wp_query;
+      $returnWPQuery = $wp_query;
+    }
+
+    return $returnWPQuery;
   }
 
   public function generate() {
+    remove_filter( 'posts_request', 'relevanssi_prevent_default_request' ); 
+    remove_filter( 'posts_pre_query', 'relevanssi_query', 99 );    
+    remove_filter( 'the_posts', 'relevanssi_query', 99 );
     $query = $this->makeQuery();
+
+    print_r($query);
+    die();
     return $this->render('CommonListPosts/display', [
       'query' => $query,
       'id'=>$this->attributes['id'],
