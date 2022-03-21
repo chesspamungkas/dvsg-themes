@@ -100,7 +100,6 @@ class DVBA extends Factory {
       //}
 
       add_filter( 'archive_template', function($template, $type, $templates) use ($DVBA) {
-        
         $postType = get_query_var('post_type');        
         if($postType === $this->makePostTypeName($DVBA['year'])) {
           $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive.php";
