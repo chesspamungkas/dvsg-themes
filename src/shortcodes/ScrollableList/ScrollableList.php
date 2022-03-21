@@ -18,6 +18,8 @@ class ScrollableList extends ShortCode {
   public static $SCROLLABLE_LIST_QUERY_FILTER = "SCROLLABLE_LIST_QUERY_FILTER";
   public static $SCROLLABLE_ITEM_VIEW_MORE_BTN_TEXT = "SCROLLABLE_ITEM_VIEW_MORE_BTN_TEXT";
 
+  public static $SCROLLABLE_LIST_ITEM_CLASS = "SCROLLABLE_LIST_ITEM_CLASS";
+
   public static function init($args) {
     $model = new ScrollableList();
 

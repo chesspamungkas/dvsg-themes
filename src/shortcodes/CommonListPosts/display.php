@@ -9,7 +9,7 @@
               <h2><a href="<?php echo $titleLink; ?>" class="eb-garamond-regular home-cat-link" target="_blank"><?php echo $title;  ?></a></h2>
             </div>
           </div>
-          <div class="row g-0 m-0" id="<?php echo $id;  ?>-items-container">          
+          <div class="row g-0 m-0 dvba_list_card_container " id="<?php echo $id;  ?>-items-container">          
             <?php if($query->have_posts()): ?>
               <?php while($query->have_posts()): $query->the_post(); ?>
                 <?php echo $this->render('CommonListPosts/_item', ['post'=>$post]); ?>

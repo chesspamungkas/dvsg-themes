@@ -59,6 +59,15 @@ class DVBA extends Factory {
     add_action(self::$LOGO_ACTION, [$model, 'logo_action']);
   }
 
+  public static function getYearBaseURL($year) {
+    $model = self::getFactory();
+    foreach($model->_registeredDVBA as $dvba) {
+      if($dvba['year'] == $year) {
+        return "{$dvba['slug']}/{$year}";
+      }
+    }
+  }
+
   public static function additionalMedias($post) {
     return get_field('product_media', $post );
   }

@@ -13,7 +13,7 @@
               <button type="button" id="<?php echo $id;  ?>-next" class="alt-slick-next"><i class="fas fa-chevron-right"></i></button>
             </div>
           </div>
-          <div class="row g-0 m-0" id="<?php echo $id;  ?>-slider-container">          
+          <div class="row g-0 m-0 dvba_list_card_container " id="<?php echo $id;  ?>-slider-container">          
             <?php if($query->have_posts()): ?>
               <?php while($query->have_posts()): $query->the_post(); ?>
                 <?php echo $this->render('ScrollableList/_item', ['post'=>$post]); ?>

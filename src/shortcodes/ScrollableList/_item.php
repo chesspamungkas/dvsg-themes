@@ -1,7 +1,7 @@
 <?php 
   use DV\shortcodes\ScrollableList\ScrollableList;  
 ?>
-<div class="col cat-products dvba_list_card_container <?php echo $id;  ?> p-0">
+<div class="<?php echo apply_filters(ScrollableList::$SCROLLABLE_LIST_ITEM_CLASS, "col cat-products p-0 {$id}-item", $post) ?>">
   <div class="card p-2 px-md-4 dvba_list_card_item" id="<?php echo $post->ID; ?>" aria-hidden="false">
     <a href="<?php the_permalink(); ?>" target="_blank">
       <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" class="card-img-top" alt="<?php echo get_the_post_thumbnail_caption($post->ID) ?>">

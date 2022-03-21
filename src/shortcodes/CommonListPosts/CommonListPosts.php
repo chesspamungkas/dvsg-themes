@@ -18,6 +18,8 @@ class CommonListPosts extends ShortCode {
   public static $COMMON_LIST_POST_VIEW_DETAIL_BTN_TEXT = "COMMON_LIST_POST_VIEW_MORE_BTN_TEXT";
   public static $COMMON_LIST_POST_TITLE_FILTER = 'COMMON_LIST_POST_TITLE_FILTER';
 
+  public static $COMMON_LIST_POST_ITEM_CLASS = "COMMON_LIST_POST_ITEM_CLASS";
+
   public static function init($args) {
     $model = new CommonListPosts();
 
@@ -79,8 +81,6 @@ class CommonListPosts extends ShortCode {
     remove_filter( 'the_posts', 'relevanssi_query', 99 );
     $query = $this->makeQuery();
 
-    print_r($query);
-    die();
     return $this->render('CommonListPosts/display', [
       'query' => $query,
       'id'=>$this->attributes['id'],

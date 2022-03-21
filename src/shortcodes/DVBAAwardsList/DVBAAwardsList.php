@@ -31,6 +31,7 @@ class DVBAAwardsList extends ShortCode {
     }
     return $this->render('DVBAAwardsList/display', [
       'terms' => $terms,
+      'post_id'=>$this->attributes['post_id']
     ]);
   }
 }
