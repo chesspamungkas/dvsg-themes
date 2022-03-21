@@ -91,9 +91,8 @@ class DVBA extends Factory {
     add_filter('page_template', function($template, $type, $templates) use ($DVBA) {
       $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "page.php";
       foreach($templates as $_template) {
-        if($_template === $templateFile) {
-          //load_template($_template);
-          return $_template;
+        if($_template === $templateFile) {          
+          return get_stylesheet_directory().$_template;
         }
       }
       return $template;
@@ -101,17 +100,17 @@ class DVBA extends Factory {
     
     if($DVBA['templateDirectory']) {
       $templateFile = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "page.php";
-      //if(file_exists($templateFile) || file_exists($templateFile)) {
-        add_filter( 'theme_page_templates', function($post_templates) use ($DVBA, $templateFile) {
-          $post_templates[$templateFile] = "DVBA {$DVBA['year']} Listing Template";
-          return $post_templates;
-        });
-      //}
+      
+      add_filter( 'theme_page_templates', function($post_templates) use ($DVBA, $templateFile) {
+        $post_templates[$templateFile] = "DVBA {$DVBA['year']} Listing Template";
+        return $post_templates;
+      });
+      
 
       add_filter( 'archive_template', function($template, $type, $templates) use ($DVBA) {
         $postType = get_query_var('post_type');        
         if($postType === $this->makePostTypeName($DVBA['year'])) {
-          $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive.php";
+          $template = get_stylesheet_directory().$DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive.php";
         }
         return $template;
       }, 10, 3);
@@ -119,7 +118,7 @@ class DVBA extends Factory {
       add_filter( 'search_template', function($template, $type, $templates) use ($DVBA) {
         $postType = get_query_var('post_type');
         if($postType === $this->makePostTypeName($DVBA['year'])) {
-          $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive.php";
+          $template = get_stylesheet_directory().$DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "archive.php";
         }
         return $template;
       }, 10, 3);
@@ -127,7 +126,7 @@ class DVBA extends Factory {
       add_filter( 'single_template', function($template, $type, $templates) use ($DVBA) {
         global $post;
         if($post->post_type === $this->makePostTypeName($DVBA['year'])) {
-          $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "single.php";
+          $template = get_stylesheet_directory().$DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "single.php";
         }
         return $template;
       }, 10, 3);
@@ -136,7 +135,7 @@ class DVBA extends Factory {
         $lowercaseName = $this->makeTaxonomyTypeYearName($DVBA['year'], $taxonomy['name']);
         add_filter( 'taxonomy_template', function($template, $type, $templates) use ($DVBA, $lowercaseName) {     
           if(is_tax($lowercaseName)) {            
-            $template = $DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "taxonomy-{$lowercaseName}.php";;
+            $template = get_stylesheet_directory().$DVBA['templateDirectory'] . DIRECTORY_SEPARATOR . "taxonomy-{$lowercaseName}.php";;
           }
           return $template;
         }, 10, 3);
