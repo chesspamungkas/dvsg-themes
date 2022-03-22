@@ -14,7 +14,12 @@ class ShortCode {
     'featured-daily-tips'=>['\DV\shortcodes\FeaturedDailyTips\FeaturedDailyTips', 'init'],
     'beauty-newsfeed'=>['\DV\shortcodes\BeautyNewsfeed\BeautyNewsfeed', 'init'],
     'featured-articles'=>['\DV\shortcodes\FeaturedArticles\FeaturedArticles', 'init'],
-    'content-upgrade'=>['\DV\shortcodes\ContentUpgrade\ContentUpgrade', 'init']
+    'content-upgrade'=>['\DV\shortcodes\ContentUpgrade\ContentUpgrade', 'init'],
+    'scrollable-list'=>['\DV\shortcodes\ScrollableList\ScrollableList', 'init'],
+    'dvba-awards-list'=>['\DV\shortcodes\DVBAAwardsList\DVBAAwardsList', 'init'],
+    'dvba-where-to-buy'=>['\DV\shortcodes\DVBAWhereToBuy\DVBAWhereToBuy', 'init'],
+    'common-list-posts'=>['\DV\shortcodes\CommonListPosts\CommonListPosts', 'init'],
+    'taxonomy-filter-list'=>['\DV\shortcodes\TaxonomyFilterList\TaxonomyFilterList', 'init'],
   ];
 
   public static function Add($key, $class) {
@@ -30,6 +35,8 @@ class ShortCode {
   public static function init() {
     foreach(self::$_registerCode as $key=>$class) {
       add_shortcode($key, $class);
+      if(is_callable([$class[0], 'registerLibaray']))
+        call_user_func_array([$class[0], 'registerLibaray'], []);
     }
   }
 }
