@@ -1,0 +1,298 @@
+div#dv-for-business-top-banner {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+  
+    > div.row {
+        background-image: url( "https://uploads.dailyvanity.sg/wp-content/uploads/2021/01/beauty-magazine-singapore-daily-vanity-dv-for-business-bg-1.jpg" );
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        > div.top-banner-col {
+            min-height: 380px;
+
+            > div#dv-for-business-logo {
+                position: absolute;
+                top: 15%;
+                right: 15%;
+                // width: 500px;
+
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+div#dv-for-business-who-we-are {
+    > div.row {
+        > .who-we-are-div {
+            font-size: 20px;
+
+            > h2 {
+                margin-bottom: 40px;
+            }
+
+            blockquote {
+                font-size: 24px;
+                margin: 50x 0 !important;
+                width: 100%;
+
+                &:before {
+                    top: 15px;
+                    left: -55px;
+                    font-size: 5em;
+                }
+            }
+        }
+
+        > .who-we-are-img-div {
+            > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+  
+#dv-for-business-our-solutions {
+    background-image: url( "https://uploads.dailyvanity.sg/wp-content/uploads/2021/01/beauty-magazine-singapore-daily-vanity-our-solutions-bg.jpg" );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    > .row {
+        > .our-solutions-title {
+            color: #fff;
+            border-bottom: 3px solid #fff;
+
+            > h2 {
+                font-size: 24px;
+            }
+        }
+  
+        > .our-solutions-content {
+            color: #fff;
+
+            > ol {
+                counter-reset: item;
+                list-style-type: none;
+                padding-inline-start: 0;
+
+                > li {
+                    position:relative;
+                    font-size: 24px;
+                    padding-left: 35px;
+
+                    &::before {
+                        @extend .poppins-semibold;
+                        content: counter(item, decimal-leading-zero) "  "; 
+                        counter-increment: item;
+                        color: $dvPinkColor;
+                        font-size: 12px;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#dv-for-business-why-choose-us {
+    > .row {
+        > .why-choose-us-title {
+            color: #000;
+
+            > h2 {
+                @extend .poppins-bold;
+                font-size: 24px;
+            }
+        }
+
+        > .why-choose-us-content {
+            > ul {
+                list-style-type: none;
+                padding-inline-start: 0;
+
+                > li {
+                    @extend .poppins-medium;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #626262;
+
+                    > img {
+                        width: 140px;
+                        height: 140px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#dv-for-business-form {
+    background-image: linear-gradient( #ffffff, #faf7f7 );
+
+    > .row {
+        > .form-content {
+            -moz-box-shadow: 3px 3px 15px #ccc;
+            -webkit-box-shadow: 3px 3px 15px #ccc;
+            box-shadow: 3px 3px 15px #ccc;
+
+            > article > .entry-content {
+                > h2 {
+                    @extend .pb-4;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+  
+@media (min-width: 1441px) {
+    #dv-for-business-top-banner > .row > .col {
+        min-height: 550px !important;
+
+        > #dv-for-business-logo {
+            top: 10% !important;
+        }
+    }
+}
+  
+@media (max-width: $breakpoint-mobile) {
+    div#dv-for-business-top-banner {      
+        > div.row {
+            > div.top-banner-col {
+                min-height: 250px;
+    
+                > div#dv-for-business-logo {
+                    top: 15%;
+                    right: 1%;
+                }
+            }
+        }
+    }
+
+    div#dv-for-business-who-we-are {
+        > div.row {
+            > .who-we-are-div {
+                blockquote {
+                    &:before {
+                        top: 30px;
+                        left: -20px;
+                    }
+                }
+            }
+        }
+    }
+    
+    div#dv-for-business-form {
+        .submit-btn-container {
+            input {
+                margin-left: 16px;
+            }
+        }
+    }
+}
+  
+@media (max-width: 414px) {
+    div#dv-for-business-top-banner {      
+        > div.row {
+            > div.top-banner-col {
+                min-height: 230px;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    div#dv-for-business-top-banner {      
+        > div.row {
+            > div.top-banner-col {
+                min-height: 200px;
+            }
+        }
+    }
+
+    div#dv-for-business-who-we-are {
+        > div.row {
+            > .who-we-are-div {
+                blockquote {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    div#dv-for-business-top-banner {      
+        > div.row {
+            > div.top-banner-col {
+                min-height: 160px;
+            }
+
+            > div#dv-for-business-logo {
+                top: 15%;
+                right: 5%;
+            }
+        }
+    }
+
+    #dv-for-business-who-we-are {
+        > .row {
+            > .col-md-6 {    
+                > h2 {
+                    font-size: 24px;
+                    margin-bottom: 30px;
+                }
+    
+                blockquote {
+                    font-size: 18px;
+    
+                    &:before {
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
+  
+    #dv-for-business-our-solutions {      
+        > .row {      
+            > .col-md-9 {    
+                > ol {    
+                    > li {
+                        font-size: 22px;
+    
+                        &::before {
+                            top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #dv-for-business-why-choose-us {
+        > .row {    
+            > .col {
+                > ul {    
+                    > li {
+                        font-size: 14px;
+    
+                        > img {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

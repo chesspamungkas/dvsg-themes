@@ -1,0 +1,726 @@
+/*
+Theme Name: Daily Vanity SG
+Theme URI: 
+description: Daily Vanity SG
+Author: Daily Vanity
+Author URI: http://dailyvanity.sg
+Template: dailyvanity-main
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: dailyvanity-sg
+*/
+
+/* @import url("src/.dist/index.ts.css"); */
+
+/* top_header_social_section */
+#myaccount-title {
+    font-size: 18px;
+    padding : 10px 10px 0 10px;
+} 
+
+#salon-finder-title {
+    font-family:'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 10px;
+    letter-spacing: 0.09em;
+    border-top: 1px solid #efb7c9 !important;
+    border-bottom: 1px solid #efb7c9 !important;
+}
+
+#follow-us-title {
+    padding: 10px;
+    font-size: 12px !important;
+}
+
+#header-social-icon {
+    padding-left: 10px !important;
+}	
+
+#header-social-icon > li {	      
+    margin-right: 20px;
+}
+
+/* related articles */
+#featured-daily-tip-container {
+    position:relative;
+}
+
+#featured-daily-tip-container > .row:first-child {
+    padding-bottom: 185px !important;
+}
+
+#more-beauty-tips {
+    width: 85%;
+    float: right;
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -170px;
+    color: #22201B;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    text-align: right;
+}
+
+.more-beauty-tips-border {
+    font-size: 12px;
+    border-bottom:2px solid #EA4A7F;
+    letter-spacing: 1.8px;
+}
+
+.more-beauty-tips > a {
+    position: absolute;
+    top:30px;
+    right:0;
+}
+
+.related-articles-container {
+    width: 100%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-image: unset !important;
+    /* background-color: #f3f3f3; */
+}
+
+.related-articles-container > .related-articles-container-col {
+    position:relative;
+}
+
+.related-articles-container > .related-articles-container-col > .container {
+    width: 100%;
+    position: relative;
+    /* top: -100px;
+    left: 0; */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-image: unset !important;
+}
+
+.container-related-articles {
+    position: relative;
+}
+
+.related-articles-wrapper {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    z-index: 9;
+    grid-gap: unset;
+    grid-template-columns: unset;
+    grid-template-areas: unset;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 10px 3px #956B6B29; 
+    -moz-box-shadow:    3px 3px 10px 3px #956B6B29; 
+    box-shadow:         3px 3px 10px 3px #956B6B29;
+}
+
+.related-articles-header {
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.6em;
+    letter-spacing: 0.05em;
+    color : #5D5D4E;
+    padding: 0;
+}
+
+.related-articles-content {
+    padding: 0;
+}
+
+.related-articles-content > .col-md-6 {
+    max-width: 49%;
+}
+
+.article-category {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.article-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#newsfeed-header {
+    margin-top: 275px !important;
+    margin-bottom: 50px !important;
+}
+
+#browse-categories-title {
+    padding: 20px 50px 0 50px;
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    color:#5D5D4E;
+    letter-spacing: 0.09em;
+}
+
+.category_tags {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.category_tags a {
+    text-align: center;
+    padding: 5px;
+    background-color: #f0d6de;
+    color: #5d5d4e;
+    margin-right: 8px;
+    float: left;
+    margin-bottom: 10px;
+    font-family:'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing:0.05em;
+}
+
+.category_tags a:hover { 
+    background: #ea4a7f;
+    color: #fff !important;
+}
+
+/* docking menu */
+#docking-menu {
+    display:none;
+}
+
+/* form */
+.wpcf7-list-item > label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.wpcf7-list-item:not(:last-child) > label {
+    margin-bottom: 0;
+}
+
+.wpcf7-list-item > label > input[type="checkbox"] {
+    display: none;
+}
+
+.wpcf7-list-item > label > input[type="checkbox"] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: gray;
+}
+
+.wpcf7-list-item > label > input[type="checkbox"]:checked + *::before {
+    color: #EA4A7F;
+}
+
+.wpcf7-list-item > label > input[type="checkbox"]:checked + *::before {
+    content: "✓";
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    background: #EA4A7F;
+    border-color: #EA4A7F;
+    line-height: 1;
+}
+
+.wpcf7-list-item > label > input[type="checkbox"] + * {
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+#watch-us-more-btn {
+    width: 125px;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
+
+#watch-us-more-btn > a {
+    font-size: 12px;
+    border-bottom: 2px solid #EA4A7F;
+    letter-spacing: 1.8px;
+}
+
+#watch-us-more-btn > a::after {
+    content: '\f30b';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+/* remove scroll bar */
+
+#shopable-container > .row > .shopable-content-wrapper::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+#shopable-container > .row > .shopable-content-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.entry-content a {
+    text-decoration: none !important;
+}
+
+#search-wrapper {
+    display:none;
+}
+
+.aligncenter, div.post .new-post .aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.authorName > a {
+    color: #444;
+    text-decoration: none;
+}
+
+.authorName > a:hover {
+    color: #EA4A7F;
+    text-decoration: none;
+}
+
+.quiz-actions > .full-width {
+    width: 100vw;
+    position: relative;
+    left: unset;
+    right: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+
+.single-post blockquote.tiktok-embed:before{
+    display: none;
+}
+
+.header-cart-info a{
+    text-decoration:none;
+    color:#C1BFB7
+}
+
+.header-cart-info a:hover {
+    text-decoration:none;
+    color:#C1BFB7
+}
+
+.et-cart-info .cart-count {
+    position:relative
+}
+.et-cart-info .cart-count:before {
+    margin-right:10px;
+    font-family:"Font Awesome 5 Free";
+    font-weight:900;
+    content:"\f290"
+}
+
+.et-cart-info .cart-count .cart_totals {
+    position:absolute;
+    left:10px;
+    top:-5px;
+    background:#EA4A7F;
+    border-radius:100%;
+    width:15px;
+    height:15px;
+    display:block;
+    font-size:8px;
+    text-align:center;
+    line-height:.9rem;
+    color:#fff !important;
+    font-family:'Inter', sans-serif;
+    font-weight: 600 !important;
+}
+
+.et-cart-info .cart-count .cart_totals:hover {
+    color:#fff !important
+}
+
+#top-header-table > tbody > tr > td:nth-child(2) {
+    width: 90% !important;
+}
+
+@media (max-width:1024px) {
+    #browse-categories-title {
+        padding: 20px 50px 0 35px !important;
+    }
+
+    /* #main-menu-container, #top-search-container {
+        overflow-y: auto !important;
+    } */
+}
+
+@media (max-width: 480px) {
+    /* docking menu */
+    #docking-menu {
+        position: fixed;
+        bottom:0;
+        width: 100%;
+        display:block;
+        padding:0;
+        background-color: #707070;
+        z-index: 99999;
+    }
+
+    #docking-menu > ul {
+        padding-inline-start:0;
+        margin-bottom: 0;
+    }
+
+    #docking-menu > ul > li {
+        width: 20%;
+        display: inline-block !important;
+        color:#fff !important;
+        text-align: center;
+    }
+
+    #docking-menu > ul > li > ul {
+        position:absolute;
+        top:-40px;
+        left:-80px;
+        width: 350px;
+        background-color: unset;
+        border: 0;
+        border-radius: unset;
+        z-index: 10000;
+        display: none;
+    }
+
+    #docking-menu > ul > li > ul > li {
+        /* width: 20%; */
+        display: inline-block !important;
+        /* color:#fff !important; */
+        text-align: center;
+        border-radius: 30px;
+    }
+
+    #docking-menu > ul > li > a {
+        position:relative;
+        width: 100%;
+        display: inline-block;
+        color:#fafafa;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 8px;
+        padding: .25rem 0;
+        background-color: #707070;
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+    }
+
+    #docking-menu > ul > li > a:focus {
+        background-color: #333333 ;
+    }
+
+    #docking-menu > ul > li > ul > li > a {
+        width: 30px;
+        display: inline-block;
+        border-radius: 30px;
+        background-color: #FFFFFF;
+        padding: .4rem;
+        -moz-box-shadow: 1px 1px 5px #666;
+        -webkit-box-shadow: 1px 1px 5px #666;
+        box-shadow: 1px 1px 5px #666;
+        font-size: 12px;
+        margin: 0 .05rem;
+    }
+
+    #docking-menu > ul > li > a > .parent-icon {
+        width: 30px;
+    }
+
+    #docking-menu > ul > li > a > .count {
+        position:absolute;
+        top: 3px;
+        right: 25px;
+        color: #fff;
+        background: #f04084;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        display: block;
+        font-size: 12px;
+        text-align: center;
+        line-height: 20px;
+        text-decoration: none;
+    }
+
+    .dropup .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    #watch-us-more-btn {
+        right: 50%;
+        margin-right: -63px;
+    }
+
+    #newsfeed-header {
+        margin-top: 0px !important;
+    }
+
+    /* #featured-daily-tip-container > .row {
+        padding-bottom: 100px !important;
+    } */
+
+    #featured-daily-tip > p:last-child {
+        margin-top: 130px !important;
+    }
+
+    /* .related-articles-container > .related-articles-container-col > .container {
+        top: -180px;
+    } */
+
+    .more-beauty-tips > a {
+        width: 170px;
+        top: -110px;
+        right:50%;
+        margin-right: -85px;
+    }
+    
+    .article-category {
+        text-align: center;
+        color: #f04084;
+    }
+    
+    .article-title {
+        text-align: center;
+    }
+    
+    #featured-daily-tip-container > .row:first-child {
+        padding-bottom: 100px !important;
+    }
+
+    .related-articles-wrapper {
+        width: 100% !important;
+        left: 50%;
+        margin-left: -50% !important;
+    }
+
+    .related-articles-container {
+        min-height: 750px;
+    }
+
+    .related-articles-content > .col-md-6 {
+        max-width: 100%;
+    }
+
+    #browse-categories-title {
+        padding: 30px 50px 0 0 !important;
+    }
+
+    .category_tags {
+        padding: 0 !important;
+    }
+
+    #main-menu-container {
+        overflow-y: auto !important;
+    }
+
+    #myaccount-title {
+        padding : 10px 10px 0 0 !important;
+    }
+
+    #salon-finder-title {
+        padding : 20px 0 20px 0 !important;
+    }
+
+    #follow-us-title {
+        padding: 10px 0 10px 0 !important;
+    }
+
+    #header-social-icon {
+        padding-left: 0px !important;
+    }
+
+    .category_tags {
+        margin: 20px 0 30px 0 !important;
+    }
+
+    #header-social-icon {
+        padding-bottom: 100px !important;
+    }
+    
+    .single-post .tiktok-embed iframe {
+        min-height: 770px;
+    }
+
+    #top-header-table tbody tr td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    #featured-daily-tip > p:last-child {
+        font-size: 11px !important;
+        padding: 75px 0 100px 0;
+        margin: 0px !important;
+    }
+
+    #featured-daily-tip-container > .row {
+        padding-bottom: 140px !important;
+    }
+
+    #more-beauty-tips {
+        width: 100%;
+        text-align: center;
+        margin-top: -325px !important;
+    }
+
+    .more-beauty-tips > a {
+        top: -200px;
+    }
+
+    #featured-daily-tip-container > .row:first-child {
+        padding-bottom: 0 !important;
+    }
+    
+    .article-category {
+        text-align: center;
+        color: #f04084;
+    }
+    
+    .article-title {
+        text-align: center;
+    }
+
+    #newsfeed-header {
+        margin-top: 100px !important;
+    }
+
+    #docking-menu > ul > li > a > .count {
+        right: 19px;
+    }
+
+    .related-articles-wrapper {
+        top: 20px;
+    }
+
+    .related-articles-container {
+        min-height: 700px;
+    }
+} 
+
+@media (max-width: 375px) {
+    #featured-daily-tip-container > .row {
+        padding-bottom: 140px !important;
+    }
+
+    #more-beauty-tips {
+        width: 100%;
+        text-align: center;
+        margin-top: -305px !important;
+    }
+
+    .more-beauty-tips-border {
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 50%; /* Change this to whatever width you want. */
+    }
+
+    #more-beauty-tips:hover{
+        transform: scale(1.05);
+    }
+
+    #newsfeed-header {
+        margin-top: 0px !important;
+    }
+
+    .more-beauty-tips > a {
+        top: -180px;
+    }
+
+    #featured-daily-tip-container > .row:first-child {
+        padding-bottom: 20px !important;
+    }
+
+    #docking-menu > ul > li > a > .count {
+        right: 15px;
+    }
+
+    .related-articles-wrapper {
+        top: -100px;
+    }
+}
+
+@media( max-width: 350px ) {
+    #newsfeed-header {
+        margin-top: 0px !important;
+    }
+
+    .newsfeed-wrapper {
+        padding-top: 0 !important;
+    }
+
+    #docking-menu > ul > li > a > .count {
+        right: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    #featured-daily-tip > p:last-child {
+        font-size: 10px !important;
+        padding: 70px 0 100px 0;
+    }
+
+    #featured-daily-tip-container > .row {
+        padding-bottom: 150px !important;
+    }
+
+    #more-beauty-tips {
+        width: 100%;
+        text-align: center;
+        margin-top: -320px !important;
+    }
+
+    .more-beauty-tips-border {
+        content: ""; /* This is necessary for the pseudo element to work. */ 
+        display: block; /* This will put the pseudo element on its own line. */
+        margin: 0 auto; /* This will center the border. */
+        width: 60%; /* Change this to whatever width you want. */
+    }
+
+    .article-category {
+        text-align: center;
+        color: #f04084;
+    }
+    
+    .article-title {
+        text-align: center;
+    }
+
+    #newsfeed-header {
+        margin-top: 0 !important;
+    }
+
+    #docking-menu > ul > li > a > .count {
+        right: 10px;
+    }
+
+    .newsfeed-wrapper {
+        padding-top: 0 !important;
+    }
+}
+
+
+/* @media (max-width: 480px) {
+    #body {
+      padding-top: 40px !important;
+    }
+} */
