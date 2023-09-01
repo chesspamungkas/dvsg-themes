@@ -1,9 +1,12 @@
 <?php
+
 namespace DV\shortcodes\ScrollableList;
+
 use DV\base\ShortCode;
 use DV\core\BaseStyle;
 
-class ScrollableList extends ShortCode {
+class ScrollableList extends ShortCode
+{
 
   public $attributes = [];
 
@@ -20,44 +23,47 @@ class ScrollableList extends ShortCode {
 
   public static $SCROLLABLE_LIST_ITEM_CLASS = "SCROLLABLE_LIST_ITEM_CLASS";
 
-  public static function init($args) {
+  public static function init($args)
+  {
     $model = new ScrollableList();
 
-    $model->attributes = shortcode_atts( array(
-      'paged'=> 1,
-      'filter'=>null,
-      'order'=>'rand',
-      'order_by'=>null,
-      'posts_per_page'=>11,
-      'id'=>'SCROLLABLE_LIST',
-      'title'=>'',
-      'title_link'=>'',
-      'identifier'=>null,
-      'item_show'=>5
-    ), $args );
+    $model->attributes = shortcode_atts(array(
+      'paged' => 1,
+      'filter' => null,
+      'order' => 'rand',
+      'order_by' => null,
+      'posts_per_page' => 11,
+      'id' => 'SCROLLABLE_LIST',
+      'title' => '',
+      'title_link' => '',
+      'identifier' => null,
+      'item_show' => 5
+    ), $args);
     return $model->generate();
   }
 
-  public static function registerLibaray() {
+  public static function registerLibaray()
+  {
     BaseStyle::AddScript('scrollableListScript', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
     BaseStyle::AddStyle('scrollableListStyle', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
   }
 
 
-  public function makeQuery() {    
+  public function makeQuery()
+  {
     $query = [
-      'tax_query'=> [],  
+      'tax_query' => [],
       'posts_per_page' => $this->attributes['posts_per_page'],
       'post_status' => 'publish',
       'paged' => $this->attributes['paged'],
-      'orderby'=>$this->attributes['order']
+      'orderby' => $this->attributes['order']
     ];
 
-    if($this->attributes['filter']) {
+    if ($this->attributes['filter']) {
       $query['s'] = $this->attributes['filter'];
     }
 
-    if( $this->attributes['order_by'] ) {      
+    if ($this->attributes['order_by']) {
       $query['orderby'] = $this->attributes['order_by'];
       $query['order'] = $this->attributes['order'];
     }
@@ -66,14 +72,15 @@ class ScrollableList extends ShortCode {
     return new \WP_Query($query);
   }
 
-  public function generate() {
+  public function generate()
+  {
     $query = $this->makeQuery();
     return $this->render('ScrollableList/display', [
       'query' => $query,
-      'id'=>$this->attributes['id'],
-      'title'=>$this->attributes['title'],
-      'titleLink'=>$this->attributes['title_link'],
-      'item_show'=>$this->attributes['item_show']
+      'id' => $this->attributes['id'],
+      'title' => $this->attributes['title'],
+      'titleLink' => $this->attributes['title_link'],
+      'item_show' => $this->attributes['item_show']
     ]);
   }
 }

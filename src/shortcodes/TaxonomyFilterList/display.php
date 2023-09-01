@@ -7,16 +7,16 @@
       <div class="row g-0 m-0">
         <div class="col-6">
           <ul class="filter-dropdown">
-            <?php foreach($mainSectionTermOrder as $section): ?>
-              <?php echo $this->render('TaxonomyFilterList/_sections', ['title'=>$section, 'items'=>$mainSectionTerms[$section]]) ?>
+            <?php foreach ($mainSectionTermOrder as $section) : ?>
+              <?php echo $this->render('TaxonomyFilterList/_sections', ['title' => $section, 'items' => $mainSectionTerms[$section]]) ?>
             <?php endforeach; ?>
           </ul>
         </div>
         <div class="col-6">
           <ul class="filter-dropdown">
-            <?php foreach($subSectionTermOrder as $section): ?>
-              <?php echo $this->render('TaxonomyFilterList/_sections', ['title'=>$section, 'items'=>$subSectionTerms[$section]]) ?>
-            <?php endforeach; ?>           
+            <?php foreach ($subSectionTermOrder as $section) : ?>
+              <?php echo $this->render('TaxonomyFilterList/_sections', ['title' => $section, 'items' => $subSectionTerms[$section]]) ?>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>

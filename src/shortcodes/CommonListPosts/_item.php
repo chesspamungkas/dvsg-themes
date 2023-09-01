@@ -1,5 +1,6 @@
-<?php 
-  use DV\shortcodes\CommonListPosts\CommonListPosts;  
+<?php
+
+use DV\shortcodes\CommonListPosts\CommonListPosts;
 ?>
 <div class="<?php echo apply_filters(CommonListPosts::$COMMON_LIST_POST_ITEM_CLASS, "col cat-products p-0 {$id}-item", $post) ?>">
   <div class="card p-2 px-md-4 dvba_list_card_item" id="<?php echo $post->ID; ?>" aria-hidden="false">

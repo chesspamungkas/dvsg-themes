@@ -8,8 +8,8 @@ use DV\shortcodes\TaxonomyFilterList\TaxonomyFilterList;
 </li>
 <li class="skin-type-container">
   <div class="filter-wrapper">
-    <?php foreach($items as $item): ?>
-      <?php echo $this->render('TaxonomyFilterList/_items', ['model'=>$item->to_array()]) ?>
+    <?php foreach ($items as $item) : ?>
+      <?php echo $this->render('TaxonomyFilterList/_items', ['model' => $item->to_array()]) ?>
     <?php endforeach; ?>
   </div>
 </li>

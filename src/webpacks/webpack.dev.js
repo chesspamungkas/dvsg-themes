@@ -72,6 +72,5 @@ module.exports = {
     new MiniCssExtractPlugin( {
       filename: '[name].css',
     } ),
-   // new IgnoreEmitPlugin( [ 'editor.js', 'style.js' ] ),
   ],
 };

@@ -9,11 +9,13 @@ abstract class Factory
   {
   }
 
-  final public static function getInstance() {
+  final public static function getInstance()
+  {
     return self::getFactory();
   }
 
-  final public static function getFactory()  {
+  final public static function getFactory()
+  {
     $calledClass = get_called_class();
     if (!isset(self::$_model[$calledClass])) {
       self::$_model[$calledClass] = new $calledClass();

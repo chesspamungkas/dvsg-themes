@@ -1,8 +1,11 @@
 <?php
+
 namespace DV\widgets;
 
-class FooterOneWidget extends \WP_Widget {
-  function __construct() {    
+class FooterOneWidget extends \WP_Widget
+{
+  function __construct()
+  {
     parent::__construct(
       // widget ID
       "ttesting_widget",

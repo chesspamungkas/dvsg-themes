@@ -13,10 +13,10 @@
               <button type="button" id="<?php echo $id;  ?>-next" class="alt-slick-next"><i class="fas fa-chevron-right"></i></button>
             </div>
           </div>
-          <div class="row g-0 m-0 dvba_list_card_container " id="<?php echo $id;  ?>-slider-container">          
-            <?php if($query->have_posts()): ?>
-              <?php while($query->have_posts()): $query->the_post(); ?>
-                <?php echo $this->render('ScrollableList/_item', ['post'=>$post]); ?>
+          <div class="row g-0 m-0 dvba_list_card_container " id="<?php echo $id;  ?>-slider-container">
+            <?php if ($query->have_posts()) : ?>
+              <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <?php echo $this->render('ScrollableList/_item', ['post' => $post]); ?>
               <?php endwhile; ?>
             <?php endif; ?>
           </div>
@@ -39,23 +39,19 @@
       slidesToScroll: <?php echo $item_show ?>,
       pauseOnFocus: true,
       pauseOnHover: true,
-      responsive: [
-        {
-          breakpoint: 481,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: false,
-            dots: false
-          }
-        },
-      ],
+      responsive: [{
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: false
+        }
+      }, ],
       arrows: true,
-      prevArrow: $('#'+prevBtn),
-      nextArrow: $('#'+nextBtn)
-      // appendArrows: '.slide-button-container'
-    };    
-    $('#'+containerID).slick( prodArgs );
+      prevArrow: $('#' + prevBtn),
+      nextArrow: $('#' + nextBtn)
+    };
+    $('#' + containerID).slick(prodArgs);
   });
-  
 </script>

@@ -1,2 +1,2 @@
 <?php
-// Nothing in sidebarwwww
+// Nothing in sidebar

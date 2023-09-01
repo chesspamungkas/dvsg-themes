@@ -1,20 +1,22 @@
 <?php
+
 namespace DV\base;
 
-class ShortCode extends Factory {
+class ShortCode extends Factory
+{
 
-  public static function registerLibaray() {
-
+  public static function registerLibaray()
+  {
   }
 
-  public function render($pathAlias, $params=[]) {
-    $viewFile = path_join(DV_SHORTCODE_PATH,$pathAlias).'.php';
+  public function render($pathAlias, $params = [])
+  {
+    $viewFile = path_join(DV_SHORTCODE_PATH, $pathAlias) . '.php';
     $returnText = '';
-    if (file_exists($viewFile)) {      
+    if (file_exists($viewFile)) {
       try {
         $returnText = $this->renderPhpFile($viewFile, $params);
-      } catch(\Exception $e) {
-        
+      } catch (\Exception $e) {
       }
     }
     return $returnText;

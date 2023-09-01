@@ -109,38 +109,6 @@ jQuery( document ).ready( function() {
       }
     } );
 
-    // var keywords = [ "remove blackheads", "oily skin moisturiser", "long lasting lipstick", "face wash", "micellar water" ];
-
-    // jQuery( "#s" ).autocomplete( {
-    //     source: function( request, response ) {
-    //         console.log( request );
-    //         jQuery.ajax( {
-    //             'type': 'post',
-    //             'dataType': 'json',
-    //             'url': ajaxUrl,
-    //             'data': { 
-    //                 'action': 'ajaxGetSearchTerms', 
-    //                 'keyword': request.term,
-    //             },
-    //             success: function( data ) {
-    //                 console.log( data );
-    //                 response( data );
-    //             }
-    //         } );
-    //     },
-    //     // source: keywords,
-    //     minLength: 3,
-    //     open: function() {
-    //         jQuery( "#ui-id-1" ).css( "display", "block" );
-    //         jQuery( "#ui-id-1" ).css( "z-index", "99999" );
-    //     },
-    //     close: function() {
-    //         jQuery( "#ui-id-1" ).css( "display", "none" );
-    //         jQuery( "#ui-id-1" ).css( "z-index", "0" );
-    //     }
-    // });
-
-
     jQuery( 'body' ).on( 'click', '.searchresults-paginav', function( e ) {
         e.preventDefault();
         var pageno = this.id.split( '-' );

@@ -47,8 +47,8 @@ $roles = get_the_author_meta('roles');
   </div>
 
   <div id="author-bio" class="clearfix grid-8 column-2">
-    
-    
+
+
   </div><!-- #author-bio -->
 
 </div><!-- .tabs -->

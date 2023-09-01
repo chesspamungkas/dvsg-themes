@@ -1,10 +1,13 @@
-<?php 
+<?php
+
 namespace DV\sidebars;
 
 use DV\core\SideBar;
 
-class FooterFour {
-  public static function init() {
+class FooterFour
+{
+  public static function init()
+  {
     return array_merge(
       SideBar::$commonArgs,
       [

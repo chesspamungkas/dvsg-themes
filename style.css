@@ -10,6 +10,6 @@ License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-.mobileAdBanner div iframe{
-    padding:0 5px!important;
+.mobileAdBanner div iframe {
+  padding: 0 5px !important;
 }

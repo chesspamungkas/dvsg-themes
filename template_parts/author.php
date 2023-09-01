@@ -1,9 +1,9 @@
 <div id="main-content">
-  	<div class="container-fluid">
-	  	<div class="row">
-		  	<div class="col no-padding">
-				<?= do_shortcode('[beauty-newsfeed featured="0" author="'. $author_id .'" title="0"]') ?>
-			  </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col no-padding">
+				<?= do_shortcode('[beauty-newsfeed featured="0" author="' . $author_id . '" title="0"]') ?>
+			</div>
 		</div>
 	</div>
 </div> <!-- #main-content -->

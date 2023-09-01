@@ -2,7 +2,7 @@
 
 namespace DV\base;
 
-abstract class DVBABase {
+abstract class DVBABase
+{
   public static $_model = array();
-  
 }

@@ -1,20 +1,24 @@
 <?php
+
 namespace DV\shortcodes\ListPosts;
+
 use DV\base\ShortCode;
 
-class ListPosts extends ShortCode {
+class ListPosts extends ShortCode
+{
   private $search_args = null;
 
   private $additional_args = [
-    'title'=>"1",
+    'title' => "1",
     'header' => 'LATEST',
     'sub_header' => 'BEAUTY READS',
     'taxonomy' => 'cat',
   ];
-  public static function init($args) {
+  public static function init($args)
+  {
     $model = new ListPosts();
 
-    $model->search_args = shortcode_atts( array(
+    $model->search_args = shortcode_atts(array(
       'posts_per_page' => 18,
       'offset'  => 0,
       'paged' => 1,
@@ -28,93 +32,91 @@ class ListPosts extends ShortCode {
       'tag_id' => 0,
       'taxonomy' => 'cat',
       'post_status' => 'publish'
-    ), $args );
+    ), $args);
 
-    foreach($model->additional_args as $key=>$value) {
-      if( isset($model->search_args[$key]) ) {
+    foreach ($model->additional_args as $key => $value) {
+      if (isset($model->search_args[$key])) {
         unset($model->search_args[$key]);
       }
     }
 
-    foreach( $model->search_args as $k=>$v ) {
-      if( !$model->search_args[$k] ) {
-        unset( $model->search_args[$k] );
+    foreach ($model->search_args as $k => $v) {
+      if (!$model->search_args[$k]) {
+        unset($model->search_args[$k]);
       }
     }
 
     // Beauty Reads title = 1, Author page title = 0, Category page title = 2 
-    if( isset( $args['title'] ) ) {
+    if (isset($args['title'])) {
       $model->additional_args['title'] = $args['title'];
     }
- 
+
     $model->additional_args = array_merge($model->additional_args, $model->search_args);
     $model->generate();
   }
 
-  public function getTaxonomy( $mode=null, $id=null, $postID=null ) {
+  public function getTaxonomy($mode = null, $id = null, $postID = null)
+  {
     global $post;
 
-    if( isset( $id ) ) {
-      if( isset( $mode ) && $mode == 'cat' ) {
-        $category = get_the_category_by_ID( $id );
+    if (isset($id)) {
+      if (isset($mode) && $mode == 'cat') {
+        $category = get_the_category_by_ID($id);
         $totalCat = 0;
-      } else if( isset( $mode ) && $mode == 'tag' ) { 
-        $tag = get_tag( $id );
+      } else if (isset($mode) && $mode == 'tag') {
+        $tag = get_tag($id);
         $totalTag = 0;
       }
     } else {
-      $categories = get_the_category( $post->ID );
+      $categories = get_the_category($post->ID);
       $totalCat = count($categories);
     }
 
     $content = '';
 
-    // if( $totalCat > 0 ) {
-      if( $totalCat >= 1 ) {
-        $count = 1;
+    if ($totalCat >= 1) {
+      $count = 1;
 
-        foreach( $categories as $cat ) {
-          $catLink = get_category_link( $cat->term_id );
-          $content .= '<a href="' . esc_url( $catLink ) . '" class="category-link poppins-regular">' . $cat->name . '</a>';
-  
-          if( $count < $totalCat ) {
-            $content .= ', ';
-          }
-          $count++;
+      foreach ($categories as $cat) {
+        $catLink = get_category_link($cat->term_id);
+        $content .= '<a href="' . esc_url($catLink) . '" class="category-link poppins-regular">' . $cat->name . '</a>';
+
+        if ($count < $totalCat) {
+          $content .= ', ';
         }
-      } else {
-        if( isset( $mode ) && $mode == 'cat' ) {
-          // $catLink = get_category_link( $id );
-          $content .= $category;
-        } else if( isset( $mode ) && $mode == 'tag' ) {
-          // $catLink = get_category_link( $id );
-          $content .= $tag->name;
-        }
+        $count++;
       }
-    // }
-      
-    if( !empty( $content ) ) {
+    } else {
+      if (isset($mode) && $mode == 'cat') {
+        $content .= $category;
+      } else if (isset($mode) && $mode == 'tag') {
+        $content .= $tag->name;
+      }
+    }
+
+    if (!empty($content)) {
       return $content;
     } else {
       return "No Title";
     }
   }
 
-  public function pagination( $author, $pageno, $totalPages ) {
+  public function pagination($author, $pageno, $totalPages)
+  {
     $content = '';
 
     $count = 2;
 
-    if( $pageno <= 3 && $totalPages > 5 ) {
+    if ($pageno <= 3 && $totalPages > 5) {
       $startPage = 1;
       $endPage = 5;
-    } else if( ( $pageno == $totalPages || $pageno == $totalPages - 1 ) && $totalPages > 5 ) {
+    } else if (($pageno == $totalPages || $pageno == $totalPages - 1) && $totalPages > 5) {
       $startPage = $totalPages - 4;
       $endPage = $totalPages;
     } else {
-      if( $totalPages > 5 ) {
-        $startPage = max( 1, $pageno - $count );
-        $endPage = min( $totalPages, $pageno + $count);
+      if ($totalPages > 5) {
+        $startPage = max(1, $pageno - $count);
+        $endPage = min($totalPages, $pageno + $count);
       } else {
         $startPage = 1;
         $endPage = $totalPages;
@@ -123,23 +125,23 @@ class ListPosts extends ShortCode {
 
     $content .= '<nav aria-label="pagination">';
     $content .= '<ul class="pagination pagination-sm justify-content-center">';
-    
-    if( isset( $author ) ) {
+
+    if (isset($author)) {
       $author = 'author';
     } else {
       $author = '';
     }
 
-    if( $pageno != 1 ) {
-      $content .= '<li class="page-item listposts-paginav-prev cursor-pointer ' . $author . '" aria-current="page" id="listposts-pageno-' . ($pageno-1) . '"><span class="page-link">&laquo;</span></li>';
+    if ($pageno != 1) {
+      $content .= '<li class="page-item listposts-paginav-prev cursor-pointer ' . $author . '" aria-current="page" id="listposts-pageno-' . ($pageno - 1) . '"><span class="page-link">&laquo;</span></li>';
     }
 
-    if( $pageno - $count > 1 && $totalPages > 5 && $paageno <= $totalPages - 4 ) { 
+    if ($pageno - $count > 1 && $totalPages > 5 && $paageno <= $totalPages - 4) {
       $content .= '<li class="page-item listposts-paginav disabled"><span aria-hidden="true" class="page-link">...</span></li>';
     }
 
-    for($p = $startPage; $p <= $endPage; $p++) {
-      if( $p == $pageno ) {
+    for ($p = $startPage; $p <= $endPage; $p++) {
+      if ($p == $pageno) {
         $current = 'active';
       } else {
         $current = '';
@@ -150,46 +152,33 @@ class ListPosts extends ShortCode {
       $content .= '</li>';
     }
 
-    if( $totalPages - $pageno > 2 && $totalPages > 5 ) {
+    if ($totalPages - $pageno > 2 && $totalPages > 5) {
       $content .= '<li class="page-item listposts-paginav disabled"><span aria-hidden="true" class="page-link">...</span></li>';
     }
 
-    if( $pageno != $totalPages ) {
-      $content .= '<li class="page-item listposts-paginav-next cursor-pointer ' . $author . '" aria-current="page" id="listposts-pageno-' . ($pageno+1) . '"><span class="page-link">&raquo;</span></li>';
+    if ($pageno != $totalPages) {
+      $content .= '<li class="page-item listposts-paginav-next cursor-pointer ' . $author . '" aria-current="page" id="listposts-pageno-' . ($pageno + 1) . '"><span class="page-link">&raquo;</span></li>';
     }
-    
+
     $content .= '</ul>';
     $content .= '</nav>';
 
     return $content;
   }
 
-  public function generate() {
-    // if( isset( $this->search_args['category'] ) ) {
-    //   $allposts = get_posts( 'post_status=publish&category=' . $this->search_args['cat'] . '&numberposts=-1' );
-    //   $totalPosts = count($allposts);
-    // } else if( isset( $this->search_args['author'] ) ) {
-    //   $allposts = get_posts( 'post_status=publish&author=' . $this->search_args['author'] . '&numberposts=-1' );
-    //   $totalPosts = count($allposts);
-    // } else {
-    //   $totalPosts = wp_count_posts()->publish;
-    // }
-    $offset = ( $this->additional_args['paged'] - 1 ) * $this->additional_args['posts_per_page'];
+  public function generate()
+  {
+    $offset = ($this->additional_args['paged'] - 1) * $this->additional_args['posts_per_page'];
     $this->search_args['offset'] = $offset;
     $this->additional_args['offset'] = $offset;
 
-    $posts = new \WP_Query( $this->search_args );
+    $posts = new \WP_Query($this->search_args);
 
-    // print_r( $posts );
-
-    // $this->search_args['numberposts'] = 20;
-    // print_r( $this->search_args );
-    // print_r( $posts );
     echo $this->render('ListPosts/display', [
-      'posts'=>$posts,
-      'args'=>$this->additional_args,
-      'count'=>$posts->found_posts,
-      'totalPages'=> $posts->max_num_pages
+      'posts' => $posts,
+      'args' => $this->additional_args,
+      'count' => $posts->found_posts,
+      'totalPages' => $posts->max_num_pages
     ]);
   }
 }
