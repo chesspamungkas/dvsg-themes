@@ -1,0 +1,167 @@
+
+
+/* Featured Articles toggle button */
+
+.featured-toggle-btn {
+    position:relative;
+    width: 100%;
+}
+
+.featured-toggle-btn > .btn-group {
+    position:absolute;
+    top: 35px;
+    right: 0;
+    z-index: 100;
+    border-radius: 30px;
+    /* border: 5px solid #f0f0f0; */
+    padding: 5px;
+    background-color: #f0f0f0;
+    /* -moz-box-shadow: inset 1px 1px 3px #666;
+    -webkit-box-shadow: inset 1px 1px 3px #666;
+    box-shadow: inset 1px 1px 3px #666; */
+}
+
+.featured-toggle-btn > .btn-group > label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom:0;
+    color: #c1bfb7;
+    letter-spacing: .15rem;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    z-index: 10;
+}
+
+.featured-toggle-btn > .btn-group > label > input[type="radio"] {
+    opacity:0;
+    width:0;
+}
+
+.featured-toggle-btn > .btn-group > .btn:focus, .featured-toggle-btn > .btn-group > .btn.focus {
+    outline: none;
+    box-shadow: unset;
+}
+
+.btn-group>.btn:not(:first-child), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:last-child)>.btn {
+    border-radius: 30px;
+    padding: .65rem 2.65rem;
+}
+
+.btn-group>.btn:focus, .btn-group>.btn:active, .btn-group>.btn.active, .btn-group-vertical>.btn:focus, .btn-group-vertical>.btn:active, .btn-group-vertical>.btn.active {
+    color: #fff;
+}
+
+.featured-toggle-btn > .btn-group > .slide-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 185px;
+    height: 45px;
+    background-color: #EA4A7F;
+    border-radius: 30px;
+    padding: .65rem 2.65rem;
+    z-index:0;
+    /* -moz-box-shadow: 1px 1px 3px #666;
+    -webkit-box-shadow: 1px 1px 3px #666;
+    box-shadow: 1px 1px 3px #666; */
+}
+
+.watch-us .featured-01 .card .row .col-md-12:first-child:before, .watch-us .featured-02 .card .row .col-md-6:first-child:before {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f144";
+    color: #fff;
+    opacity: .7;
+}
+
+.watch-us .featured-01 .card .row .col-md-12:first-child:before {
+    font-size: 3rem;
+}
+
+.watch-us .featured-02 .card .row .col-md-6:first-child:before {
+    font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+    .featured-container > .row:nth-child(2) {
+        margin-top: 150px;
+    }
+
+    .featured-toggle-btn > .btn-group {
+        top: 190px;
+        right: 50%;
+        margin-right: -190px;
+    }
+}
+
+@media (max-width: 375px) {
+    .featured-container > .row:nth-child(2) {
+        margin-top: 130px;
+    }
+
+    .featured-toggle-btn > .btn-group {
+        top: 170px;
+        margin-right: -170px;
+        width: 340px
+    }
+
+    .featured-toggle-btn > .btn-group > label {
+        font-size: 14px;
+    }
+
+    .btn-group>.btn:not(:first-child), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:last-child)>.btn {
+        padding: .65rem 2rem;
+    }
+
+    .featured-toggle-btn > .btn-group > .slide-btn {
+        width: 170px;
+        height: 43px;
+    }
+}
+
+@media (max-width: 350px) {
+    .featured-toggle-btn > .btn-group {
+        top: 160px;
+        margin-right: -160px;
+        width: 320px
+    }
+
+    .btn-group>.btn:not(:first-child), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:last-child)>.btn {
+        padding: .65rem 1.6rem;
+    }
+
+    .featured-toggle-btn > .btn-group > .slide-btn {
+        width: 160px;
+        height: 43px;
+    }
+}
+
+@media (max-width: 320px) {
+    .featured-container > .row:nth-child(2) {
+        margin-top: 110px;
+    }
+
+    .featured-toggle-btn > .btn-group {
+        top: 140px;
+        margin-right: -150px;
+        width: 300px
+    }
+
+    .btn-group>.btn:not(:first-child), .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-group>.btn-group:not(:last-child)>.btn {
+        padding: .65rem 1.5rem;
+    }
+
+    .featured-toggle-btn > .btn-group > label {
+        font-size: 12px;
+    }
+
+    .featured-toggle-btn > .btn-group > .slide-btn {
+        width: 150px;
+        height: 40px;
+    }
+}

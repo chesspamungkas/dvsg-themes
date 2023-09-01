@@ -1,0 +1,354 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+/* Header */
+
+#top-logo {
+    width: 70%;
+    height: auto;
+    padding-left: 1.4rem;
+    transition: width 0.5s ease;
+}
+
+.shrink-logo {
+    width: 50% !important;
+}
+
+.navbar-brand {
+    transition: all 0.5s ease;
+}
+
+.shrink-navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.collapse {
+    padding-top: 0 !important;
+}
+
+#top-bar {
+    border-bottom: 1px solid #efefef;
+}
+
+#top-bar > nav {
+    background-color: #fff !important;
+}
+
+#top-bar > nav > div > .navbar-nav > .nav-item > .nav-link {
+    font-family: 'Philosopher', sans-serif !important;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#top-bar > nav > .social-media-nav > .nav-item > .nav-link {
+    font-size: 1.3rem;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Intro */
+
+#intro > .row:not(:last-child) > .col {
+    background-position: center bottom;
+    background-size: cover;
+    min-height: 400px;
+    margin-top: 50px;
+}
+
+#intro > .row:last-child > .col {
+    min-height: 300px;
+}
+
+.dvsha-logo {
+    position: absolute;
+    top: -350px;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    height: 400px;
+    z-index: 100;
+}
+
+.dvsha-logo > img {
+    width: 100%;
+    height: auto;
+}
+
+.intro-text {
+    font-family: 'Philosopher', sans-serif;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.intro-text > h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #EA4A7F;
+    letter-spacing: .15rem;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+    line-height: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro-text > p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.intro-text > p:nth-last-of-type(1) {
+    margin-bottom: 30px;
+}
+
+/* Giveaway */
+
+#giveaway > .row > .col {
+    background-position: center cener;
+    background-size: cover;
+    min-height: 300px;
+}
+
+.giveaway-text {
+    font-family: 'Philosopher', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.giveaway-content, .giveaway-title {
+    text-align: center;
+}
+
+.giveaway-content > .prizes {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.giveaway-content > .prizes > span > span {
+    color: #EA4A7F;
+}
+
+.giveaway-content > .text {
+    font-family: 'Poppins', sans-serif;
+    font-size: .85rem;
+    margin-bottom: 30px;
+}
+
+.giveaway-title > h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2.5rem;
+}
+
+.giveaway-btn {
+    background-color: #EA4A7F;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: .9rem 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: .85rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .15rem;
+    font-weight: 600;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-top: 100px !important;
+}
+
+.giveaway-btn:hover {
+    color: #fff;
+}
+
+
+/* Vote */
+
+#vote {
+    background-color: #fffbf7;
+    font-family: 'Philosopher', sans-serif;
+}
+
+#vote > .row > .col {
+    padding: 6rem;
+}
+
+.vote-btn {
+    background-color: #CAC4B4;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: .35rem 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.vote-btn:hover {
+    color: #000;
+}
+
+
+
+/* Footer */
+
+.footer {
+    font-family: 'Philosopher', sans-serif !important;
+    padding: .85rem 1rem;
+    background-color: #E5E1DE;
+}
+
+.footer > .container {
+    text-align: center;
+}
+
+.footer > .container > .text-muted {
+    font-size: .85rem;
+    line-height: 0;
+}
+
+.collapsing {
+    transition: unset !important;
+}
+
+@media (max-width: 480px) {
+    .desktop {
+        display: none;
+    }
+    
+    .mobile {
+        display: block;
+    }
+
+    #top-bar {
+        top: -5px !important;
+        border-bottom: 0;
+    }
+
+    #top-bar > nav {
+        background-color: unset !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #top-logo {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .navbar-inner {
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border:0;
+    }
+
+    .navbar-brand {
+        width: 50%;
+        padding-left: .6rem !important;
+        padding-right: .5rem !important;
+        padding-top: .5rem;
+        padding-bottom: .6rem;
+        margin-right: 8rem;
+    }
+
+    .navbar-collapse {
+        background-color: #ededed;
+        border-radius: 2rem;
+        flex-basis: 30%;
+        flex-grow: .5;
+        margin-left: auto;
+        padding: 4rem 1.5rem !important;
+    }
+
+    .navbar-nav {
+        margin: 0 auto;
+        width: 310px;
+    }
+
+    .navbar-nav > .nav-item {
+        text-align: center;
+    }
+
+    .social-media-nav {
+        display: block !important;
+        flex-direction: unset !important;
+        margin-top: 20px;
+    }
+
+    .social-media-nav > .nav-item {
+        /* display: inline !important; */
+        float: left;
+    }
+
+    #intro > .row:not(:last-child) > .col {
+        background-position: center bottom;
+        background-size: cover;
+        min-height: 250px;
+        margin-top: 0;
+    }
+
+    .dvsha-logo {
+        top: -180px;
+        margin-left: -125px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .intro-text {
+        margin-bottom: 50px;
+    }
+
+    .giveaway-title {
+        margin-bottom: 2rem;
+    }
+
+    .giveaway-content > .prizes, .giveaway-content > .text {
+        margin-bottom: 2rem;
+    }
+
+    .giveaway-content > .prizes {
+        font-size: 1.1rem;
+    }
+
+    .giveaway-content > .text {
+        font-size: 1rem;
+    }
+
+    .giveaway-content > .prizes > span {
+        /* margin-bottom: 20px; */
+        display: block;
+    }
+
+    .giveaway-content > .prizes > span > span::before {
+        content: "\A";
+        white-space: pre;
+    }
+}
+
+@media (max-width: 350px) {
+    .navbar-brand {
+        margin-right: 7rem;
+    }
+}

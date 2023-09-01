@@ -1,0 +1,290 @@
+.mobile-view {
+    display: none;
+}
+
+.navbar {
+    line-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: #fff;
+}
+
+.navbar-brand {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.navbar-nav > li > .nav-link {
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+.dv-logo {
+    width: 200px;
+}
+
+.navbar-toggler {
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+.navbar-toggler > .fas {
+    color: #EA4A7F;
+}
+
+.navbar-toggler:focus, .navbar-toggler > .fas:focus-visible {
+    outline: unset !important;
+}
+
+@media ( max-width: 480px ) {
+    .desktop-view {
+        display: none !important;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    .close-menu-btn {
+        color: #EA4A7F;
+    }
+
+    .dv-logo {
+        width: 120px;
+    }
+
+    .navbar-collapse {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url( 'https://uploads.dailyvanity.sg/wp-content/uploads/2021/03/toggle_bar_bg.jpg' );
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .navbar-nav > li {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-nav > li:not(:first-child) {
+        text-align: center;
+    }
+
+    .navbar-nav > li {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .top-social-icon {
+        list-style: none;
+        padding-inline-start: unset;
+    }
+
+    .top-social-icon > li {
+        display: inline-block;
+    }
+
+    .top-social-icon > li > a {
+        color: #666;
+    }
+}
+
+/* DEV */
+.bgRainbow{
+    background: url('../images/Web-1920-–-1.jpg') 0 0 no-repeat;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+
+.bgRainbow2{
+    background: url('../images/Web-1920-–-2.jpg') 0 0 no-repeat;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    padding-top: 20px;
+}
+
+.votingLogo{
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+
+.contentIntro{
+    padding: 100px 50px;
+    text-align: center;
+    margin-top: 60px;
+}
+.contentIntro h1{
+    color:#ea4a7f;
+    margin-bottom:20px;
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.contentIntro h1{
+    color:#ea4a7f;
+    margin-bottom:20px;
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.contentIntro h2{
+    color:#ea4a7f;
+    margin-bottom:20px;
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.contentIntro p{
+    font-size: 14px;
+    font-style: italic;
+    color: #3a3737;
+    font-family: 'Poppins', san-serif;
+}
+
+.contentGiveaway{
+    padding: 100px 50px;
+    text-align: center;
+    margin-top: 60px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+.contentGiveaway p{
+    font-size: 16px;
+    color: #252525;
+    font-family: 'Poppins', san-serif;
+    font-weight: 500;
+
+}
+.contentGiveaway h3{
+    color:#b55858;
+    margin-bottom:50px;
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+.gradient-button {
+    margin: 10px;
+    font-family: 'Poppins', san-serif;
+    font-size: 15px;
+    padding: 5px 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+    border: none;
+    font-weight: 700;
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    color:#fff;
+}
+
+.gradient-button-1 {
+    background: linear-gradient(#e94f82, #f79dbb);
+}
+  
+.gradient-button-1:hover { background-position: right center; }
+
+/* MEDIA QUERY */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .bgRainbow{
+        height: 250px;
+    }
+    .votingLogo{
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 80px
+    }
+    .contentIntro {
+        padding: 100px 10px;
+        text-align: center;
+        margin-top: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .bgRainbow{
+        height: 350px;
+    }
+    .votingLogo{
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 80px
+    }
+    .contentIntro {
+        padding: 100px 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .bgRainbow{
+        height: 400px;
+    }
+    .contentIntro{
+        padding: 100px 50px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .votingLogo{
+        width: 45%;
+        margin: 0 auto;
+        padding-top: 150px;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+        .bgRainbow{
+           height: 400px;
+       }
+       .contentIntro{
+           padding: 100px 50px;
+           text-align: center;
+           margin-top: 60px;
+       }
+   
+       .votingLogo{
+           width: 30%;
+           margin: 0 auto;
+           padding-top: 150px;
+       }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
