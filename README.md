@@ -1,6 +1,6 @@
 # DVSG Themes
 
-I have built these Themes for Daily Vanity.
+I have built these WordPress Themes for Daily Vanity Singapore.
 
 For the live website please view the URL :
 
